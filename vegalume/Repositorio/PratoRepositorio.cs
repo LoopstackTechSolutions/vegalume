@@ -1,10 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
-using ProjetoEcommerce.Models;
+using vegalume.Models;
 using System.Data;
 
 
-namespace ProjetoEcommerce.Repositorio
+namespace vegalume.Repositorio
 {
     // Define a classe responsável por interagir com os dados de clientes no banco de dados
     public class ClienteRepositorio(IConfiguration configuration)
