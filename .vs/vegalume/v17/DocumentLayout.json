@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\2mod\\Desktop\\vegalume\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\funcionariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\funcionariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\pagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\pedidorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\pedidorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClienteRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
-              "RelativeDocumentMoniker": "vegalume\\Repositorio\\ClienteRepositorio.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
-              "RelativeToolTip": "vegalume\\Repositorio\\ClienteRepositorio.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAIwHkAAABEAAAAAAAAAA==",
+              "Title": "Cartao.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Cartao.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Cartao.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Cartao.cs",
+              "RelativeToolTip": "vegalume\\Models\\Cartao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:17:15.59Z",
+              "WhenOpened": "2025-05-23T19:20:26.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FuncionarioRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\FuncionarioRepositorio.cs",
-              "RelativeDocumentMoniker": "vegalume\\Repositorio\\FuncionarioRepositorio.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\FuncionarioRepositorio.cs",
-              "RelativeToolTip": "vegalume\\Repositorio\\FuncionarioRepositorio.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAcwHoAAABEAAAAAAAAAA==",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Cliente.cs",
+              "RelativeToolTip": "vegalume\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:16:32.539Z",
+              "WhenOpened": "2025-05-23T19:18:44.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Endereco.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Endereco.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Endereco.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Endereco.cs",
+              "RelativeToolTip": "vegalume\\Models\\Endereco.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:14:03.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PedidoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PedidoRepositorio.cs",
-              "RelativeDocumentMoniker": "vegalume\\Repositorio\\PedidoRepositorio.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PedidoRepositorio.cs",
-              "RelativeToolTip": "vegalume\\Repositorio\\PedidoRepositorio.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAA0wBIAAABEAAAAAAAAAA==",
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Funcionario.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Funcionario.cs",
+              "RelativeToolTip": "vegalume\\Models\\Funcionario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:12:31.368Z",
+              "WhenOpened": "2025-05-23T19:10:00.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PratoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
-              "RelativeDocumentMoniker": "vegalume\\Repositorio\\PratoRepositorio.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
-              "RelativeToolTip": "vegalume\\Repositorio\\PratoRepositorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABEAAAAAAAAAA==",
+              "Title": "Pagamento.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Pagamento.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Pagamento.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Pagamento.cs",
+              "RelativeToolTip": "vegalume\\Models\\Pagamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T17:40:18.077Z",
+              "WhenOpened": "2025-05-23T19:03:57.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Pedido.cs",
+              "RelativeToolTip": "vegalume\\Models\\Pedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:54:47.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Prato.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Prato.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeToolTip": "vegalume\\Models\\Prato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:50:44.498Z",
               "EditorCaption": ""
             }
           ]
