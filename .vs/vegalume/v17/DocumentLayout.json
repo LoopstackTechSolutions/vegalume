@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\2mod\\Desktop\\vegalume\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\funcionariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\funcionariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\pedidorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\pedidorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "vegalume\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "vegalume\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAowDkAAAATAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ClienteRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA2wCYAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T18:09:55.269Z",
+              "WhenOpened": "2025-05-26T19:25:47.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FuncionarioRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\FuncionarioRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\FuncionarioRepositorio.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\FuncionarioRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\FuncionarioRepositorio.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowFgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T19:25:43.568Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PratoController.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
-              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
-              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwDIAAABmAAAAAAAAAA==",
+              "Title": "PedidoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PedidoRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\PedidoRepositorio.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PedidoRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\PedidoRepositorio.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T18:09:39.024Z",
+              "WhenOpened": "2025-05-26T19:24:28.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FuncionarioController.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\FuncionarioController.cs",
-              "RelativeDocumentMoniker": "vegalume\\Controllers\\FuncionarioController.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\FuncionarioController.cs",
-              "RelativeToolTip": "vegalume\\Controllers\\FuncionarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABaAAAAAAAAAA==",
+              "Title": "PratoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\PratoRepositorio.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\PratoRepositorio.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwFYAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T18:09:22.079Z",
+              "WhenOpened": "2025-05-26T19:11:22.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "vegalume\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "vegalume\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwFEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Prato.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Prato.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeToolTip": "vegalume\\Models\\Prato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T18:08:56.284Z",
+              "WhenOpened": "2025-05-26T19:09:51.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PratoController.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwDIAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:09:39.024Z",
               "EditorCaption": ""
             }
           ]

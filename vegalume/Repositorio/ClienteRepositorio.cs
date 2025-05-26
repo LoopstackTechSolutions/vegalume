@@ -36,12 +36,13 @@ namespace vegalume.Repositorio
                 {
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand("Update tb_cliente set nome=@nome, telefone=@telefone, email=@email " + " where idCliente=@id ", conexao);
-                    cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = cliente.IdCliente;
+                    cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = cliente.idCliente;
                     cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.nome;
                     cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = cliente.senha;
                     cmd.Parameters.Add("@telefone", MySqlDbType.Decimal).Value = cliente.telefone;
                     cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cliente.email;
                     int linhasAfetadas = cmd.ExecuteNonQuery();
+                    return linhasAfetadas > 0;
 
                 }
             }
@@ -72,11 +73,11 @@ namespace vegalume.Repositorio
                     Clientlist.Add(
                                 new Cliente
                                 {
-                                    idCliente = Convert.ToInt64(dr["idCliente"]),
-                                    nome = ((string)dr["nome"]), 
-                                    senha = ((string)dr["senha"]),
-                                    telefone = ((decimal)dr["telefone"]),
-                                    email = ((string)dr["email"]),
+                                    idCliente = (int)dr["idCliente"],
+                                    nome = (string)dr["nome"], 
+                                    senha = (string)dr["senha"],
+                                    telefone = (decimal)dr["telefone"],
+                                    email = (string)dr["email"],
                                 });
                 }
                 return Clientlist;
@@ -101,11 +102,11 @@ namespace vegalume.Repositorio
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    cliente.idCliente = Convert.ToInt64(dr["idCliente"]);
-                    cliente.nome = (string)(dr["nome"]); 
-                    cliente.senha = (string)(dr["senha"]);
-                    cliente.telefone = (decimal)(dr["telefone"]); 
-                    cliente.email = (string)(dr["email"]); 
+                    cliente.idCliente = (int)dr["idCliente"];
+                    cliente.nome = (string)dr["nome"];
+                    cliente.senha = (string)dr["senha"];
+                    cliente.telefone = (decimal)dr["telefone"];
+                    cliente.email = (string)dr["email"];
                 }
                 
                 return cliente;

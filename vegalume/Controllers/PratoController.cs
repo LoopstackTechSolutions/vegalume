@@ -48,7 +48,7 @@ namespace vegalume.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditarPrato(int id, [Bind("idPrato, nomePrato, precoPrato, descricaoPrato")] Prato prato)
+        public IActionResult EditarPrato(int id, [Bind("idPrato, nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas")] Prato prato)
         {
             if (id != prato.idPrato)
             {
