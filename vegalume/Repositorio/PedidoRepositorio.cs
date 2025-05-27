@@ -41,6 +41,7 @@ namespace vegalume.Repositorio
                     cmd.Parameters.Add("@cep", MySqlDbType.Decimal).Value = pedido.cep;
                     cmd.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = pedido.idCliente;
                     int linhasAfetadas = cmd.ExecuteNonQuery();
+                    return linhasAfetadas > 0;
 
                 }
             }
@@ -71,11 +72,11 @@ namespace vegalume.Repositorio
                     Pedidolist.Add(
                                 new Pedido
                                 {
-                                    idPedido = Convert.ToInt64(dr["idPedido"]),
+                                    idPedido = (int)(dr["idPedido"]),
                                     statusPagamento = ((bool)dr["statusPagamento"]),
-                                    rm = Convert.ToInt32(dr["rm"]),//idem
-                                    cep = ((decimal)dr["cep"]),//DEIXO ASSIM OU mudo para ConvertToDecimal
-                                    idCliente = Convert.ToInt64(dr["idCliente"]),// idem
+                                    rm = (int)dr["rm"],//idem
+                                    cep = ((int)dr["cep"]),//DEIXO ASSIM OU mudo para ConvertToDecimal
+                                    idCliente = (int)(dr["idCliente"]),// idem
                                 });
                 }
                 return Pedidolist;
@@ -100,11 +101,11 @@ namespace vegalume.Repositorio
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    pedido.idPedido = Convert.ToInt64(dr["idPedido"]);
+                    pedido.idPedido = (int)(dr["idPedido"]);
                     pedido.statusPagamento = ((bool)dr["statusPagamento"]);
                     pedido.rm = Convert.ToInt32(dr["rm"]);//idem
-                    pedido.cep = ((decimal)dr["cep"]);//DEIXO ASSIM OU mudo para ConvertToDecimal
-                    pedido.idCliente = Convert.ToInt64(dr["idCliente"]);         
+                    pedido.cep = ((int)dr["cep"]);//DEIXO ASSIM OU mudo para ConvertToDecimal
+                    pedido.idCliente = (int)(dr["idCliente"]);         
                 }
                 return pedido;
             }

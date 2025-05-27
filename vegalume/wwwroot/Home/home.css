@@ -1,0 +1,392 @@
+@import url(../shared.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../Imagens/output-onlinepngtools.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--verde-escuro);
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+header a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.btn-minha-conta,
+.btn-sair {
+    display: none;
+}
+
+#logo-section {
+    width: 100%;
+    text-align: center;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+}
+
+#logo {
+    width: 40%;
+}
+
+#nosso-restaurante {
+    background-color: var(--cinza-escuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vw;
+}
+
+.expand {
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+    border-top: black solid 2px;
+    font-family: steelfish;
+    letter-spacing: 0.9vw;
+    font-size: 3vw;
+    width: 100%;
+}
+
+.expand:last-of-type {
+    border-bottom: black solid 2px;
+}
+
+.expand span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mais {
+    background: var(--cinza-escuro);
+    width: 4vw;
+    height: 4vw;
+    border: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.mais span {
+    position: absolute;
+    background: black;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mais span:first-child {
+    width: 6%;
+    height: 60%;
+    left: 47%;
+    top: 20%;
+}
+
+.mais span:last-child {
+    width: 60%;
+    height: 6%;
+    top: 47%;
+    left: 20%;
+}
+
+.mais.menos span:first-child {
+    transform: rotate(90deg);
+}
+
+
+.conteudo {
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 0;
+    margin: 0;
+}
+
+.conteudo.mostrar {
+    max-height: 200px;
+    opacity: 1;
+    padding: 1em 0;
+}
+
+#detalhes {
+    padding-right: 7vw;
+    display: inline-block;
+}
+
+#img-restaurante {
+    width: 60%;
+}
+
+#nosso-cardapio {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    margin: 0;
+    padding: 5vw;
+}
+
+#titulo-cardapio {
+    font-family: avarezo;
+    font-size: 4vw;
+    letter-spacing: 0.1vw;
+}
+
+#dica-cardapio {
+    font-family: unageo;
+    font-size: 1.4vw;
+    margin-bottom: 4vw;
+}
+
+#cardapio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+}
+
+#cardapio p {
+    margin: 0;
+}
+
+.prato {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prato p {
+    margin: 0;
+    padding: 0;
+}
+
+.prato aside {
+    width: 80%;
+}
+
+.prato aside p:first-of-type {
+    padding-bottom: 1vw;
+}
+
+.nome-prato {
+    font-family: avarezo;
+    font-size: 2vw;
+    letter-spacing: 0.2vw;
+    text-align: right;
+}
+
+.descricao-prato {
+    font-family: unageo;
+    font-size: 1.6vw;
+    text-align: right;
+}
+
+.preco {
+    align-self: center;
+    font-family: steelfish;
+    font-size: 3vw;
+    letter-spacing: 0.4vw;
+}
+
+#nossa-historia {
+    background-color: var(--bege);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 6vw;
+}
+
+#historia {
+    background-color: var(--verde-escuro);
+    color: white;
+    padding: 2vw;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: unageo;
+    font-size: 1.6vw;
+    width: 35%;
+}
+
+#historia p {
+    margin-bottom: 0;
+}
+
+#critica {
+    padding: 2vw;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    background-image: url('../Imagens/transparent-food.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--verde-escuro);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 30%;
+    height: 50%;
+    align-self: center;
+}
+
+#titulo {
+    font-size: 2.3vw;
+    letter-spacing: 0.2vw;
+    font-family: avarezo;
+}
+
+#critica-autor {
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 2.3vw;
+    color: var(--verde-escuro);
+    text-decoration: underline;
+}
+
+#critica-texto {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-family: unageo-italic;
+    font-size: 1.6vw;
+}
+
+#letreiro-section {
+    overflow: hidden;
+    white-space: nowrap;
+    background: black;
+    color: white;
+    font-size: 4vw;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    padding: 1vw 0;
+    position: relative;
+    background-color: var(--verde-escuro);
+    font-family: avarezo;
+    font-size: 8vw;
+    padding: 2vw;
+}
+
+#letreiro {
+    display: inline-flex;
+    animation: scroll-left 15s linear infinite;
+}
+
+#letreiro span {
+    padding-right: 1vw;
+    white-space: nowrap;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+footer {
+    background-color: var(--verde-escuro);
+    font-family: steelfish;
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 2vw;
+    letter-spacing: 0.5vw;
+}
+
+footer img {
+    height: 7vw;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+#meio {
+    align-self: center;
+}
+
+#direita {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-between;
+}
+
+#direita div {
+    display: flex;
+    flex-direction: column;
+}
+
+#direita div a {
+    margin-bottom: 1.6vw;
+}
+
+#esquerda p {
+    margin-top: 0;
+}
+
+#direita,
+#esquerda {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fixed-btn {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+#btn-carrinho {
+    position: fixed;
+    bottom: 70px;
+    left: 70px;
+    background-color: var(--branco);
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    background-color: var(--verde-escuro);
+}
+
+#scroll-top img,
+#btn-carrinho img {
+    height: 4vw;
+}
+
+#qtd-carrinho {
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    font-size: 1.4vw;
+    color: var(--branco);
+    font-family: steelfish;
+}

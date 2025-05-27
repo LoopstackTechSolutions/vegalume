@@ -6,7 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
+	<PropertyGroup>
+		<EnableDefaultStaticWebAssetsItems>true</EnableDefaultStaticWebAssetsItems>
+		<StaticWebAssetsTrace>true</StaticWebAssetsTrace>
+	</PropertyGroup>
+
+
+	<ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 

@@ -1,8 +1,188 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="~/home/home.css" rel="stylesheet" />
+	<link href="~/shared.css" rel="stylesheet" />
+    <title>Vegalume - Home</title>
+</head>
+
+<body>
+    <header>
+        <a href="#nosso-restaurante">Nosso Restaurante</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#nossa-historia">Nossa História</a>
+        <button class="white-green-btn" id="btn-login">Entre e peça já!</button>
+        <button class="white-green-btn btn-minha-conta">Minha Conta</button>
+        <button class="white-green-btn btn-sair">Sair</button>
+    </header>
+
+    <section id="logo-section">
+        <img src="~/Imagens/logo + nome-cropped.svg" id="logo">
+    </section>
+
+    <section id="nosso-restaurante">
+        <div id="detalhes">
+            <div class="expand">
+                <span>
+                    <div>Localização</div>
+                    <button class="mais" id="btn-localizacao" onclick="revelaEsconde('localizacao')">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </span>
+                <p id="p-localizacao" class="conteudo">
+                    Rua Guaipá, 678
+                    Vila Leopoldina, São Paulo
+                </p>
+            </div>
+            <div class="expand">
+                <span>
+                    <div>Horários</div>
+                    <button class="mais" id="btn-horarios" onclick="revelaEsconde('horarios')">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </span>
+                <p id="p-horarios" class="conteudo">
+                    Seg-Sex 12-22<br>
+                    Sab-Dom 17-22
+                </p>
+            </div>
+            <div class="expand">
+                <span>
+                    <div>Contatos</div>
+                    <button class="mais" id="btn-contatos" onclick="revelaEsconde('contatos')">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </span>
+                <p id="p-contatos" class="conteudo">
+                    Email: vegalume0@gmail.com
+                    Instagram: @@vegalume00
+                </p>
+            </div>
+        </div>
+        <img id="img-restaurante" src="~/Imagens/rest-modified.png">
+    </section>
+
+    <section id="nosso-cardapio">
+        <div id="titulo-cardapio">Nosso Cardápio</div>
+        <div id="dica-cardapio">Clique em qualquer prato abaixo para adicioná-lo ao seu carrinho!</div>
+        <div id="cardapio">
+            <div class="prato">
+                <aside>
+                    <p class="nome-prato">Nhoque de Mandioquinha com Ragu de Cogumelos</p>
+                    <p class="descricao-prato">
+                        Delicado e levemente dourado, o nhoque de mandioquinha é servido com um
+                        ragu
+                        rico de cogumelos (shitake, shimeji e portobello), refogados com alho-poró, vinho tinto e ervas
+                        frescas. Finalizado com azeite trufado e castanhas-do-pará tostadas, o prato combina sabores
+                        terrosos, textura macia e um aroma envolvente — uma opção vegana sofisticada e reconfortante.
+                    </p>
+                </aside>
+                <p class="preco">$30</p>
+            </div>
+            <div class="prato">
+                <aside>
+                    <p class="nome-prato">Curry de Grão-de-Bico com Leite de Coco</p>
+                    <p class="descricao-prato">
+                        Grão-de-bico cozido em molho cremoso de leite de coco com tomate e
+                        especiarias indianas, como cúrcuma e garam masala. Servido com arroz de jasmim e finalizado com
+                        coentro fresco, é um prato aromático, reconfortante e cheio de sabor.
+                    </p>
+                </aside>
+                <p class="preco">$30</p>
+            </div>
+            <div class="prato">
+                <aside>
+                    <p class="nome-prato">Curry de Grão-de-Bico com Leite de Coco</p>
+                    <p class="descricao-prato">
+                        Grão-de-bico cozido em molho cremoso de leite de coco com tomate e
+                        especiarias indianas, como cúrcuma e garam masala. Servido com arroz de jasmim e finalizado com
+                        coentro fresco, é um prato aromático, reconfortante e cheio de sabor.
+                    </p>
+                </aside>
+                <p class="preco">$30</p>
+            </div>
+            <div class="prato">
+                <aside>
+                    <p class="nome-prato">Curry de Grão-de-Bico com Leite de Coco</p>
+                    <p class="descricao-prato">
+                        Grão-de-bico cozido em molho cremoso de leite de coco com tomate e
+                        especiarias indianas, como cúrcuma e garam masala. Servido com arroz de jasmim e finalizado com
+                        coentro fresco, é um prato aromático, reconfortante e cheio de sabor.
+                    </p>
+                </aside>
+                <p class="preco">$30</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nossa-historia">
+        <div id="historia">
+            <div id="titulo">Dez Anos Iluminando a Gastronomia Vegana</div>
+            <p>
+                O Vegalume surgiu como um pequeno bistrô vegano com a missão de unir sabor, ética e criatividade.
+                Em dez anos de história, cresceu e se firmou como referência na gastronomia vegetal, encantando
+                clientes com pratos autorais, ingredientes frescos e um compromisso contínuo com a sustentabilidade.
+                Hoje, é mais que um restaurante — é um espaço de encontro e consciência alimentar.
+            </p>
+        </div>
+        <div id="critica">
+            <div id="critica-autor">
+                Caio D. Moura, crítico da Revista Sabor & Alma
+            </div>
+            <div id="critica-texto">
+                "O Vegalume prova que comida vegana pode ser surpreendente, sofisticada e profundamente acolhedora.
+                Um refúgio gastronômico onde cada prato conta uma história — e todas valem a pena."
+            </div>
+        </div>
+    </section>
+
+    <section id="letreiro-section">
+        <div id="letreiro">
+            <span>COMA BEM • VIVA BEM • COMECE UMA REVOLUÇÃO • </span>
+            <span>COMA BEM • VIVA BEM • COMECE UMA REVOLUÇÃO • </span>
+        </div>
+    </section>
+
+    <footer>
+        <div id="esquerda">
+            <p>
+                Rua Guaipá, 678<br>
+                Vila Leopoldina, São Paulo
+            </p>
+            <p>Email: vegalume0@gmail.com</p>
+            <p>
+                Horários:<br>
+                Seg-Sex 12-22<br>
+                Sab-Dom 17-22
+            </p>
+        </div>
+        <a id="meio" href="https://www.instagram.com/vegalume00/" target="_blank"><img src="~/Imagens/insta.png"></a>
+        <div id="direita">
+            <div>
+                <a href="">Entrar</a>
+                <a href="" class="btn-minha-conta">Minha Conta</a>
+                <a href="" class="btn-minha-conta">Sair</a>
+                <a href="#nosso-cardapio">Cardápio</a>
+            </div>
+            <p>Design por Loopstack Tech Solutions</p>
+        </div>
+    </footer>
+
+    <button class="fixed-btn" id="scroll-top">
+        <img src="../Imagens/arrow.png">
+    </button>
+
+    <button class="fixed-btn" id="btn-carrinho">
+        <img src="~/Imagens/cart.png">
+        <div id="qtd-carrinho"></div>
+    </button>
+	<script src="~/home/home.js"></script>
+</body>

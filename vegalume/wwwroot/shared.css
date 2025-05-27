@@ -1,0 +1,38 @@
+:root{
+    --verde-escuro: #17660C;
+    --cinza-escuro: #ABB599;
+    --bege: #FBF3A4;
+    --branco: #FFFFFF;
+}
+
+@font-face {
+    font-family: avarezo;
+    src: url(Fontes/AvarezoSerif_PERSONAL_USE_ONLY.otf);
+}
+
+@font-face {
+    font-family: steelfish;
+    src: url(Fontes/Steelfish\ Rg.ttf);
+}
+
+@font-face {
+    font-family: unageo;
+    src: url(Fontes/Unageo-Regular.ttf);
+}
+
+@font-face {
+    font-family: unageo-italic;
+    src: url(Fontes/Unageo-Regular-Italic.ttf);
+}
+
+.white-green-btn{
+    color: var(--verde-escuro);
+    background-color: var(--branco);
+    box-shadow: none;
+    border: none;
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 1.8vw;
+    padding: 1vw;
+    cursor: pointer;
+}
