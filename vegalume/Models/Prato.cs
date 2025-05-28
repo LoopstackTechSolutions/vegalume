@@ -8,7 +8,7 @@
         public float? precoPrato { get; set; }
         public string? descricaoPrato { get; set; }
         public int? valorCalorico { get; set; }
-        public float? peso { get; set; }
+        public int? peso { get; set; }
         public int? pessoasServidas { get; set; }
         public List<Prato>? ListaPrato { get; set; }
 

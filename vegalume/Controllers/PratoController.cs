@@ -77,5 +77,11 @@ namespace vegalume.Controllers
             _pratoRepositorio.Excluir(id);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult TodosPratos()
+        {
+            return Json(_pratoRepositorio.TodosPratos());
+        }
     }
 }

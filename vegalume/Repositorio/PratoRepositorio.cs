@@ -80,11 +80,11 @@ namespace vegalume.Repositorio
                                 {
                                     idPrato = (int)dr["idPrato"], 
                                     nomePrato = (string)dr["nomePrato"],
-                                    precoPrato = (float)dr["precoPrato"],
+                                    precoPrato = Convert.ToSingle(dr["precoPrato"]),
                                     descricaoPrato = (string)dr["descricaoPrato"],
                                     valorCalorico = (int)dr["valorCalorico"],
-                                    peso = (float)dr["peso"],
-                                    pessoasServidas = (int)dr["pessoasServidas"],
+                                    peso = (int)dr["peso"],
+                                    pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]),
                                 });
                 }
                 return Pratolist;
@@ -110,12 +110,12 @@ namespace vegalume.Repositorio
                 while (dr.Read())
                 {
                     prato.idPrato = (int)dr["idPrato"];
-                    prato.nomePrato = (string)dr["nomePrato"]; 
-                    prato.precoPrato = (float)dr["precoPrato"]; 
+                    prato.nomePrato = (string)dr["nomePrato"];
+                    prato.precoPrato = Convert.ToSingle(dr["precoPrato"]);
                     prato.descricaoPrato = (string)dr["descricaoPrato"];
                     prato.valorCalorico = (int)dr["valorCalorico"];
-                    prato.peso = (float)dr["peso"];
-                    prato.pessoasServidas = (int)dr["pessoasServidas"];
+                    prato.peso = (int)dr["peso"];
+                    prato.pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]);
 
                 }
                 return prato;

@@ -5,6 +5,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\wwwroot\\home\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\home\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\pratorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Prato.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Prato.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\Prato.cs",
+              "RelativeToolTip": "vegalume\\Models\\Prato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T03:22:24.159Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +53,47 @@
               "RelativeDocumentMoniker": "vegalume\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "vegalume\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAALgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T02:02:05.203Z",
+              "WhenOpened": "2025-05-28T02:37:13.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "home.js",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\Home\\home.js",
+              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Home\\home.js",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\Home\\home.js",
+              "RelativeToolTip": "vegalume\\wwwroot\\Home\\home.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwCYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-28T02:30:02.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PratoController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwFMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T02:26:28.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PratoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\PratoRepositorio.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Repositorio\\PratoRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\PratoRepositorio.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAIwGgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T02:21:25.808Z",
               "EditorCaption": ""
             }
           ]
