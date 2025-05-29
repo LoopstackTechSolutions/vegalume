@@ -23,5 +23,14 @@ namespace vegalume.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public void GuardarId(int id)
+        {
+            HttpContext.Session.SetInt32("UserId", id);
+        }
     }
 }

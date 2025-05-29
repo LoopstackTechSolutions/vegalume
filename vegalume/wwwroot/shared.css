@@ -1,8 +1,17 @@
-:root{
+:root {
     --verde-escuro: #17660C;
     --cinza-escuro: #ABB599;
     --bege: #FBF3A4;
     --branco: #FFFFFF;
+}
+
+body {
+    background-image: url(Imagens/output-onlinepngtools.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 @font-face {
@@ -25,7 +34,7 @@
     src: url(Fontes/Unageo-Regular-Italic.ttf);
 }
 
-.white-green-btn{
+.white-green-btn {
     color: var(--verde-escuro);
     background-color: var(--branco);
     box-shadow: none;
@@ -36,3 +45,31 @@
     padding: 1vw;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+}
+
+
+
+header {
+    background-color: var(--verde-escuro);
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+    header a {
+        color: var(--branco);
+        text-decoration: none;
+    }
+
+        header a:hover {
+            text-decoration: underline;
+        }

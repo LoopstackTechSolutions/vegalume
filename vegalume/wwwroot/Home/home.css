@@ -368,6 +368,7 @@ footer a {
     bottom: 70px;
     left: 70px;
     background-color: var(--branco);
+    display: none;
 }
 
 #scroll-top {
@@ -389,4 +390,7 @@ footer a {
     font-size: 1.4vw;
     color: var(--branco);
     font-family: steelfish;
+}
+#bt-carrinho img{
+    display: none;
 }

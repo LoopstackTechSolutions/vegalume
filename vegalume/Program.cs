@@ -9,6 +9,7 @@ builder.Services.AddScoped<ClienteRepositorio>();
 builder.Services.AddScoped<FuncionarioRepositorio>();
 builder.Services.AddScoped<PedidoRepositorio>();
 builder.Services.AddScoped<PratoRepositorio>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -20,6 +21,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

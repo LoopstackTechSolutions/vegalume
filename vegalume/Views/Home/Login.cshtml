@@ -1,0 +1,36 @@
+﻿
+@{
+ 
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegalume - Login</title>
+    <link href="~/login/login.css" rel="stylesheet" />
+    <link href="~/shared.css" rel="stylesheet" />
+</head>
+
+<body>
+    <button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
+
+    <form>
+        <p>Login</p>
+        <div><input type="checkbox" id="cbxfuncionario"><label id="lblFuncionario">Funcionário</label></div>
+        <div id="textboxes">
+            <div>
+                <label>Email </label>
+                <input type="text" id="txtEmail" required maxlength="50" placeholder="joao.vieira@gmail.com">
+            </div>
+            <div>
+                <label>Senha </label>
+                <input type="password" id="txtSenha" required maxlength="30" placeholder="••••••••">
+            </div>
+        </div>
+        <a href="">Esqueci minha senha</a>
+        <button class="white-green-btn" id="entrar">Entrar</button>
+        <a href="">Não tem uma conta? Cadastre-se!</a>
+    </form>
+
+    <script src="login.js"></script>
+</body>

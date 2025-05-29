@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj": {}
+    "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\vegalume\\vegalume\\vegalume.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj": {
+    "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\vegalume\\vegalume\\vegalume.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\vegalume\\vegalume\\vegalume.csproj",
         "projectName": "vegalume",
-        "projectPath": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
-        "packagesPath": "C:\\Users\\Vini\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\vegalume\\vegalume\\vegalume.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\vegalume\\vegalume\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
