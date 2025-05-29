@@ -13,11 +13,31 @@ namespace vegalume.Controllers
             _pratoRepositorio = pratoRepositorio;
         }
 
-        public IActionResult Index()
+        public IActionResult AdicionarAoCarrinho(int id, int qtd, string? anotacoes)
         {
-            return View(_pratoRepositorio.TodosPratos());
-        }
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
 
+            var existingItem = carrinho.FirstOrDefault(c => c.Id == id);
+
+            if (existingItem != null)
+            {
+                existingItem.Qtd += qtd;
+                existingItem.Anotacoes = anotacoes;
+            }
+            else
+            {
+                carrinho.Add(new PratoCarrinho
+                {
+                    Id = id,
+                    Qtd = qtd,
+                    Anotacoes = anotacoes
+                });
+            }
+
+            HttpContext.Session.SetObject("Carrinho", carrinho);
+
+            return RedirectToAction("Index", "Home");
+        }
 
         public IActionResult CadastrarPrato()
         {

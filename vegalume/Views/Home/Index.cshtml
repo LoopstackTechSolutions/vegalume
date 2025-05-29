@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    var userId = Context.Session.GetInt32("UserId");
 }
 
 
@@ -16,9 +16,9 @@
         <a href="#nosso-restaurante">Nosso Restaurante</a>
         <a href="#nosso-cardapio">Cardápio</a>
         <a href="#nossa-historia">Nossa História</a>
-        <a asp-action="Login" asp-controller="Home" class="white-green-btn" id="btn-login">Entre e peça já!</a>
-        <button class="white-green-btn btn-minha-conta">Minha Conta</button>
-        <button class="white-green-btn btn-sair">Sair</button>
+        <a asp-action="Login" asp-controller="Home" style="@(userId != null ? "display:none;" : "")" class="white-green-btn" id="btn-login">Entre e peça já!</a>
+        <button class="white-green-btn btn-minha-conta" style="@(userId != null ? "display:inline;" : "")">Minha Conta</button>
+        <a asp-action="Logout" asp-controller="Home" class="white-green-btn btn-sair" style="@(userId != null ? "display:inline;" : "")">Sair</a>
     </header>
 
     <section id="logo-section">
@@ -121,9 +121,9 @@
         <a id="meio" href="https://www.instagram.com/vegalume00/" target="_blank"><img src="~/Imagens/insta.png"></a>
         <div id="direita">
             <div>
-                <a href="">Entrar</a>
-                <a href="" class="btn-minha-conta">Minha Conta</a>
-                <a href="" class="btn-minha-conta">Sair</a>
+                <a asp-action="Login" asp-controller="Home" style="@(userId != null ? "display:none;" : "")">Entrar</a>
+                <a href="" class="btn-minha-conta" style="@(userId != null ? "display:inline;" : "")">Minha Conta</a>
+                <a asp-action="Logout" asp-controller="Home" class="btn-minha-conta" style="@(userId != null ? "display:inline;" : "")">Sair</a>
                 <a href="#nosso-cardapio">Cardápio</a>
             </div>
             <p>Design por Loopstack Tech Solutions</p>
@@ -136,7 +136,7 @@
 
     <button class="fixed-btn" id="btn-carrinho">
         <img src="~/Imagens/cart.png">
-        <div id="qtd-carrinho">2</div>
+        <div id="qtd-carrinho"></div>
     </button>
 	<script src="~/home/home.js"></script>
 </body>

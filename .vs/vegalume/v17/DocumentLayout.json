@@ -1,46 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\",
+  "WorkspaceRootPath": "C:\\Users\\Vini\\Desktop\\vegalume\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\wwwroot\\home\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\home\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\wwwroot\\login\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\login\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\models\\pratocarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\pratocarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\wwwroot\\shared.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\shared.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\repositorio\\clienterepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\lucas\\onedrive\\\u00E1rea de trabalho\\vegalume\\vegalume\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\cartao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,137 +50,132 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Program.cs",
-              "RelativeDocumentMoniker": "vegalume\\Program.cs",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Program.cs",
-              "RelativeToolTip": "vegalume\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:22:56.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Carrinho.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Models\\Carrinho.cs",
-              "RelativeDocumentMoniker": "vegalume\\Models\\Carrinho.cs",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Models\\Carrinho.cs",
-              "RelativeToolTip": "vegalume\\Models\\Carrinho.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "PratoController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvxEAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T04:20:36.416Z",
+              "WhenOpened": "2025-05-29T06:29:32.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "home.css",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\Home\\home.css",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Home\\home.css",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\Home\\home.css",
-              "RelativeToolTip": "vegalume\\wwwroot\\Home\\home.css",
-              "ViewState": "AgIAAHYBAAAAAAAAAAAAAIoBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-29T04:13:22.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "vegalume\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "vegalume\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T03:54:57.955Z",
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "vegalume\\SessionExtensions.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\SessionExtensions.cs",
+              "RelativeToolTip": "vegalume\\SessionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T06:26:47.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "login.css",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\Login\\login.css",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Login\\login.css",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\Login\\login.css",
-              "RelativeToolTip": "vegalume\\wwwroot\\Login\\login.css",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-29T03:32:14.934Z",
+              "Title": "PratoCarrinho.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\PratoCarrinho.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\PratoCarrinho.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\PratoCarrinho.cs",
+              "RelativeToolTip": "vegalume\\Models\\PratoCarrinho.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T06:22:21.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "vegalume\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "vegalume\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIoAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAH0AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T03:30:58.35Z",
+              "WhenOpened": "2025-05-29T06:00:02.579Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Models\\Cliente.cs",
+              "RelativeToolTip": "vegalume\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:23:37.023Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "vegalume\\Views\\Home\\Login.cshtml",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "vegalume\\Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T03:26:29.219Z",
-              "EditorCaption": ""
+              "Title": "FuncionarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\FuncionarioController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\FuncionarioController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\FuncionarioController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\FuncionarioController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T05:17:10.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "vegalume\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\HomeController.cs",
               "RelativeToolTip": "vegalume\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBwAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAADwv0EAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T03:24:30.555Z",
+              "WhenOpened": "2025-05-29T05:07:27.552Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "vegalume\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "vegalume\\Views\\Home\\Login.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-29T05:12:33.021Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "shared.css",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\shared.css",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\shared.css",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\wwwroot\\shared.css",
-              "RelativeToolTip": "vegalume\\wwwroot\\shared.css",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-29T04:04:13.146Z",
-              "EditorCaption": ""
+              "Title": "ClienteRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeDocumentMoniker": "vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "RelativeToolTip": "vegalume\\Repositorio\\ClienteRepositorio.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAkwE4AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T04:57:40.536Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Cartao.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Models\\Cartao.cs",
-              "RelativeDocumentMoniker": "vegalume\\Models\\Cartao.cs",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\\u00C1rea de Trabalho\\vegalume\\vegalume\\Models\\Cartao.cs",
-              "RelativeToolTip": "vegalume\\Models\\Cartao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCIAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T03:22:12.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T04:56:22.579Z"
             }
           ]
         }

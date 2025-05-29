@@ -13,10 +13,7 @@ namespace vegalume.Controllers
             _clienteRepositorio = clienteRepositorio;
         }
 
-        public IActionResult Index()
-        {
-            return View(_clienteRepositorio.TodosClientes());
-        }
+        
 
 
         public IActionResult CadastrarCliente()
@@ -35,7 +32,7 @@ namespace vegalume.Controllers
 
         public IActionResult EditarCliente(int id)
         {
-            var cliente = _clienteRepositorio.ObterCliente(id);
+            var cliente = _clienteRepositorio.ObterClientePeloId(id);
 
             if (cliente == null)
             {

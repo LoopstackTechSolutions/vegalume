@@ -14,23 +14,29 @@
 <body>
     <button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
 
-    <form>
+    <form method="post" action="/Home/Login">
         <p>Login</p>
-        <div><input type="checkbox" id="cbxfuncionario"><label id="lblFuncionario">Funcionário</label></div>
+        <div><input type="checkbox" id="cbxfuncionario" name="isFuncionario" value="true"><label id="lblFuncionario">Funcionário</label></div>
         <div id="textboxes">
             <div>
                 <label>Email </label>
-                <input type="text" id="txtEmail" required maxlength="50" placeholder="joao.vieira@gmail.com">
+                <input type="text" id="txtEmail" name="email" value="@ViewBag.Email" required maxlength="50" placeholder="joao.vieira@gmail.com">
             </div>
             <div>
                 <label>Senha </label>
-                <input type="password" id="txtSenha" required maxlength="30" placeholder="••••••••">
+                <input type="password" id="txtSenha" name="senha" required maxlength="30" placeholder="••••••••">
             </div>
         </div>
-        <a href="">Esqueci minha senha</a>
-        <button class="white-green-btn" id="entrar">Entrar</button>
+        <input type="submit" class="white-green-btn" id="entrar" value="Entrar" />
         <a href="">Não tem uma conta? Cadastre-se!</a>
     </form>
 
     <script src="login.js"></script>
 </body>
+
+@if (ViewBag.Erro != null)
+{
+    <script>
+        alert('@ViewBag.Erro');
+    </script>
+}

@@ -76,7 +76,7 @@ namespace vegalume.Repositorio
                                     idCliente = (int)dr["idCliente"],
                                     nome = (string)dr["nome"], 
                                     senha = (string)dr["senha"],
-                                    telefone = (decimal)dr["telefone"],
+                                    telefone = (long)dr["telefone"],
                                     email = (string)dr["email"],
                                 });
                 }
@@ -84,7 +84,7 @@ namespace vegalume.Repositorio
             }
         }
 
-        public Cliente ObterCliente(int Id)
+        public Cliente ObterClientePeloId(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -105,14 +105,13 @@ namespace vegalume.Repositorio
                     cliente.idCliente = (int)dr["idCliente"];
                     cliente.nome = (string)dr["nome"];
                     cliente.senha = (string)dr["senha"];
-                    cliente.telefone = (decimal)dr["telefone"];
+                    cliente.telefone = (long)dr["telefone"];
                     cliente.email = (string)dr["email"];
                 }
                 
                 return cliente;
             }
         }
-
 
         public void Excluir(int Id)
         {

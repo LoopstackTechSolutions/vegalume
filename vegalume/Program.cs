@@ -10,6 +10,12 @@ builder.Services.AddScoped<FuncionarioRepositorio>();
 builder.Services.AddScoped<PedidoRepositorio>();
 builder.Services.AddScoped<PratoRepositorio>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
