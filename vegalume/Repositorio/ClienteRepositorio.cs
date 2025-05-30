@@ -147,6 +147,24 @@ namespace vegalume.Repositorio
             return lista;
         }
 
+        public void CadastrarEndereco(Endereco endereco, int? idCliente)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("insert into tb_endereco (rua, numero, bairro, cidade, estado, idcliente)" +
+                                                    " values (@rua, @numero, @bairro, @cidade, @estado, @idcliente)", conexao);
+                                                                                                                                                                 // Adiciona um parâmetro para o nome, definindo seu tipo e valor
+                cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = endereco.rua;
+                cmd.Parameters.Add("@numero", MySqlDbType.Int16).Value = endereco.numero;
+                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = endereco.bairro;
+                cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = endereco.cidade;
+                cmd.Parameters.Add("@estado", MySqlDbType.VarChar).Value = endereco.estado;
+                cmd.Parameters.Add("@idcliente", MySqlDbType.Int32).Value = idCliente;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
         public void Excluir(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))

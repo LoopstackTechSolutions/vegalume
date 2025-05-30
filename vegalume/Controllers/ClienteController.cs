@@ -78,6 +78,13 @@ namespace vegalume.Controllers
             return Json(_clienteRepositorio.TodosEnderecos(HttpContext.Session.GetInt32("UserId")));
         }
 
+        [HttpPost]
+        public IActionResult CadastrarEndereco(Endereco endereco)
+        {
+            _clienteRepositorio.CadastrarEndereco(endereco, HttpContext.Session.GetInt32("UserId"));
+            return Redirect("/Home/MinhaConta#meus-enderecos");
+        }
+
         public IActionResult ExcluirCliente(int id)
         {
             _clienteRepositorio.Excluir(id);

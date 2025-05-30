@@ -110,17 +110,17 @@
         <div id="enderecos">
         </div>
 
-        <form id="frm-adicionar-endereco">
+        <form id="frm-adicionar-endereco" asp-action="CadastrarEndereco" asp-controller="Cliente">
             <div id="adicione-endereco">Adicione um novo endereço:</div>
             <div id="endereco-textboxes">
                 <div>
-                    <label>Rua </label><input type="text" id="txtRua" required maxlength="50">
-                    <label>N° </label><input type="text" class="numerico" id="txtN" required maxlength="6">
+                    <label>Rua </label><input type="text" id="txtRua" name="rua" required maxlength="50">
+                    <label>N° </label><input type="text" class="numerico" id="txtN" name="numero" required maxlength="6">
                 </div>
                 <div>
-                    <label>Bairro </label><input type="text" id="txtBairro" required maxlength="50">
-                    <label>Cidade </label><input type="text" id="txtCidade" required maxlength="50">
-                    <label>UF </label><select id="txtN" required>
+                    <label>Bairro </label><input type="text" id="txtBairro" name="bairro" required maxlength="50">
+                    <label>Cidade </label><input type="text" id="txtCidade" name="cidade" required maxlength="50">
+                    <label>UF </label><select id="txtUF" name="estado" required>
                         <option value=""></option>
                         <option value="AC">AC</option>
                         <option value="AL">AL</option>

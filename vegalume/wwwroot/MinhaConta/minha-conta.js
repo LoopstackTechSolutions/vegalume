@@ -121,6 +121,12 @@ cardInput.addEventListener('input', function () {
     this.value = formatted;
 });
 
+document.getElementById('frm-adicionar-endereco').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Endereço cadastrado!');
+    setTimeout(() => this.submit(), 0);
+});
+
 document.getElementById('frm-adicionar-cartao').addEventListener('submit', function (e) {
     const cartao = document.getElementById('txtNCartao');
     const validade = document.getElementById('txtValidade');
