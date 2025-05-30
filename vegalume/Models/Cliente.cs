@@ -8,7 +8,6 @@
         public string? senha { get; set; }
         public long? telefone { get; set; }
         public string? email { get; set; }
-        public List<Cliente>? ListaCliente { get; set; }
 
     }
 }

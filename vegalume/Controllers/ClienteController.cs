@@ -13,9 +13,6 @@ namespace vegalume.Controllers
             _clienteRepositorio = clienteRepositorio;
         }
 
-        
-
-
         public IActionResult CadastroCliente()
         {
             return View();
@@ -41,6 +38,12 @@ namespace vegalume.Controllers
             }
 
             return View(cliente);
+        }
+
+        public IActionResult ObterCliente()
+        {
+            var cliente = _clienteRepositorio.ObterClientePeloId(HttpContext.Session.GetInt32("UserId"));
+            return Json(cliente);
         }
 
 
@@ -69,6 +72,11 @@ namespace vegalume.Controllers
             return View(cliente);
         }
 
+        [HttpGet]
+        public IActionResult TodosEnderecos()
+        {
+            return Json(_clienteRepositorio.TodosEnderecos(HttpContext.Session.GetInt32("UserId")));
+        }
 
         public IActionResult ExcluirCliente(int id)
         {

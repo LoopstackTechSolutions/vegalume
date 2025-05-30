@@ -5,6 +5,10 @@
     --branco: #FFFFFF;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 body {
     background-image: url(Imagens/output-onlinepngtools.png);
     background-repeat: no-repeat;
@@ -65,11 +69,54 @@ header {
     padding-right: 5vw;
 }
 
-    header a {
-        color: var(--branco);
-        text-decoration: none;
-    }
+header a {
+    color: var(--branco);
+    text-decoration: none;
+}
 
-        header a:hover {
-            text-decoration: underline;
-        }
+header a:hover {
+    text-decoration: underline;
+}
+.fixed-btn {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+#btn-carrinho {
+    position: fixed;
+    bottom: 70px;
+    left: 70px;
+    background-color: var(--branco);
+    display: none;
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    background-color: var(--verde-escuro);
+}
+
+#scroll-top img,
+#btn-carrinho img {
+    height: 4vw;
+}
+
+#qtd-carrinho {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 1.4vw;
+    color: var(--branco);
+    font-family: steelfish;
+}
+
+#bt-carrinho img {
+    display: none;
+}

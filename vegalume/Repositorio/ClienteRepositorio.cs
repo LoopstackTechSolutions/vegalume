@@ -18,7 +18,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into tb_cliente (nome, senha, telefone, email) values (@nome, @senha, @telefone, @email)", conexao); // @: PARAMETRO
-                                                                                                                                                 // Adiciona um parâmetro para o nome, definindo seu tipo e valor
+                                                                                                                                                                 // Adiciona um parâmetro para o nome, definindo seu tipo e valor
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.nome;
                 cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = cliente.senha;
                 cmd.Parameters.Add("@telefone", MySqlDbType.Decimal).Value = cliente.telefone;
@@ -74,7 +74,7 @@ namespace vegalume.Repositorio
                                 new Cliente
                                 {
                                     idCliente = (int)dr["idCliente"],
-                                    nome = (string)dr["nome"], 
+                                    nome = (string)dr["nome"],
                                     senha = (string)dr["senha"],
                                     telefone = (long)dr["telefone"],
                                     email = (string)dr["email"],
@@ -84,7 +84,7 @@ namespace vegalume.Repositorio
             }
         }
 
-        public Cliente ObterClientePeloId(int Id)
+        public Cliente ObterClientePeloId(int? Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -98,7 +98,7 @@ namespace vegalume.Repositorio
                 MySqlDataReader dr;
                 Cliente cliente = new Cliente();
 
-                
+
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
@@ -108,9 +108,43 @@ namespace vegalume.Repositorio
                     cliente.telefone = (long)dr["telefone"];
                     cliente.email = (string)dr["email"];
                 }
-                
+
                 return cliente;
             }
+        }
+
+        public IEnumerable<Endereco> TodosEnderecos(int? idCliente)
+        {
+            var lista = new List<Endereco>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c INNER JOIN tb_endereco e ON e.idcliente = c.idcliente WHERE c.idcliente = @idCliente;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Endereco
+                            {
+                                rua = reader.GetString("rua"),
+                                numero = reader.GetInt16("numero"),
+                                bairro = reader.GetString("bairro"),
+                                cidade = reader.GetString("cidade"),
+                                estado = reader.GetString("estado")
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
         }
 
         public void Excluir(int Id)
@@ -125,7 +159,7 @@ namespace vegalume.Repositorio
 
                 int i = cmd.ExecuteNonQuery();
 
-                conexao.Close(); 
+                conexao.Close();
             }
         }
     }

@@ -14,18 +14,9 @@ function revelaEsconde(conteudo) {
 }
 
 const btn = document.getElementById('scroll-top');
-
-/*window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        btn.classList.add('show');
-        alert("hi");
-    } else {
-        btn.classList.remove('show');
-    }
-});*/
-
 btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    alert("hi");
 });
 
 fetch('/Prato/TodosPratos')

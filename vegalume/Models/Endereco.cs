@@ -3,12 +3,12 @@
 
     public class Endereco
     {
-        public decimal? cep { get; set; }
+        public int idEndereco { get; set; }
         public string? cidade { get; set; }
         public string? bairro { get; set; }
         public string? rua { get; set; }
         public int? numero { get; set; }
-        public List<Endereco>? ListaEndereco { get; set; }
-
+        public string? estado { get; set; }
+        public int? idCliente { get; set; }
     }
 }

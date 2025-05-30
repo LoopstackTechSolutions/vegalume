@@ -1,0 +1,219 @@
+﻿@{
+	var userId = Context.Session.GetInt32("UserId");
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegalume - Minha Conta</title>
+    <link href="~/minhaconta/minha-conta.css" rel="stylesheet" />
+    <link href="~/shared.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <button onclick="window.history.back()" class=" white-green-btn">Voltar</button>
+        <a href="#meus-pedidos">Meus Pedidos</a>
+        <a href="#dados-cadastrais">Dados Cadastrais</a>
+        <a href="#meus-enderecos">Meus Endereços</a>
+        <a href="#formas-de-pagamento">Formas de Pagamento</a>
+    </header>
+
+    <section id="meus-pedidos">
+        <p>Meus Pedidos</p>
+        <p id="primeiro-pedido">Seu primeiro pedido aparecerá aqui!</p>
+        <table>
+            <tr>
+                <th>N°</th>
+                <th>Data</th>
+                <th>Pratos</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+            <tr class="linha-pedido">
+                <td>234</td>
+                <td>27/06/25</td>
+                <td>
+                    Falafel com Homus e Pão Pita (1)<br>
+                    Curry com Grão de Bico (2)
+                </td>
+                <td>R$90,00</td>
+                <td>Entregue</td>
+            </tr>
+            <tr class="linha-pedido">
+                <td>234</td>
+                <td>27/06/25</td>
+                <td>
+                    Falafel com Homus e Pão Pita (1)<br>
+                    Curry com Grão de Bico (2)
+                </td>
+                <td>R$90,00</td>
+                <td>Entregue</td>
+            </tr>
+            <tr class="linha-pedido">
+                <td>234</td>
+                <td>27/06/25</td>
+                <td>
+                    Falafel com Homus e Pão Pita (1)<br>
+                    Curry com Grão de Bico (2)
+                </td>
+                <td>R$90,00</td>
+                <td>Entregue</td>
+            </tr>
+            <tr class="linha-pedido">
+                <td>234</td>
+                <td>27/06/25</td>
+                <td>
+                    Falafel com Homus e Pão Pita (1)<br>
+                    Curry com Grão de Bico (2)
+                </td>
+                <td>R$90,00</td>
+                <td>Entregue</td>
+            </tr>
+            <tr class="linha-pedido">
+                <td>234</td>
+                <td>27/06/25</td>
+                <td>
+                    Falafel com Homus e Pão Pita (1)<br>
+                    Curry com Grão de Bico (2)
+                </td>
+                <td>R$90,00</td>
+                <td>Entregue</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="dados-cadastrais">
+        <p>Meus Dados Cadastrais</p>
+        <form id="frm-dados-cadastrais">
+            <div id="dados-textboxes">
+                <div>
+                    <label>Nome </label>
+                    <input type="text" id="txtNome" required maxlength="50">
+                </div>
+                <div>
+                    <label>Senha </label>
+                    <input type="password" id="txtSenha" required maxlength="30">
+                </div>
+                <div>
+                    <label>Telefone </label>
+                    <input type="text" class="numerico telefone" id="txtTelefone" required maxlength="14">
+                </div>
+            </div>
+            <input type="submit" class="white-green-btn" id="salvar" value="Salvar" />
+        </form>
+    </section>
+
+    <section id="meus-enderecos">
+        <p>Meus Endereços de Entrega</p>
+        <div id="enderecos">
+            <div id="linha-endereco">
+                <div id="logradouro">Rua Faride Gebauer Pimentel, 44 - Vila Cretti, Carapicuíba - SP</div>
+                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
+            </div>
+            <div id="linha-endereco">
+                <div id="logradouro">Rua Guaipá, 678 - Vila Leopoldina, São Paulo - SP</div>
+                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
+            </div>
+            <div id="linha-endereco">
+                <div id="logradouro">Rua Fernão Dias Falcão, 196 - Centro, Santana de Parnaíba - SP</div>
+                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
+            </div>
+        </div>
+
+        <form id="frm-adicionar-endereco">
+            <div id="adicione-endereco">Adicione um novo endereço:</div>
+            <div id="endereco-textboxes">
+                <div>
+                    <label>Rua </label><input type="text" id="txtRua" required maxlength="50">
+                    <label>N° </label><input type="text" class="numerico" id="txtN" required maxlength="6">
+                </div>
+                <div>
+                    <label>Bairro </label><input type="text" id="txtBairro" required maxlength="50">
+                    <label>Cidade </label><input type="text" id="txtCidade" required maxlength="50">
+                    <label>UF </label><select id="txtN" required>
+                        <option value=""></option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MG">MG</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="PR">PR</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SE">SE</option>
+                        <option value="SP">SP</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" class="white-green-btn" id="adicionar-endereco" value="Adicionar" />
+        </form>
+    </section>
+
+    <section id="formas-de-pagamento">
+        <p>Minhas Formas de Pagamento</p>
+        <div id="cartoes">
+            <div id="linha-cartao">
+                <div id="detalhes-cartao">Mastercard (crédito) - VINICIUS D CAVEQUI - **** 4003</div>
+                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
+            </div>
+            <div id="linha-cartao">
+                <div id="detalhes-cartao">VISA (débito) - VINICIUS S O CAVEQUI - **** 8934</div>
+                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
+            </div>
+        </div>
+
+        <form id="frm-adicionar-cartao">
+            <div id="adicione-cartao">Adicione um novo cartão:</div>
+            <div id="cartao-textboxes">
+                <div>
+                    <label>Nome do Titular </label><input type="text" id="txtTitular" required maxlength="30">
+                </div>
+                <div>
+                    <label>Bandeira </label><input type="text" id="txtBandeira" required maxlength="30">
+                    <label>N° </label><input type="text" class="numerico cartao" id="txtNCartao" required
+                                             maxlength="19">
+                </div>
+                <div>
+                    <label>CVV </label><input type="text" class="numerico" id="txtCVV" required maxlength="3">
+                    <label>Validade </label><input type="text" class="numerico data" id="txtValidade" required
+                                                   maxlength="5">
+                </div>
+                <div>
+                    <input type="radio" id="radModalidade" name="radModalidade" value="0" checked><label class="lblModalidade">Débito</label>
+                    <input type="radio" id="radModalidade" name="radModalidade" value="1"><label class="lblModalidade">Crédito</label>
+                </div>
+            </div>
+            <input type="submit" class="white-green-btn" id="adicionar-cartao" value="Adicionar" />
+        </form>
+    </section>
+
+    <button class="fixed-btn" id="scroll-top">
+        <img src="../Imagens/arrow.png">
+    </button>
+
+    <button class="fixed-btn" id="btn-carrinho">
+        <img src="~/Imagens/cart.png">
+        <div id="qtd-carrinho"></div>
+    </button>
+
+    <script src="~/minhaconta/minha-conta.js"></script>
+</body>
