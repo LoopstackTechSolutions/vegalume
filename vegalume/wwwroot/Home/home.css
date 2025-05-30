@@ -169,6 +169,11 @@ header a:hover {
 .prato {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.prato:hover .nome-prato {
+    text-decoration: underline;
 }
 
 .prato p {

@@ -16,7 +16,7 @@ namespace vegalume.Controllers
         
 
 
-        public IActionResult CadastrarCliente()
+        public IActionResult CadastroCliente()
         {
             return View();
         }
@@ -26,8 +26,9 @@ namespace vegalume.Controllers
         {
 
             _clienteRepositorio.Cadastrar(cliente);
+            HttpContext.Session.SetInt32("UserId", cliente.idCliente);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult EditarCliente(int id)
