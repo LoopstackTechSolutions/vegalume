@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <button onclick="window.history.back()" class=" white-green-btn">Voltar</button>
+        <a asp-action="Index" asp-controller="Home" class=" white-green-btn">Voltar</a>
         <a href="#meus-pedidos">Meus Pedidos</a>
         <a href="#dados-cadastrais">Dados Cadastrais</a>
         <a href="#meus-enderecos">Meus Endereços</a>
@@ -108,18 +108,6 @@
     <section id="meus-enderecos">
         <p>Meus Endereços de Entrega</p>
         <div id="enderecos">
-            <div id="linha-endereco">
-                <div id="logradouro">Rua Faride Gebauer Pimentel, 44 - Vila Cretti, Carapicuíba - SP</div>
-                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
-            </div>
-            <div id="linha-endereco">
-                <div id="logradouro">Rua Guaipá, 678 - Vila Leopoldina, São Paulo - SP</div>
-                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
-            </div>
-            <div id="linha-endereco">
-                <div id="logradouro">Rua Fernão Dias Falcão, 196 - Centro, Santana de Parnaíba - SP</div>
-                <a href=""><img src="../Imagens/icons8-trash-250.png" alt=""></a>
-            </div>
         </div>
 
         <form id="frm-adicionar-endereco">

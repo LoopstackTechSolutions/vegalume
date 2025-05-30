@@ -21,6 +21,60 @@ fetch('/Cliente/ObterCliente')
         console.error('Fetch error:', error);
     })
 
+fetch('/Cliente/TodosEnderecos')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const enderecos = document.getElementById("enderecos");
+
+        if (data.length === 0) {
+            document.getElementById("adicione-endereco").style.marginTop = 0;
+        }
+        else {
+            function Capitalizar(str) {
+                return str
+                    .toLowerCase()
+                    .split(' ')
+                    .filter(word => word.trim().length > 0)
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+
+            data.forEach(endereco => {
+                const linhaEndereco = document.createElement('div');
+                linhaEndereco.classList.add("linha-endereco");
+                enderecos.appendChild(linhaEndereco);
+
+                const rua = Capitalizar(endereco.rua);
+                const numero = endereco.numero;
+                const bairro = Capitalizar(endereco.bairro);
+                const cidade = Capitalizar(endereco.cidade);
+                const estado = endereco.estado;
+
+                const logradouro = document.createElement('div');
+                logradouro.classList.add("logradouro");
+                logradouro.textContent = rua + ", " + numero + " - " + bairro + ", " + cidade + " - " + estado;
+                linhaEndereco.appendChild(logradouro);
+
+                const a = document.createElement('a');
+                a.href = ""; // TO-DO
+                linhaEndereco.appendChild(a);
+
+                const trashcan = document.createElement('img');
+                trashcan.src = "../Imagens/icons8-trash-250.png"
+                a.appendChild(trashcan);
+
+            })
+        }
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    })
+
 document.querySelectorAll('.numerico').forEach(input => {
     input.addEventListener('input', function () {
         if (this.classList.contains('phone-mask')) return;

@@ -116,7 +116,7 @@ select {
     margin-top: 0;
 }*/
 
-#linha-endereco,
+.linha-endereco,
 #linha-cartao {
     display: flex;
     margin: 0 auto;
@@ -126,18 +126,18 @@ select {
     margin-top: 0.2vw;
 }
 
-#linha-endereco a,
+.linha-endereco a,
 #linha-cartao a {
     width: 6%;
     margin-left: 2%;
 }
 
-#linha-endereco img,
+.linha-endereco img,
 #linha-cartao img {
     width: 100%;
 }
 
-#logradouro,
+.logradouro,
 #detalhes-cartao {
     font-family: unageo;
     font-size: 1.5vw;

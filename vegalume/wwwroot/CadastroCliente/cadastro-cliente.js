@@ -17,7 +17,9 @@ phoneInput.addEventListener('input', function () {
     this.value = formatted;
 });
 
-document.getElementById('frm-cadastro').addEventListener('submit', function (e){
+document.getElementById('frm-cadastro').addEventListener('submit', function (e) {
+    e.preventDefault();
+
     const senha = document.getElementById('txtSenha').value;
     const telefone = document.getElementById('txtTelefone');
 
@@ -36,4 +38,6 @@ document.getElementById('frm-cadastro').addEventListener('submit', function (e){
     }
 
     telefone.value = rawTelefone;
+    alert('Cadastrado com sucesso!');
+    setTimeout(() => this.submit(), 0);
 })
