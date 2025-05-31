@@ -22,22 +22,10 @@ namespace vegalume.Controllers
         public IActionResult CadastrarCliente(Cliente cliente)
         {
 
-            _clienteRepositorio.Cadastrar(cliente);
+            _clienteRepositorio.CadastrarCliente(cliente);
             HttpContext.Session.SetInt32("UserId", cliente.idCliente);
 
             return RedirectToAction("Index", "Home");
-        }
-
-        public IActionResult EditarCliente(int id)
-        {
-            var cliente = _clienteRepositorio.ObterClientePeloId(id);
-
-            if (cliente == null)
-            {
-                return NotFound();
-            }
-
-            return View(cliente);
         }
 
         public IActionResult ObterCliente()
@@ -48,28 +36,10 @@ namespace vegalume.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult EditarCliente(int id, [Bind("idCliente, nome, senha, telefone, email")] Cliente cliente)
+        public IActionResult EditarCliente(Cliente cliente)
         {
-            if (id != cliente.idCliente)
-            {
-            }
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    if (_clienteRepositorio.Atualizar(cliente))
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
-                }
-                catch (Exception)
-                {
-                    ModelState.AddModelError("", "Ocorreu um erro ao Editar.");
-                    return View(cliente);
-                }
-            }
-            return View(cliente);
+            _clienteRepositorio.EditarCliente(cliente, HttpContext.Session.GetInt32("UserId"));
+            return Redirect("/Home/MinhaConta#dados-cadastrais");
         }
 
         [HttpGet]

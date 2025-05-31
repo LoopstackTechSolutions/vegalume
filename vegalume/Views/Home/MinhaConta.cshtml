@@ -86,19 +86,19 @@
 
     <section id="dados-cadastrais">
         <p>Meus Dados Cadastrais</p>
-        <form id="frm-dados-cadastrais">
+        <form id="frm-dados-cadastrais" asp-action="EditarCliente" asp-controller="Cliente">
             <div id="dados-textboxes">
                 <div>
                     <label>Nome </label>
-                    <input type="text" id="txtNome" required maxlength="50">
+                    <input type="text" id="txtNome" name="nome" required maxlength="50">
                 </div>
                 <div>
                     <label>Senha </label>
-                    <input type="password" id="txtSenha" required maxlength="30">
+                    <input type="password" id="txtSenha" name="senha" required maxlength="30">
                 </div>
                 <div>
                     <label>Telefone </label>
-                    <input type="text" class="numerico telefone" id="txtTelefone" required maxlength="14">
+                    <input type="text" class="numerico telefone" id="txtTelefone" name="telefone" required maxlength="14">
                 </div>
             </div>
             <input type="submit" class="white-green-btn" id="salvar" value="Salvar" />

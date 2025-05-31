@@ -172,6 +172,8 @@ document.getElementById('frm-adicionar-endereco').addEventListener('submit', fun
 });
 
 document.getElementById('frm-adicionar-cartao').addEventListener('submit', function (e) {
+    e.preventDefault();
+
     const cartao = document.getElementById('txtNCartao');
     const validade = document.getElementById('txtValidade');
     const cvv = document.getElementById('txtCVV').value;
@@ -219,9 +221,14 @@ document.getElementById('frm-adicionar-cartao').addEventListener('submit', funct
 
     cartao.value = rawCartao;
     validade.value = formattedDate;
+
+    alert('Cartão cadastrado!');
+    setTimeout(() => this.submit(), 0);
 });
 
 document.getElementById('frm-dados-cadastrais').addEventListener('submit', function (e){
+    e.preventDefault();
+
     const senha = document.getElementById('txtSenha').value;
     const telefone = document.getElementById('txtTelefone');
 
@@ -240,4 +247,7 @@ document.getElementById('frm-dados-cadastrais').addEventListener('submit', funct
     }
 
     telefone.value = rawTelefone;
+
+    alert('Dados alterados!');
+    setTimeout(() => this.submit(), 0);
 })

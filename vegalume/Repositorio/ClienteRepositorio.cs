@@ -12,7 +12,7 @@ namespace vegalume.Repositorio
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
 
-        public void Cadastrar(Cliente cliente)
+        public void CadastrarCliente(Cliente cliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -28,29 +28,20 @@ namespace vegalume.Repositorio
             }
         }
 
-        public bool Atualizar(Cliente cliente)
+        public void EditarCliente(Cliente cliente, int? id)
         {
-            try
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
-                using (var conexao = new MySqlConnection(_conexaoMySQL))
-                {
-                    conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update tb_cliente set nome=@nome, telefone=@telefone, email=@email " + " where idCliente=@id ", conexao);
-                    cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = cliente.idCliente;
-                    cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.nome;
-                    cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = cliente.senha;
-                    cmd.Parameters.Add("@telefone", MySqlDbType.Decimal).Value = cliente.telefone;
-                    cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cliente.email;
-                    int linhasAfetadas = cmd.ExecuteNonQuery();
-                    return linhasAfetadas > 0;
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("Update tb_cliente set nome=@nome, telefone=@telefone, senha=@senha " + " where idCliente=@id ", conexao);
+                
+                cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.nome;
+                cmd.Parameters.Add("@senha", MySqlDbType.VarChar).Value = cliente.senha;
+                cmd.Parameters.Add("@telefone", MySqlDbType.Decimal).Value = cliente.telefone;
+                cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = id;
 
-                }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine($"Erro ao atualizar cliente: {ex.Message}");
-                return false;
-
+                cmd.ExecuteNonQuery();
+                conexao.Close();
             }
         }
 
@@ -121,7 +112,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c " + 
+                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c " +
                     "INNER JOIN tb_endereco e ON e.idcliente = c.idcliente WHERE c.idcliente = @idCliente;";
 
                 using (var cmd = new MySqlCommand(query, conexao))
@@ -191,7 +182,7 @@ namespace vegalume.Repositorio
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into tb_endereco (rua, numero, bairro, cidade, estado, idcliente)" +
                                                     " values (@rua, @numero, @bairro, @cidade, @estado, @idcliente)", conexao);
-                                                                                                                                                                 // Adiciona um parâmetro para o nome, definindo seu tipo e valor
+
                 cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = endereco.rua;
                 cmd.Parameters.Add("@numero", MySqlDbType.Int16).Value = endereco.numero;
                 cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = endereco.bairro;
@@ -218,14 +209,14 @@ namespace vegalume.Repositorio
 
                 int modalidadeBool = cartao.modalidade == "crédito" ? 1 : 0;
                 cmd.Parameters.Add("@modalidade", MySqlDbType.Bit).Value = modalidadeBool;
-                
-                cmd.Parameters.Add("@bandeira", MySqlDbType.VarChar).Value = cartao.bandeira ;
+
+                cmd.Parameters.Add("@bandeira", MySqlDbType.VarChar).Value = cartao.bandeira;
                 cmd.Parameters.Add("@idCliente", MySqlDbType.Int32).Value = idCliente;
                 cmd.ExecuteNonQuery();
                 conexao.Close();
             }
         }
-        
+
         public void Excluir(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
