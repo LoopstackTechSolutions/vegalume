@@ -121,7 +121,8 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c INNER JOIN tb_endereco e ON e.idcliente = c.idcliente WHERE c.idcliente = @idCliente;";
+                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c " + 
+                    "INNER JOIN tb_endereco e ON e.idcliente = c.idcliente WHERE c.idcliente = @idCliente;";
 
                 using (var cmd = new MySqlCommand(query, conexao))
                 {
@@ -147,6 +148,42 @@ namespace vegalume.Repositorio
             return lista;
         }
 
+        public IEnumerable<Cartao> TodosCartoes(int? idCliente)
+        {
+            var lista = new List<Cartao>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"select ca.bandeira, ca.modalidade, ca.nometitular, ca.numerocartao from tb_cliente cl
+                                inner join tb_cartao ca on ca.idcliente = cl.idcliente
+                                where cl.idcliente = @idCliente;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var modalidadeBool = reader.GetFieldValue<bool>("modalidade");
+                            string modalidade = modalidadeBool ? "crédito" : "débito";
+                            lista.Add(new Cartao
+                            {
+                                bandeira = reader.GetString("bandeira"),
+                                modalidade = modalidade,
+                                nomeTitular = reader.GetString("nometitular"),
+                                numeroCartao = reader.GetInt64("numerocartao")
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+
         public void CadastrarEndereco(Endereco endereco, int? idCliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
@@ -165,6 +202,30 @@ namespace vegalume.Repositorio
                 conexao.Close();
             }
         }
+
+        public void CadastrarCartao(Cartao cartao, int? idCliente)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("insert into tb_cartao values " +
+                    "(null, @numeroCartao, @nomeTitular, @dataValidade, @cvv, @modalidade, @bandeira, @idCliente)", conexao);
+
+                cmd.Parameters.Add("@numeroCartao", MySqlDbType.Int64).Value = cartao.numeroCartao;
+                cmd.Parameters.Add("@nomeTitular", MySqlDbType.VarChar).Value = cartao.nomeTitular;
+                cmd.Parameters.Add("@dataValidade", MySqlDbType.Date).Value = cartao.dataValidade;
+                cmd.Parameters.Add("@cvv", MySqlDbType.Int32).Value = cartao.cvv;
+
+                int modalidadeBool = cartao.modalidade == "crédito" ? 1 : 0;
+                cmd.Parameters.Add("@modalidade", MySqlDbType.Bit).Value = modalidadeBool;
+                
+                cmd.Parameters.Add("@bandeira", MySqlDbType.VarChar).Value = cartao.bandeira ;
+                cmd.Parameters.Add("@idCliente", MySqlDbType.Int32).Value = idCliente;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
+        
         public void Excluir(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))

@@ -78,11 +78,24 @@ namespace vegalume.Controllers
             return Json(_clienteRepositorio.TodosEnderecos(HttpContext.Session.GetInt32("UserId")));
         }
 
+        [HttpGet]
+        public IActionResult TodosCartoes()
+        {
+            return Json(_clienteRepositorio.TodosCartoes(HttpContext.Session.GetInt32("UserId")));
+        }
+
         [HttpPost]
         public IActionResult CadastrarEndereco(Endereco endereco)
         {
             _clienteRepositorio.CadastrarEndereco(endereco, HttpContext.Session.GetInt32("UserId"));
             return Redirect("/Home/MinhaConta#meus-enderecos");
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarCartao(Cartao cartao)
+        {
+            _clienteRepositorio.CadastrarCartao(cartao, HttpContext.Session.GetInt32("UserId"));
+            return Redirect("/Home/MinhaConta#formas-de-pagamento");
         }
 
         public IActionResult ExcluirCliente(int id)

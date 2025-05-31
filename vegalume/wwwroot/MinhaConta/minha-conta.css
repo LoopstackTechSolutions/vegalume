@@ -117,7 +117,7 @@ select {
 }*/
 
 .linha-endereco,
-#linha-cartao {
+.linha-cartao {
     display: flex;
     margin: 0 auto;
     align-items: center;
@@ -127,18 +127,18 @@ select {
 }
 
 .linha-endereco a,
-#linha-cartao a {
+.linha-cartao a {
     width: 6%;
     margin-left: 2%;
 }
 
 .linha-endereco img,
-#linha-cartao img {
+.linha-cartao img {
     width: 100%;
 }
 
 .logradouro,
-#detalhes-cartao {
+.detalhes-cartao {
     font-family: unageo;
     font-size: 1.5vw;
     background-color: var(--branco);
@@ -185,7 +185,7 @@ select {
 }
 
 #txtUF {
-    width: 7%;
+    width: 8%;
 }
 
 .lblModalidade {
@@ -202,13 +202,13 @@ select {
 }
 
 #txtNCartao {
-    width: 24%;
+    width: 27%;
 }
 
 #txtCVV {
-    width: 5%;
+    width: 8%;
 }
 
 #txtValidade {
-    width: 7%;
+    width: 10%;
 }

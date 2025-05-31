@@ -21,6 +21,15 @@ fetch('/Cliente/ObterCliente')
         console.error('Fetch error:', error);
     })
 
+function Capitalizar(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .filter(word => word.trim().length > 0)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 fetch('/Cliente/TodosEnderecos')
     .then(response => {
         if (!response.ok) {
@@ -35,16 +44,7 @@ fetch('/Cliente/TodosEnderecos')
             document.getElementById("adicione-endereco").style.marginTop = 0;
         }
         else {
-            function Capitalizar(str) {
-                return str
-                    .toLowerCase()
-                    .split(' ')
-                    .filter(word => word.trim().length > 0)
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-            }
-
-            data.forEach(endereco => {
+                data.forEach(endereco => {
                 const linhaEndereco = document.createElement('div');
                 linhaEndereco.classList.add("linha-endereco");
                 enderecos.appendChild(linhaEndereco);
@@ -68,6 +68,50 @@ fetch('/Cliente/TodosEnderecos')
                 trashcan.src = "../Imagens/icons8-trash-250.png"
                 a.appendChild(trashcan);
 
+            })
+        }
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    })
+
+fetch('/Cliente/TodosCartoes')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Total cartoes:", data.length);
+        const cartoes = document.getElementById('cartoes');
+
+        if (data.length === 0) {
+            document.getElementById("adicione-cartao").style.marginTop = 0;
+        }
+        else {
+            data.forEach(cartao => {
+                const linhaCartao = document.createElement('div');
+                linhaCartao.classList.add('linha-cartao');
+                cartoes.appendChild(linhaCartao);
+
+                const bandeira = Capitalizar(cartao.bandeira);
+                const modalidade = cartao.modalidade;
+                const nomeTitular = cartao.nomeTitular.toUpperCase();
+                const numeroCartao = String(cartao.numeroCartao).slice(-4);
+
+                const detalhesCartao = document.createElement('div');
+                detalhesCartao.classList.add('detalhes-cartao');
+                detalhesCartao.textContent = bandeira + " (" + modalidade + ") - " + nomeTitular + " - **** " + numeroCartao;
+                linhaCartao.appendChild(detalhesCartao);
+
+                const a = document.createElement('a');
+                a.href = ""; // TO-DO
+                linhaCartao.appendChild(a);
+
+                const trashcan = document.createElement('img');
+                trashcan.src = "../Imagens/icons8-trash-250.png"
+                a.appendChild(trashcan);
             })
         }
     })
@@ -141,18 +185,25 @@ document.getElementById('frm-adicionar-cartao').addEventListener('submit', funct
         return;
     }
 
-    const mes = parseInt(rawValidade.slice(0,2));
-    const ano = parseInt(rawValidade.slice(-2));
-
-    if (rawValidade.length !== 4 || mes > 12) {
+    if (rawValidade.length !== 4) {
         alert('Data de validade inválida!');
         e.preventDefault();
         return;
     }
 
-    if(ano < (new Date().getFullYear() % 100)){
+    const mes = parseInt(rawValidade.slice(0, 2));
+    const ano = parseInt(rawValidade.slice(2));
+
+    if (mes < 1 || mes > 12) {
+        alert('Mês inválido!');
+        e.preventDefault();
+        return;
+    }
+
+    const currentYear = new Date().getFullYear() % 100;
+    if (ano < currentYear) {
         alert('Cartão vencido!');
-        e.preventDefault;
+        e.preventDefault();
         return;
     }
 
@@ -162,9 +213,12 @@ document.getElementById('frm-adicionar-cartao').addEventListener('submit', funct
         return;
     }
 
-    card.value = rawCard;
-    exp.value = rawExp;
+    const fullYear = 2000 + ano;
+    const monthPadded = mes.toString().padStart(2, '0');
+    const formattedDate = `${fullYear}-${monthPadded}-01`;
 
+    cartao.value = rawCartao;
+    validade.value = formattedDate;
 });
 
 document.getElementById('frm-dados-cadastrais').addEventListener('submit', function (e){
