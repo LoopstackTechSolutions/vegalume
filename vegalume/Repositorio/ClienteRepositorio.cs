@@ -112,7 +112,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                string query = @"SELECT e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c " +
+                string query = @"SELECT e.idendereco, e.rua, e.numero, e.bairro, e.cidade, e.estado FROM tb_cliente c " +
                     "INNER JOIN tb_endereco e ON e.idcliente = c.idcliente WHERE c.idcliente = @idCliente;";
 
                 using (var cmd = new MySqlCommand(query, conexao))
@@ -125,8 +125,9 @@ namespace vegalume.Repositorio
                         {
                             lista.Add(new Endereco
                             {
+                                idEndereco = reader.GetInt32("idendereco"),
                                 rua = reader.GetString("rua"),
-                                numero = reader.GetInt16("numero"),
+                                numero = reader.GetInt32("numero"),
                                 bairro = reader.GetString("bairro"),
                                 cidade = reader.GetString("cidade"),
                                 estado = reader.GetString("estado")
@@ -147,7 +148,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                string query = @"select ca.bandeira, ca.modalidade, ca.nometitular, ca.numerocartao from tb_cliente cl
+                string query = @"select ca.idcartao, ca.bandeira, ca.modalidade, ca.nometitular, ca.numerocartao from tb_cliente cl
                                 inner join tb_cartao ca on ca.idcliente = cl.idcliente
                                 where cl.idcliente = @idCliente;";
 
@@ -163,6 +164,7 @@ namespace vegalume.Repositorio
                             string modalidade = modalidadeBool ? "crédito" : "débito";
                             lista.Add(new Cartao
                             {
+                                idCartao = reader.GetInt32("idcartao"),
                                 bandeira = reader.GetString("bandeira"),
                                 modalidade = modalidade,
                                 nomeTitular = reader.GetString("nometitular"),
@@ -184,7 +186,7 @@ namespace vegalume.Repositorio
                                                     " values (@rua, @numero, @bairro, @cidade, @estado, @idcliente)", conexao);
 
                 cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = endereco.rua;
-                cmd.Parameters.Add("@numero", MySqlDbType.Int16).Value = endereco.numero;
+                cmd.Parameters.Add("@numero", MySqlDbType.Int32).Value = endereco.numero;
                 cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = endereco.bairro;
                 cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = endereco.cidade;
                 cmd.Parameters.Add("@estado", MySqlDbType.VarChar).Value = endereco.estado;
@@ -212,6 +214,34 @@ namespace vegalume.Repositorio
 
                 cmd.Parameters.Add("@bandeira", MySqlDbType.VarChar).Value = cartao.bandeira;
                 cmd.Parameters.Add("@idCliente", MySqlDbType.Int32).Value = idCliente;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
+
+        public void ExcluirEndereco(int idEndereco)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("delete from tb_endereco where idendereco = @idEndereco;", conexao);
+
+                cmd.Parameters.Add("@idEndereco", MySqlDbType.Int32).Value = idEndereco;
+
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
+
+        public void ExcluirCartao(int idCartao)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("delete from tb_cartao where idcartao = @idCartao;", conexao);
+
+                cmd.Parameters.Add("@idCartao", MySqlDbType.Int32).Value = idCartao;
+
                 cmd.ExecuteNonQuery();
                 conexao.Close();
             }

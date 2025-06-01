@@ -34,7 +34,6 @@ namespace vegalume.Controllers
             return Json(cliente);
         }
 
-
         [HttpPost]
         public IActionResult EditarCliente(Cliente cliente)
         {
@@ -66,6 +65,21 @@ namespace vegalume.Controllers
         {
             _clienteRepositorio.CadastrarCartao(cartao, HttpContext.Session.GetInt32("UserId"));
             return Redirect("/Home/MinhaConta#formas-de-pagamento");
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirEndereco(int idEndereco)
+        {
+            _clienteRepositorio.ExcluirEndereco(idEndereco);
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult ExcluirCartao(int idCartao)
+        {
+            System.Diagnostics.Debug.WriteLine($"Deleting cartão with ID: {idCartao}");
+            _clienteRepositorio.ExcluirCartao(idCartao);
+            return Ok();
         }
 
         public IActionResult ExcluirCliente(int id)

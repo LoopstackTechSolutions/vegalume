@@ -44,9 +44,10 @@ fetch('/Cliente/TodosEnderecos')
             document.getElementById("adicione-endereco").style.marginTop = 0;
         }
         else {
-                data.forEach(endereco => {
+            data.forEach(endereco => {
                 const linhaEndereco = document.createElement('div');
                 linhaEndereco.classList.add("linha-endereco");
+                linhaEndereco.setAttribute('data-idendereco', endereco.idEndereco);
                 enderecos.appendChild(linhaEndereco);
 
                 const rua = Capitalizar(endereco.rua);
@@ -60,9 +61,41 @@ fetch('/Cliente/TodosEnderecos')
                 logradouro.textContent = rua + ", " + numero + " - " + bairro + ", " + cidade + " - " + estado;
                 linhaEndereco.appendChild(logradouro);
 
-                const a = document.createElement('a');
-                a.href = ""; // TO-DO
+                const a = document.createElement('a');;
+                const idendereco = linhaEndereco.dataset.idendereco;
+                a.href = "#";
+                a.classList.add("excluir-endereco");
+                a.setAttribute('data-id', idendereco);
                 linhaEndereco.appendChild(a);
+
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const id = this.dataset.id;
+
+                    const confirmed = confirm("Tem certeza que deseja excluir este endereço?");
+                    if (!confirmed) return;
+
+                    fetch('/Cliente/ExcluirEndereco', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `idEndereco=${encodeURIComponent(id)}`
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Endereço excluído com sucesso!');
+                                window.location.reload();
+                                window.location.href = '/Home/MinhaConta#salvar';
+                            } else {
+                                throw new Error('Erro ao excluir endereço.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro:', error);
+                        });
+                });
 
                 const trashcan = document.createElement('img');
                 trashcan.src = "../Imagens/icons8-trash-250.png"
@@ -83,16 +116,15 @@ fetch('/Cliente/TodosCartoes')
         return response.json();
     })
     .then(data => {
-        console.log("Total cartoes:", data.length);
         const cartoes = document.getElementById('cartoes');
 
         if (data.length === 0) {
             document.getElementById("adicione-cartao").style.marginTop = 0;
-        }
-        else {
+        } else {
             data.forEach(cartao => {
                 const linhaCartao = document.createElement('div');
                 linhaCartao.classList.add('linha-cartao');
+                linhaCartao.setAttribute('data-idcartao', cartao.idCartao); // ok
                 cartoes.appendChild(linhaCartao);
 
                 const bandeira = Capitalizar(cartao.bandeira);
@@ -102,22 +134,58 @@ fetch('/Cliente/TodosCartoes')
 
                 const detalhesCartao = document.createElement('div');
                 detalhesCartao.classList.add('detalhes-cartao');
-                detalhesCartao.textContent = bandeira + " (" + modalidade + ") - " + nomeTitular + " - **** " + numeroCartao;
+                detalhesCartao.textContent = `${bandeira} (${modalidade}) - ${nomeTitular} - **** ${numeroCartao}`;
                 linhaCartao.appendChild(detalhesCartao);
 
                 const a = document.createElement('a');
-                a.href = ""; // TO-DO
+                a.href = "#";
+                a.classList.add("excluir-cartao");
+                a.setAttribute('data-id', cartao.idCartao); // ✅ Set from object directly
                 linhaCartao.appendChild(a);
 
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    console.log("Link clicked:", e.currentTarget);
+                    console.log("data-id attribute:", e.currentTarget.getAttribute("data-id"));
+                    console.log("dataset.id:", e.currentTarget.dataset.id);
+
+                    const id = e.currentTarget.dataset.id; // ✅ Correct dataset usage
+
+                    const confirmed = confirm("Tem certeza que deseja excluir este cartão?");
+                    if (!confirmed) return;
+
+                    fetch('/Cliente/ExcluirCartao', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `idCartao=${encodeURIComponent(id)}`
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Cartão excluído com sucesso!');
+                                window.location.reload();
+                                window.location.href = '/Home/MinhaConta#adicionar-cartao'; // no reload needed before
+                            } else {
+                                throw new Error('Erro ao excluir cartão.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro:', error);
+                        });
+                });
+
                 const trashcan = document.createElement('img');
-                trashcan.src = "../Imagens/icons8-trash-250.png"
+                trashcan.src = "../Imagens/icons8-trash-250.png";
                 a.appendChild(trashcan);
-            })
+            });
         }
     })
     .catch(error => {
         console.error('Fetch error:', error);
-    })
+    });
+
 
 document.querySelectorAll('.numerico').forEach(input => {
     input.addEventListener('input', function () {
@@ -226,7 +294,7 @@ document.getElementById('frm-adicionar-cartao').addEventListener('submit', funct
     setTimeout(() => this.submit(), 0);
 });
 
-document.getElementById('frm-dados-cadastrais').addEventListener('submit', function (e){
+document.getElementById('frm-dados-cadastrais').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const senha = document.getElementById('txtSenha').value;
@@ -234,13 +302,13 @@ document.getElementById('frm-dados-cadastrais').addEventListener('submit', funct
 
     const rawTelefone = telefone.value.replace(/\D/g, '');
 
-    if(rawTelefone.length !== 11 && rawTelefone.length !== 10){
+    if (rawTelefone.length !== 11 && rawTelefone.length !== 10) {
         alert('Telefone inválido!');
         e.preventDefault();
         return;
     }
 
-    if(senha.length < 5){
+    if (senha.length < 5) {
         alert('Senha deve ser maior que 4 caracteres!')
         e.preventDefault();
         return;
