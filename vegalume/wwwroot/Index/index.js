@@ -29,8 +29,9 @@ fetch('/Prato/TodosPratos')
         const cardapio = document.getElementById("cardapio");
 
         data.forEach(prato => {
-            const div = document.createElement('div');
+            const div = document.createElement('a');
             div.classList.add("prato");
+            div.href = `/Prato/DetalhesPrato?idPrato=${encodeURIComponent(prato.idPrato)}`;
             cardapio.appendChild(div);
 
             const aside = document.createElement('aside');

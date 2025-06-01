@@ -77,7 +77,6 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult ExcluirCartao(int idCartao)
         {
-            System.Diagnostics.Debug.WriteLine($"Deleting cartão with ID: {idCartao}");
             _clienteRepositorio.ExcluirCartao(idCartao);
             return Ok();
         }

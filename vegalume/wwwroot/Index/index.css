@@ -20,7 +20,7 @@ header {
     padding-right: 5vw;
 }
 
-header a {
+a {
     color: var(--branco);
     text-decoration: none;
 }

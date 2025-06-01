@@ -1,0 +1,56 @@
+@model vegalume.Models.Prato;
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detalhes do Prato</title>
+	<link rel="stylesheet" href="~/DetalhesPrato/detalhes-prato.css">
+	<link rel="stylesheet" href="~/shared.css">
+</head>
+
+<body>
+	<button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
+
+	<form>
+		<div id="titulo"></div>
+		<div id="nome-prato">@Model.nomePrato</div>
+		<div id="descricao-prato">@Model.descricaoPrato</div>
+		<div id="info">
+			<div class="info">
+				<img src="\imagens\icons8-scale-100.png"/>
+				<div id="conteudo">@Model.peso g</div>
+			</div>
+			<div class="info">
+				<img src="\imagens\icons8-fire-100.png"/>
+				<div id="valor-calorico">@Model.valorCalorico kcal</div>
+			</div>
+			<div class="info">
+				<img src="\imagens\icons8-people-100.png"/>
+				<div id="pessoas-servidas">@Model.pessoasServidas</div>
+			</div>
+		</div>
+
+		<div id="alguma-observacao">
+			<img src="../Imagens/icons8-chat-100.png" alt="">
+			<div>Alguma observação?</div>
+		</div>
+		<textarea name="" placeholder="Ex: Tirar a cebola, feijão a parte etc..."></textarea>
+		<div id="qtd-total">
+			<div>
+				<button class="qtd-button" type="button" onclick="diminuirQtd()">-</button>
+				<input type="text" id="qtd" value="1" />
+				<button class="qtd-button" type="button" onclick="aumentarQtd()">+</button>
+			</div>
+			<div id="total" data-preco-base="@Model.precoPrato">R$ @Model.precoPrato,00</div>
+		</div>
+		<input type="submit" class="white-green-btn" value="Adicionar ao Carrinho">
+
+	</form>
+
+	<button class="fixed-btn" id="btn-carrinho">
+		<img src="~/Imagens/cart.png">
+		<div id="qtd-carrinho"></div>
+	</button>
+
+	<script src="~/DetalhesPrato/detalhes-prato.js"></script>
+</body>

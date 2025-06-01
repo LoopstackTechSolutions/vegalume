@@ -55,7 +55,7 @@ namespace vegalume.Controllers
 
         public IActionResult EditarPrato(int id)
         {
-            var prato = _pratoRepositorio.ObterPrato(id);
+            var prato = _pratoRepositorio.ObterPratoPeloId(id);
 
             if (prato == null)
             {
@@ -65,9 +65,7 @@ namespace vegalume.Controllers
             return View(prato);
         }
 
-
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult EditarPrato(int id, [Bind("idPrato, nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas")] Prato prato)
         {
             if (id != prato.idPrato)
@@ -91,7 +89,6 @@ namespace vegalume.Controllers
             return View(prato);
         }
 
-
         public IActionResult ExcluirPrato(int id)
         {
             _pratoRepositorio.Excluir(id);
@@ -102,6 +99,13 @@ namespace vegalume.Controllers
         public IActionResult TodosPratos()
         {
             return Json(_pratoRepositorio.TodosPratos());
+        }
+
+        [HttpGet]
+        public IActionResult DetalhesPrato(int idPrato)
+        {
+            Prato prato = _pratoRepositorio.ObterPratoPeloId(idPrato);
+            return View(prato);
         }
     }
 }

@@ -91,14 +91,14 @@ namespace vegalume.Repositorio
             }
         }
 
-        public Prato ObterPrato(int Id)
+        public Prato ObterPratoPeloId(int idPrato)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * from tb_prato where idPrato=@id ", conexao);
 
-                cmd.Parameters.AddWithValue("@id", Id);
+                cmd.Parameters.AddWithValue("@id", idPrato);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
