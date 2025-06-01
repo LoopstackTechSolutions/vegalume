@@ -78,7 +78,7 @@ namespace vegalume.Repositorio
                                     rm = Convert.ToInt32(dr["rm"]), 
                                     nome = ((string)dr["nome"]), 
                                     senha = ((string)dr["senha"]),
-                                    telefone = ((decimal)dr["telefone"]),//CONFIRMAR SE DEIXA DECIMAL MESMO OU INT
+                                    telefone = Convert.ToInt64(dr["telefone"]),//CONFIRMAR SE DEIXA DECIMAL MESMO OU INT
                                     email = ((string)dr["email"]), 
                                 });
                 }
@@ -86,32 +86,30 @@ namespace vegalume.Repositorio
             }
         }
 
-        public Funcionario ObterFuncionario(int Rm)
+        public Funcionario ObterFuncionarioPeloEmail(string email)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_funcionario where rm=@rm ", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_funcionario where email=@email", conexao);
+                cmd.Parameters.AddWithValue("@email", email);
 
-                cmd.Parameters.AddWithValue("@rm", Rm);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                MySqlDataReader dr;
-                Funcionario funcionario = new Funcionario();
-
-
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while (dr.Read())
+                using (var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
-                    funcionario.rm = Convert.ToInt32(dr["rm"]);
-                    funcionario.nome = (string)(dr["nome"]);
-                    funcionario.senha = (string)(dr["senha"]);
-                    funcionario.telefone = (decimal)(dr["telefone"]); //CONFIRMAR SE DEIXA DECIMAL MESMO OU INT
-                    funcionario.email = (string)(dr["email"]);
+                    if (dr.Read())
+                    {
+                        return new Funcionario
+                        {
+                            rm = Convert.ToInt32(dr["rm"]),
+                            nome = dr["nome"].ToString(),
+                            senha = dr["senha"].ToString(),
+                            telefone = Convert.ToInt64(dr["telefone"]),
+                            email = dr["email"].ToString()
+                        };
+                    }
                 }
-                return funcionario;
             }
+            return null;
         }
 
         public void Excluir(int Rm)

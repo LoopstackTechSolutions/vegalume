@@ -1,0 +1,125 @@
+#sair {
+    margin-right: 3vw;
+    margin-top: 3vw;
+    margin-left: auto;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    display: block;
+    width: fit-content;
+}
+
+#main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    background-color: var(--verde-escuro);
+    margin-top: 3vw;
+    padding: 2vw;
+    margin-bottom: 8vw;
+}
+
+#bem-vindo {
+    font-family: avarezo;
+    color: var(--branco);
+    font-size: 4vw;
+    margin-top: 0;
+    letter-spacing: 0.1vw;
+}
+
+.table-title {
+    font-family: avarezo;
+    color: var(--branco);
+    font-size: 2vw;
+    margin-top: 4vw;
+    margin-bottom: 0.6vw;
+    letter-spacing: 0.1vw;
+}
+
+.table-div {
+    margin: 0 auto;
+    width: 100%;
+}
+
+table {
+    font-family: unageo;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    color: var(--verde-escuro);
+    background-color: var(--branco);
+    padding: 0.5vw;
+    font-size: 1.6vw;
+    line-height: 2.5vw;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.img-td {
+    background-color: var(--verde-escuro);
+    white-space: nowrap;
+}
+
+.img-td img {
+    width: 4vw;
+    vertical-align: middle;
+}
+
+.img-td a {
+    cursor: pointer;
+}
+
+.numero {
+    text-align: center;
+    white-space: nowrap;
+    width: 8%;
+}
+
+.pratos {
+    width: 60%;
+    max-width: 60%;
+}
+
+.cliente {
+    width: 15%;
+    max-width: 15%;
+}
+
+#funcoes {
+    font-family: avarezo;
+    color: var(--verde-escuro);
+    font-size: 2vw;
+    margin-top: 8vw;
+    margin-bottom: 0.6vw;
+    letter-spacing: 0.1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 2vw;
+}
+
+#funcoes a {
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    width: 18%;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+
+#funcoes a:hover {
+    text-decoration: underline;
+}
+
+#funcoes img {
+    width: 6vw;
+    margin-bottom: 2vw;
+}

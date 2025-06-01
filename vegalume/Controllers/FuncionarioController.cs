@@ -33,9 +33,9 @@ namespace vegalume.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult EditarFuncionario(int id)
+        public IActionResult EditarFuncionario(string email)
         {
-            var funcionario = _funcionarioRepositorio.ObterFuncionario(id);
+            var funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
 
             if (funcionario == null)
             {

@@ -11,7 +11,7 @@ namespace vegalume.Repositorio
     {
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
-        public void Cadastrar(Pedido pedido)
+        /*public void Cadastrar(Pedido pedido)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -27,6 +27,7 @@ namespace vegalume.Repositorio
             }
 
         }
+
         public bool Atualizar(Pedido pedido)
         {
             try
@@ -81,9 +82,43 @@ namespace vegalume.Repositorio
                 }
                 return Pedidolist;
             }
+        }*/
+
+        public IEnumerable<Pedido> TodosPedidosPorStatus(string statusPedido)
+        {
+            List<Pedido> lista = new List<Pedido>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"select * from tb_pedido where statuspedido = @statusPedido;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@statusPedido", statusPedido);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Pedido
+                            {
+                                idPedido = reader.GetInt32("idpedido"),
+                                dataHoraPedido = reader.GetDateTime("datahorapedido"),
+                                idCliente = reader.GetInt32("idcliente"),
+                                idEndereco = reader.GetInt32("idendereco"),
+                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao")) 
+                                ? (int?)null : reader.GetInt32("idcartao")
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
         }
 
-        public Pedido ObterPedido(int Id)
+        /*public Pedido ObterPedido(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -109,7 +144,7 @@ namespace vegalume.Repositorio
                 }
                 return pedido;
             }
-        }
+        }*/
 
         public void Excluir(int Id)
         {
@@ -123,7 +158,7 @@ namespace vegalume.Repositorio
 
                 int i = cmd.ExecuteNonQuery();
 
-                conexao.Close(); 
+                conexao.Close();
             }
         }
     }

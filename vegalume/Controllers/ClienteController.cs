@@ -34,6 +34,11 @@ namespace vegalume.Controllers
             return Json(cliente);
         }
 
+        public IActionResult ObterClientePeloId(int IdCliente)
+        {
+            return Json(_clienteRepositorio.ObterClientePeloId(IdCliente));
+        }
+
         [HttpPost]
         public IActionResult EditarCliente(Cliente cliente)
         {

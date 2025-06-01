@@ -102,6 +102,12 @@ namespace vegalume.Controllers
         }
 
         [HttpGet]
+        public IActionResult TodosPratosPorPedido(int idPedido)
+        {
+            return Json(_pratoRepositorio.TodosPratosPorPedido(idPedido));
+        }
+
+        [HttpGet]
         public IActionResult DetalhesPrato(int idPrato)
         {
             if(HttpContext.Session.GetInt32("UserId") == null)

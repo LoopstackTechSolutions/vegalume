@@ -18,7 +18,7 @@ namespace vegalume.Repositorio
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas) " +
                     "values (@nomePrato, @precoPrato, @descricaoPrato, @valorCalorico, @peso, @pessoasServidas)", conexao);
-                                                                                                                                                 
+
                 cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
                 cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
                 cmd.Parameters.Add("@descricaoPrato", MySqlDbType.VarChar).Value = prato.descricaoPrato;
@@ -54,7 +54,7 @@ namespace vegalume.Repositorio
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Erro ao atualizar prato: {ex.Message}");
-                return false; 
+                return false;
 
             }
         }
@@ -78,7 +78,7 @@ namespace vegalume.Repositorio
                     Pratolist.Add(
                                 new Prato
                                 {
-                                    idPrato = (int)dr["idPrato"], 
+                                    idPrato = (int)dr["idPrato"],
                                     nomePrato = (string)dr["nomePrato"],
                                     precoPrato = Convert.ToSingle(dr["precoPrato"]),
                                     descricaoPrato = (string)dr["descricaoPrato"],
@@ -89,6 +89,40 @@ namespace vegalume.Repositorio
                 }
                 return Pratolist;
             }
+        }
+
+        public IEnumerable<PratoPedido> TodosPratosPorPedido(int idPedido)
+        {
+            List<PratoPedido> lista = new List<PratoPedido>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"select pr.nomeprato, pp.qtd, pp.detalhespedido from tb_prato_pedido pp " +
+                                "inner join tb_prato pr on pr.idprato = pp.idprato " +
+                                "where pp.idpedido = @idPedido;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idPedido", idPedido);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new PratoPedido
+                            {
+                                nomePrato = reader.GetString("nomeprato"),
+                                qtd = reader.GetInt32("qtd"),
+                                anotacoes = reader.IsDBNull(reader.GetOrdinal("detalhespedido"))
+                                ? "" : reader.GetString("detalhespedido")
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
         }
 
         public Prato ObterPratoPeloId(int idPrato)

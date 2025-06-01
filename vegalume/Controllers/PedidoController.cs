@@ -13,11 +13,11 @@ namespace vegalume.Controllers
             _pedidoRepositorio = pedidoRepositorio;
         }
 
+        /*
         public IActionResult Index()
         {
             return View(_pedidoRepositorio.TodosPedidos());
         }
-
 
         public IActionResult CadastrarPedido()
         {
@@ -45,7 +45,6 @@ namespace vegalume.Controllers
             return View(pedido);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EditarPedido(int id, [Bind("idPedido, statusPagamento, dataHoraPedido, rm, cep, idCliente")] Pedido pedido)
@@ -70,7 +69,12 @@ namespace vegalume.Controllers
             }
             return View(pedido);
         }
-
+        */
+        public IActionResult TodosPedidosPorStatus(string status)
+        {
+            System.Diagnostics.Debug.WriteLine(":" + _pedidoRepositorio.TodosPedidosPorStatus(status).FirstOrDefault().idCliente);
+            return Json(_pedidoRepositorio.TodosPedidosPorStatus(status));
+        }
 
         public IActionResult ExcluirPedido(int id)
         {

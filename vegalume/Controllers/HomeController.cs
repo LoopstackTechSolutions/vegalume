@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MySqlX.XDevAPI;
 using System.Diagnostics;
 using vegalume.Models;
 using vegalume.Repositorio;
@@ -38,8 +39,20 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult Login(string email, string senha, bool isFuncionario)
         {
-            if (isFuncionario) {
-                ViewBag.Erro = "funcionário!";
+            if (isFuncionario)
+            {
+                var funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
+                System.Diagnostics.Debug.WriteLine(funcionario);
+
+                if (funcionario != null)
+                {
+                    HttpContext.Session.SetInt32("WorkerId", funcionario.rm);
+                    System.Diagnostics.Debug.WriteLine(HttpContext.Session.GetInt32("WorkerId"));
+                    return RedirectToAction("HomeFuncionario", "Home", funcionario);
+                }
+
+                ViewBag.Email = email;
+                ViewBag.Erro = "Email ou senha incorretos.(f)";
                 return View();
             }
             else
@@ -62,13 +75,22 @@ namespace vegalume.Controllers
         }
 
         [HttpGet]
+        public IActionResult HomeFuncionario(string email)
+        {
+            Funcionario funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
+            HttpContext.Session.SetInt32("WorkerId", funcionario.rm);
+            return View(funcionario);
+        }
+
+        [HttpGet]
         public IActionResult MinhaConta()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult Logout() {
+        public IActionResult Logout()
+        {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
