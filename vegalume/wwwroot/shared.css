@@ -50,6 +50,10 @@ body {
     cursor: pointer;
 }
 
+.white-green-btn:hover{
+    text-decoration: underline;
+}
+
 a {
     text-decoration: none;
 }

@@ -104,6 +104,10 @@ namespace vegalume.Controllers
         [HttpGet]
         public IActionResult DetalhesPrato(int idPrato)
         {
+            if(HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             Prato prato = _pratoRepositorio.ObterPratoPeloId(idPrato);
             return View(prato);
         }
