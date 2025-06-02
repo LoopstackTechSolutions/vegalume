@@ -17,27 +17,55 @@ phoneInput.addEventListener('input', function () {
     this.value = formatted;
 });
 
-document.getElementById('frm-cadastro').addEventListener('submit', function (e) {
+document.getElementById('frm-cadastro').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const senha = document.getElementById('txtSenha').value;
-    const telefone = document.getElementById('txtTelefone');
+    const email = document.getElementById('txtEmail').value;
+    let emailOk = true;
 
-    const rawTelefone = telefone.value.replace(/\D/g, '');
+    try {
+        const response = await fetch('/Cliente/TodosClientes');
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
 
-    if(rawTelefone.length !== 11 && rawTelefone.length !== 10){
-        alert('Telefone inválido!');
-        e.preventDefault();
+        const data = await response.json();
+
+        data.forEach(cliente => {
+            if (email === cliente.email) {
+                emailOk = false;
+            }
+        });
+
+        if (!emailOk) {
+            alert('Email já está em uso!');
+            document.getElementById('txtEmail').focus();
+            return;
+        }
+
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Erro ao verificar o email. Tente novamente.');
         return;
     }
 
-    if(senha.length < 5){
-        alert('Senha deve ser maior que 4 caracteres!')
-        e.preventDefault();
+    const senha = document.getElementById('txtSenha').value;
+    const telefone = document.getElementById('txtTelefone');
+    const rawTelefone = telefone.value.replace(/\D/g, '');
+
+    if (rawTelefone.length !== 11 && rawTelefone.length !== 10) {
+        alert('Telefone inválido!');
+        document.getElementById('txtTelefone').focus();
+        return;
+    }
+
+    if (senha.length < 5) {
+        alert('Senha deve ser maior que 4 caracteres!');
+        document.getElementById('txtSenha').focus();
         return;
     }
 
     telefone.value = rawTelefone;
     alert('Cadastrado com sucesso!');
-    setTimeout(() => this.submit(), 0);
-})
+    this.submit();
+});

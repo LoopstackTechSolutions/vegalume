@@ -7,7 +7,8 @@ namespace vegalume.Models
     {
         public int idPedido { get; set; }
         public string? statusPedido { get; set; }
-        public DateTime ? dataHoraPedido { get; set; }
+        public DateTime? dataHoraPedido { get; set; }
+        public decimal? valorTotal { get; set; }
         public int? rm { get; set; }
         public int? idEndereco { get; set; }
         public int? idCliente { get; set; }

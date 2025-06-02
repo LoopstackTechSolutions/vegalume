@@ -11,7 +11,6 @@ namespace vegalume.Repositorio
     {
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
-
         public void CadastrarCliente(Cliente cliente)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
@@ -224,7 +223,7 @@ namespace vegalume.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("delete from tb_endereco where idendereco = @idEndereco;", conexao);
+                MySqlCommand cmd = new MySqlCommand("update tb_endereco set idcliente = null where idEndereco = @idEndereco;", conexao);
 
                 cmd.Parameters.Add("@idEndereco", MySqlDbType.Int32).Value = idEndereco;
 
@@ -238,7 +237,7 @@ namespace vegalume.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("delete from tb_cartao where idcartao = @idCartao;", conexao);
+                MySqlCommand cmd = new MySqlCommand("update tb_cartao set idcliente = null where idCartao = @idCartao;", conexao);
 
                 cmd.Parameters.Add("@idCartao", MySqlDbType.Int32).Value = idCartao;
 

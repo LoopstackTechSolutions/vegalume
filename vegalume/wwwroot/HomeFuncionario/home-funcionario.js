@@ -139,6 +139,12 @@ function fetchPedidos(status) {
         });
 }
 
-fetchPedidos("espera");
-fetchPedidos("preparacao");
-fetchPedidos("transito");
+function updatePedidos() {
+    fetchPedidos("espera");
+    fetchPedidos("preparacao");
+    fetchPedidos("transito");
+}
+
+updatePedidos();
+
+setInterval(updatePedidos, 60000);

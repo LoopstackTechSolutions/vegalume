@@ -46,6 +46,11 @@ namespace vegalume.Controllers
             return Redirect("/Home/MinhaConta#dados-cadastrais");
         }
 
+        public IActionResult TodosClientes()
+        {
+            return Json(_clienteRepositorio.TodosClientes());
+        }
+
         [HttpGet]
         public IActionResult TodosEnderecos()
         {

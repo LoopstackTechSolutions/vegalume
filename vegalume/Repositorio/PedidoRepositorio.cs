@@ -106,6 +106,7 @@ namespace vegalume.Repositorio
                             {
                                 idPedido = reader.GetInt32("idpedido"),
                                 dataHoraPedido = reader.GetDateTime("datahorapedido"),
+                                valorTotal = reader.GetDecimal("valortotal"),
                                 idCliente = reader.GetInt32("idcliente"),
                                 idEndereco = reader.GetInt32("idendereco"),
                                 idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao")) 
