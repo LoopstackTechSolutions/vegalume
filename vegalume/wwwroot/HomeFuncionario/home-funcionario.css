@@ -15,8 +15,8 @@
     align-items: center;
     width: 70%;
     background-color: var(--verde-escuro);
-    margin-top: 3vw;
-    padding: 2vw;
+    margin-top: 5vw;
+    padding: 4vw;
     margin-bottom: 8vw;
 }
 
@@ -24,8 +24,9 @@
     font-family: avarezo;
     color: var(--branco);
     font-size: 4vw;
-    margin-top: 0;
+    margin-top: 4vw;
     letter-spacing: 0.1vw;
+    margin-bottom: 4vw
 }
 
 .table-title {
@@ -35,6 +36,16 @@
     margin-top: 4vw;
     margin-bottom: 0.6vw;
     letter-spacing: 0.1vw;
+}
+
+.vazio{
+    border: solid 2px var(--branco);
+    font-family: unageo;
+    color: var(--branco);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
 }
 
 .table-div {

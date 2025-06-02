@@ -9,77 +9,29 @@
 </head>
 
 <body>
-    <a class="white-green-btn" id="sair">Sair</a>
+    <a asp-action="Logout" asp-controller="Home" class="white-green-btn" id="sair">Sair</a>
 
     <div id="main" data-rm="@Model.rm">
         <div id="bem-vindo">Bem vindo, @Model.nome</div>
 
         <div class="table-div" id="espera">
             <div class="table-title">Pedidos em espera</div>
+            <div class="vazio" id="vazio-espera">Nenhum pedido em espera no momento.</div>
             <table id="table-espera">
-                
             </table>
         </div>
 
         <div class="table-div" id="preparação">
             <div class="table-title">Pedidos em preparação</div>
+            <div class="vazio" id="vazio-preparacao">Nenhum pedido em preparação no momento.</div>
             <table id="table-preparacao">
-                <tr>
-                    <td class="numero">N° 234</td>
-                    <td class="pratos">
-                        Falafel com Homus e Pão Pita (1) <strong>*TIRAR O FEIJÃO!*</strong><br>
-                        Curry de grão-de-bico (1)
-                    </td>
-                    <td class="cliente">Vinicius Cavequi</td>
-                    <td class="img-td">
-                        <a><img src="~/Imagens/icons8-yes-100.png"></a>
-                        <a><img src="~/Imagens/icons8-no-100.png"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="numero">N° 235</td>
-                    <td class="pratos">
-                        Feijoada Vegana (1) <strong>*sem louro, por favor*</strong><br>
-                        Gazpacho (1)<br>
-                        Ratatouille (1)
-                    </td>
-                    <td class="cliente">Vinicius Cavequi</td>
-                    <td class="img-td">
-                        <a><img src="~/Imagens/icons8-yes-100.png"></a>
-                        <a><img src="~/Imagens/icons8-no-100.png"></a>
-                    </td>
-                </tr>
             </table>
         </div>
 
         <div class="table-div" id="transito">
             <div class="table-title">Pedidos em trânsito</div>
+            <div class="vazio" id="vazio-transito">Nenhum pedido em trânsito no momento.</div>
             <table id="table-transito">
-                <tr>
-                    <td class="numero">N° 234</td>
-                    <td class="pratos">
-                        Falafel com Homus e Pão Pita (1) <strong>*TIRAR O FEIJÃO!*</strong><br>
-                        Curry de grão-de-bico (1)
-                    </td>
-                    <td class="cliente">Vinicius Cavequi</td>
-                    <td class="img-td">
-                        <a><img src="~/Imagens/icons8-yes-100.png"></a>
-                        <a><img src="~/Imagens/icons8-no-100.png"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="numero">N° 235</td>
-                    <td class="pratos">
-                        Feijoada Vegana (1) <strong>*sem louro, por favor*</strong><br>
-                        Gazpacho (1)<br>
-                        Ratatouille (1)
-                    </td>
-                    <td class="cliente">Vinicius Cavequi</td>
-                    <td class="img-td">
-                        <a><img src="~/Imagens/icons8-yes-100.png"></a>
-                        <a><img src="~/Imagens/icons8-no-100.png"></a>
-                    </td>
-                </tr>
             </table>
         </div>
 

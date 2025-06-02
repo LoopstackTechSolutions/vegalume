@@ -146,19 +146,37 @@ namespace vegalume.Repositorio
             }
         }*/
 
-        public void Excluir(int Id)
+        public void CancelarPedido(int idPedido, int rm)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("delete from tb_pedido where idPedido=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido='cancelado', rm=@rm " +
+                                                    "where idpedido = @idPedido; ", conexao);
 
-                cmd.Parameters.AddWithValue("@id", Id);
+                cmd.Parameters.AddWithValue("@idPedido", idPedido);
+                cmd.Parameters.AddWithValue("@rm", rm);
 
-                int i = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
-                conexao.Close();
+        public void AvancarPedido(int idPedido, string statusAtual)
+        {
+            string proxStatus = statusAtual == "espera" ? "preparacao" : 
+                (statusAtual == "preparacao" ? "transito" : "entregue");
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido=@proxStatus " +
+                                                    "where idpedido = @idPedido; ", conexao);
+
+                cmd.Parameters.AddWithValue("@idPedido", idPedido);
+                cmd.Parameters.AddWithValue("@proxStatus", proxStatus);
+
+                cmd.ExecuteNonQuery();
             }
         }
     }

@@ -42,12 +42,10 @@ namespace vegalume.Controllers
             if (isFuncionario)
             {
                 var funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
-                System.Diagnostics.Debug.WriteLine(funcionario);
 
                 if (funcionario != null)
                 {
                     HttpContext.Session.SetInt32("WorkerId", funcionario.rm);
-                    System.Diagnostics.Debug.WriteLine(HttpContext.Session.GetInt32("WorkerId"));
                     return RedirectToAction("HomeFuncionario", "Home", funcionario);
                 }
 
@@ -78,7 +76,6 @@ namespace vegalume.Controllers
         public IActionResult HomeFuncionario(string email)
         {
             Funcionario funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
-            HttpContext.Session.SetInt32("WorkerId", funcionario.rm);
             return View(funcionario);
         }
 

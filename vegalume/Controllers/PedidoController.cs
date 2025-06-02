@@ -72,14 +72,21 @@ namespace vegalume.Controllers
         */
         public IActionResult TodosPedidosPorStatus(string status)
         {
-            System.Diagnostics.Debug.WriteLine(":" + _pedidoRepositorio.TodosPedidosPorStatus(status).FirstOrDefault().idCliente);
             return Json(_pedidoRepositorio.TodosPedidosPorStatus(status));
         }
 
-        public IActionResult ExcluirPedido(int id)
+        [HttpPost]
+        public IActionResult CancelarPedido(int idPedido, int rm)
         {
-            _pedidoRepositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
+            _pedidoRepositorio.CancelarPedido(idPedido, rm);
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AvancarPedido(int idPedido, string statusAtual)
+        {
+            _pedidoRepositorio.AvancarPedido(idPedido, statusAtual);
+            return Ok();
         }
     }
 }
