@@ -18,8 +18,7 @@ namespace vegalume.Controllers
             return View(_funcionarioRepositorio.TodosFuncionarios());
         }
 
-
-        public IActionResult CadastrarFuncionario()
+        public IActionResult CadastroFuncionario()
         {
             return View();
         }
@@ -27,10 +26,9 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult CadastrarFuncionario(Funcionario funcionario)
         {
-
             _funcionarioRepositorio.Cadastrar(funcionario);
-
-            return RedirectToAction(nameof(Index));
+            string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
+            return RedirectToAction("HomeFuncionario", "Home", new { email });
         }
 
         public IActionResult EditarFuncionario(string email)
@@ -44,7 +42,6 @@ namespace vegalume.Controllers
 
             return View(funcionario);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

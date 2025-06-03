@@ -1,19 +1,20 @@
 ﻿@{
+
 }
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegalume - Cadastro</title>
-    <link href="~/cadastrocliente/cadastro-cliente.css" rel="stylesheet" />
-    <link href="~/shared.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/cadastrofuncionario/cadastro-funcionario.css">
+    <link rel="stylesheet" href="~/shared.css">
 </head>
 
 <body>
     <button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
 
-    <form id="frm-cadastro" asp-action="CadastrarCliente" asp-controller="Cliente" method="post">
-        <p>Cadastre-se e peça já!</p>
+    <form id="frm-cadastro" asp-controller="Funcionario" asp-action="CadastrarFuncionario">
+        <p>Cadastro de Funcionário</p>
         <div id="textboxes">
             <div>
                 <label>Nome </label>
@@ -29,15 +30,15 @@
             </div>
             <div>
                 <label>Telefone </label>
-                <input type="text" id="txtTelefone" name="telefone" class="numerico telefone phone-mask" required maxlength="14"
-                       placeholder="(00)00000-0000">
+                <input type="text" id="txtTelefone" name="telefone" class="numerico telefone phone-mask"
+                       required maxlength="15" placeholder="(00)00000-0000">
             </div>
         </div>
         <div id="botoes">
-            <input type="submit" class="white-green-btn" id="cadastrar" value="Cadastrar" />
+            <input type="submit" class="white-green-btn" id="entrar" value="Entrar" />
             <input type="reset" class="white-green-btn" id="limpar" value="Limpar" />
         </div>
     </form>
 
-    <script src="~/cadastrocliente/cadastro-cliente.js"></script>
+    <script src="~/cadastrofuncionario/cadastro-funcionario.js"></script>
 </body>

@@ -31,6 +31,7 @@ namespace vegalume.Repositorio
                 conexao.Close();
             }
         }
+
         public bool Atualizar(Funcionario funcionario)
         {
             try
@@ -93,6 +94,32 @@ namespace vegalume.Repositorio
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * from tb_funcionario where email=@email", conexao);
                 cmd.Parameters.AddWithValue("@email", email);
+
+                using (var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    if (dr.Read())
+                    {
+                        return new Funcionario
+                        {
+                            rm = Convert.ToInt32(dr["rm"]),
+                            nome = dr["nome"].ToString(),
+                            senha = dr["senha"].ToString(),
+                            telefone = Convert.ToInt64(dr["telefone"]),
+                            email = dr["email"].ToString()
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Funcionario ObterFuncionarioPeloRm(int? rm)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_funcionario where rm=@rm", conexao);
+                cmd.Parameters.AddWithValue("@rm", rm);
 
                 using (var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {

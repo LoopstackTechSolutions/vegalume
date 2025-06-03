@@ -7,10 +7,12 @@ namespace vegalume.Controllers
     public class ClienteController : Controller
     {
         private readonly ClienteRepositorio _clienteRepositorio;
+        private readonly FuncionarioRepositorio _funcionarioRepositorio;
 
-        public ClienteController(ClienteRepositorio clienteRepositorio)
+        public ClienteController(ClienteRepositorio clienteRepositorio, FuncionarioRepositorio funcionarioRepositorio)
         {
             _clienteRepositorio = clienteRepositorio;
+            _funcionarioRepositorio = funcionarioRepositorio;
         }
 
         public IActionResult CadastroCliente()
@@ -21,11 +23,14 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult CadastrarCliente(Cliente cliente)
         {
-
             _clienteRepositorio.CadastrarCliente(cliente);
-            HttpContext.Session.SetInt32("UserId", cliente.idCliente);
-
-            return RedirectToAction("Index", "Home");
+            if (!HttpContext.Session.GetInt32("WorkerId").HasValue)
+            {
+                HttpContext.Session.SetInt32("UserId", cliente.idCliente);
+                return RedirectToAction("Index", "Home");
+            }
+            string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
+            return RedirectToAction("HomeFuncionario", "Home", new { email});
         }
 
         public IActionResult ObterCliente()
