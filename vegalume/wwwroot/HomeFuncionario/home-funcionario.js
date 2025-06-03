@@ -12,6 +12,7 @@ function fetchPedidos(status) {
             else {
                 document.getElementById("vazio-" + status).style.display = "none";
                 const table = document.getElementById('table-' + status);
+                table.innerHTML = '';
 
                 data.forEach(pedido => {
                     const tr = document.createElement('tr');

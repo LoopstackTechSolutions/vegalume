@@ -11,6 +11,7 @@ fetch('/Cliente/ObterCliente')
         return response.json();
     })
     .then(cliente => {
+        console.log(cliente);
         document.getElementById('txtNome').value = cliente.nome;
         document.getElementById('txtSenha').value = cliente.senha;
         telefone = cliente.telefone;

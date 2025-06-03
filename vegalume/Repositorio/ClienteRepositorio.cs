@@ -103,6 +103,35 @@ namespace vegalume.Repositorio
             }
         }
 
+        public Cliente ObterClientePeloEmail(string? email)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_cliente where email=@email ", conexao);
+
+                cmd.Parameters.AddWithValue("@email", email);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                MySqlDataReader dr;
+                Cliente cliente = new Cliente();
+
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.idCliente = (int)dr["idCliente"];
+                    cliente.nome = (string)dr["nome"];
+                    cliente.senha = (string)dr["senha"];
+                    cliente.telefone = (long)dr["telefone"];
+                    cliente.email = (string)dr["email"];
+                }
+
+                return cliente;
+            }
+        }
+
         public IEnumerable<Endereco> TodosEnderecos(int? idCliente)
         {
             var lista = new List<Endereco>();
