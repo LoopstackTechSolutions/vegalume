@@ -32,7 +32,7 @@ namespace vegalume.Controllers
                 return RedirectToAction("Index", "Home");
             }
             string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
-            return RedirectToAction("HomeFuncionario", "Home", new { email});
+            return RedirectToAction("HomeFuncionario", "Home", new { email });
         }
 
         public IActionResult ObterCliente()
@@ -56,6 +56,16 @@ namespace vegalume.Controllers
         public IActionResult TodosClientes()
         {
             return Json(_clienteRepositorio.TodosClientes());
+        }
+
+        public IActionResult ListarCliente()
+        {
+            return View();
+        }
+
+        public IActionResult FiltrarClientes(string filtro)
+        {
+            return Json(_clienteRepositorio.FiltrarClientes(filtro));
         }
 
         [HttpGet]
@@ -96,12 +106,6 @@ namespace vegalume.Controllers
         {
             _clienteRepositorio.ExcluirCartao(idCartao);
             return Ok();
-        }
-
-        public IActionResult ExcluirCliente(int id)
-        {
-            _clienteRepositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
+using System;
 using System.Data;
 using System.Xml;
 using vegalume.Models;
@@ -129,6 +130,41 @@ namespace vegalume.Repositorio
                 }
 
                 return cliente;
+            }
+        }
+
+        public IEnumerable<Cliente> FiltrarClientes(string filtro)
+        {
+            List<Cliente> lista = new List<Cliente>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM tb_cliente WHERE nome LIKE " +
+                    "CONCAT('%', COALESCE(@filtro, ''), '%') OR CAST(idcliente AS CHAR) LIKE " +
+                    "CONCAT('%', COALESCE(@filtro, ''), '%'); ", conexao);
+
+                cmd.Parameters.AddWithValue("@filtro", filtro);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    lista.Add(
+                                new Cliente
+                                {
+                                    idCliente = (int)dr["idCliente"],
+                                    nome = (string)dr["nome"],
+                                    senha = (string)dr["senha"],
+                                    telefone = (long)dr["telefone"],
+                                    email = (string)dr["email"],
+                                });
+                }
+                System.Diagnostics.Debug.WriteLine("hello" + filtro + ":");
+                return lista;
             }
         }
 
@@ -271,22 +307,6 @@ namespace vegalume.Repositorio
                 cmd.Parameters.Add("@idCartao", MySqlDbType.Int32).Value = idCartao;
 
                 cmd.ExecuteNonQuery();
-                conexao.Close();
-            }
-        }
-
-        public void Excluir(int Id)
-        {
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-
-                MySqlCommand cmd = new MySqlCommand("delete from tb_cliente where idCliente=@id", conexao);
-
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                int i = cmd.ExecuteNonQuery();
-
                 conexao.Close();
             }
         }

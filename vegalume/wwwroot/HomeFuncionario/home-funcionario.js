@@ -148,4 +148,4 @@ function updatePedidos() {
 
 updatePedidos();
 
-setInterval(updatePedidos, 60000);
+setInterval(updatePedidos, 30000);

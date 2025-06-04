@@ -1,0 +1,27 @@
+﻿@{
+
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+    <link rel="stylesheet" href="~/listarcliente/listar-cliente.css">
+    <link rel="stylesheet" href="~/shared.css">
+</head>
+
+<body>
+    <button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
+
+    <form>
+        <div id="titulo">Clientes Cadastrados</div>
+        <div>
+            <label>Filtro:</label><input type="text" id="filtro" placeholder="Id ou nome" maxlength="50" />
+        </div>
+        <div id="vazio">Nenhum cliente encontrado!</div>
+        <table id="clientes">
+        </table>
+    </form>
+
+    <script src="~/listarcliente/listar-cliente.js"></script>
+</body>
