@@ -12,7 +12,6 @@ function atualizarClientes() {
         })
         .then(data => {
             const table = document.getElementById('clientes');
-            console.log(data.length);
 
             if (data.length === 0) {
                 document.getElementById("vazio").style.display = "flex";
@@ -57,7 +56,8 @@ function atualizarClientes() {
                     tr.appendChild(email);
 
                     const telefone = document.createElement('td');
-                    telefone.textContent = cliente.telefone;
+                    let telefoneFormatado = cliente.telefone.toString().replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1)$2-$3');
+                    telefone.textContent = telefoneFormatado;
                     telefone.classList.add("telefone");
                     tr.appendChild(telefone);
 

@@ -31,6 +31,11 @@ namespace vegalume.Controllers
             return RedirectToAction("HomeFuncionario", "Home", new { email });
         }
 
+        public IActionResult ObterFuncionarioPeloRm(int rm)
+        {
+            return Json(_funcionarioRepositorio.ObterFuncionarioPeloRm(rm));
+        }
+
         public IActionResult EditarFuncionario(string email)
         {
             var funcionario = _funcionarioRepositorio.ObterFuncionarioPeloEmail(email);
@@ -67,7 +72,6 @@ namespace vegalume.Controllers
             }
             return View(funcionario);
         }
-
 
         public IActionResult ExcluirFuncionario(int id)
         {

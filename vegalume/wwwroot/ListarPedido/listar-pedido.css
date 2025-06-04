@@ -1,0 +1,116 @@
+#voltar {
+    margin-left: 3vw;
+    margin-top: 3vw;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    background-color: var(--verde-escuro);
+    margin-top: 3vw;
+    padding: 2vw;
+    margin-bottom: 8vw;
+    min-height: 60vh;
+}
+
+form div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+}
+
+#titulo {
+    font-family: avarezo;
+    color: var(--branco);
+    font-size: 4vw;
+    margin-top: 0;
+    margin-bottom: 0.6vw;
+    letter-spacing: 0.1vw;
+}
+
+#nenhum{
+    border: solid 2px var(--branco);
+    font-family: unageo;
+    color: var(--branco);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    margin-top: 0;
+}
+
+input {
+    font-family: unageo;
+    width: 70%;
+    font-size: 1.5vw;
+    padding-left: 0.4vw;
+    background-color: var(--branco);
+}
+
+form label {
+    font-family: avarezo;
+    color: var(--branco);
+    font-size: 2vw;
+}
+
+table {
+    font-family: unageo;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td,
+th {
+    color: var(--verde-escuro);
+    background-color: var(--branco);
+    padding: 0.2vw;
+    font-size: 1.6vw;
+    line-height: 2.5vw;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.numero {
+    text-align: center;
+    white-space: nowrap;
+    width: 4%;
+}
+
+.pratos {
+    width: 25%;
+    max-width: 60%;
+}
+
+.valor-total {
+    width: 7%;
+    max-width: 15%;
+}
+
+.cliente {
+    width: 12%;
+    max-width: 15%;
+    white-space: nowrap;
+}
+
+.funcionario {
+    width: 12%;
+    max-width: 15%;
+}
+
+.data {
+    width: 9%;
+    max-width: 15%;
+}
+
+.status {
+    width: 11%;
+    max-width: 15%;
+}

@@ -28,7 +28,6 @@ namespace vegalume.Controllers
             {
                 int id = _clienteRepositorio.ObterClientePeloEmail(cliente.email).idCliente;
                 HttpContext.Session.SetInt32("UserId", id);
-                System.Diagnostics.Debug.WriteLine(HttpContext.Session.GetInt32("UserId"));
                 return RedirectToAction("Index", "Home");
             }
             string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;

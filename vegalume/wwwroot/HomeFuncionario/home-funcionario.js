@@ -76,13 +76,14 @@ function fetchPedidos(status) {
 
                         const idPedido = this.dataset.idPedido;
                         const rm = document.getElementById('main').dataset.rm;
+                        console.log(rm);
 
                         fetch('/Pedido/AvancarPedido', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/x-www-form-urlencoded'
                             },
-                            body: `idPedido=${encodeURIComponent(idPedido)}&statusAtual=${encodeURIComponent(status)}`
+                            body: `idPedido=${encodeURIComponent(idPedido)}&statusAtual=${encodeURIComponent(status)}&rm=${encodeURIComponent(rm)}`
                         })
                             .then(response => {
                                 if (response.ok) {

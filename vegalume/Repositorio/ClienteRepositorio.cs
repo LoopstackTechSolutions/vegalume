@@ -163,7 +163,6 @@ namespace vegalume.Repositorio
                                     email = (string)dr["email"],
                                 });
                 }
-                System.Diagnostics.Debug.WriteLine("hello" + filtro + ":");
                 return lista;
             }
         }

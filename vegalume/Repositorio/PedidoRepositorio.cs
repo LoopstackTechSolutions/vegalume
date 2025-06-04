@@ -11,79 +11,6 @@ namespace vegalume.Repositorio
     {
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
-        /*public void Cadastrar(Pedido pedido)
-        {
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("insert into tb_pedido (statusPagamento, rm, cep, idCliente) values (@statusPagamento, @rm, @cep, @idCliente)", conexao); 
-                                                                                                                                                
-                cmd.Parameters.Add("@statusPagamento", MySqlDbType.Bit).Value = pedido.statusPagamento;//VERIFICAR SE É BIT OU BOOL
-                cmd.Parameters.Add("@rm", MySqlDbType.Int32).Value = pedido.rm; // ALTERAR O TIPO DE DADO NO BANCO DE DADOS,AQUI E NOS OUTROS REPOSITÓRIOS ??? testar
-                cmd.Parameters.Add("@cep", MySqlDbType.Decimal).Value = pedido.cep;
-                cmd.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = pedido.idCliente;
-                cmd.ExecuteNonQuery();
-                conexao.Close();
-            }
-
-        }
-
-        public bool Atualizar(Pedido pedido)
-        {
-            try
-            {
-                using (var conexao = new MySqlConnection(_conexaoMySQL))
-                {
-                    conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update tb_pedido set statusPagamento=@statusPagamento, rm=@rm, cep=@cep, idCliente=@idCliente " + " where idPedido=@idPedido ", conexao);
-                    cmd.Parameters.Add("@idPedido", MySqlDbType.Int32).Value = pedido.idPedido;
-                    cmd.Parameters.Add("@statusPagamento", MySqlDbType.Bit).Value = pedido.statusPagamento;//VERIFICAR SE É BIT OU BOOL
-                    cmd.Parameters.Add("@rm", MySqlDbType.Int32).Value = pedido.rm; // ALTERAR O TIPO DE DADO NO BANCO DE DADOS E AQUI E NOS OUTROS REPOSITÓRIOS
-                    cmd.Parameters.Add("@cep", MySqlDbType.Decimal).Value = pedido.cep;
-                    cmd.Parameters.Add("@idCliente", MySqlDbType.Int64).Value = pedido.idCliente;
-                    int linhasAfetadas = cmd.ExecuteNonQuery();
-                    return linhasAfetadas > 0;
-
-                }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine($"Erro ao atualizar pedido: {ex.Message}");
-                return false;
-
-            }
-        }
-
-        public IEnumerable<Pedido> TodosPedidos()
-        {
-            List<Pedido> Pedidolist = new List<Pedido>();
-
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_pedido", conexao);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexao.Close();
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    Pedidolist.Add(
-                                new Pedido
-                                {
-                                    idPedido = (int)(dr["idPedido"]),
-                                    statusPagamento = ((bool)dr["statusPagamento"]),
-                                    rm = (int)dr["rm"],//idem
-                                    cep = ((int)dr["cep"]),//DEIXO ASSIM OU mudo para ConvertToDecimal
-                                    idCliente = (int)(dr["idCliente"]),// idem
-                                });
-                }
-                return Pedidolist;
-            }
-        }*/
-
         public IEnumerable<Pedido> TodosPedidosPorStatus(string statusPedido)
         {
             List<Pedido> lista = new List<Pedido>();
@@ -119,33 +46,60 @@ namespace vegalume.Repositorio
             return lista;
         }
 
-        /*public Pedido ObterPedido(int Id)
+        public IEnumerable<Pedido> FiltrarPedidos(string filtro)
         {
+            List<Pedido> lista = new List<Pedido> ();
+
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_pedido where idPedido=@id ", conexao);
+                    string query;
 
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                MySqlDataReader dr;
-                Pedido pedido = new Pedido();
-
-
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while (dr.Read())
+                if (string.IsNullOrEmpty(filtro))
+                    query = @"SELECT distinct pe.* FROM tb_pedido pe ORDER BY pe.idpedido DESC;";
+                else
                 {
-                    pedido.idPedido = (int)(dr["idPedido"]);
-                    pedido.statusPagamento = ((bool)dr["statusPagamento"]);
-                    pedido.rm = Convert.ToInt32(dr["rm"]);//idem
-                    pedido.cep = ((int)dr["cep"]);//DEIXO ASSIM OU mudo para ConvertToDecimal
-                    pedido.idCliente = (int)(dr["idCliente"]);         
+                    query = @"SELECT distinct pe.* FROM tb_pedido pe 
+                                left join tb_cliente c on c.idcliente = pe.idcliente 
+                                left join tb_funcionario f on f.rm = pe.rm 
+                                left join tb_prato_pedido pp on pp.idpedido = pe.idpedido 
+                                left join tb_prato pr on pr.idprato = pp.idprato 
+                                WHERE COALESCE(c.nome, '') LIKE CONCAT('%', @filtro, '%') 
+                                OR COALESCE(f.nome, '') LIKE CONCAT('%', @filtro, '%') 
+                                OR COALESCE(pr.nomeprato, '') LIKE CONCAT('%', @filtro, '%') 
+                                OR COALESCE(pe.statuspedido, '') LIKE CONCAT('%', @filtro, '%')
+                                OR COALESCE(CAST(pe.idpedido AS CHAR), '') LIKE CONCAT('%', @filtro, '%') 
+                                OR DATE_FORMAT(pe.datahorapedido, '%d/%m/%Y') = @filtro
+                                order by pe.idpedido desc;";
                 }
-                return pedido;
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@filtro", filtro);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Pedido
+                            {
+                                idPedido = reader.GetInt32("idpedido"),
+                                dataHoraPedido = reader.GetDateTime("datahorapedido"),
+                                valorTotal = reader.GetDecimal("valortotal"),
+                                idCliente = reader.GetInt32("idcliente"),
+                                rm = reader.IsDBNull(reader.GetOrdinal("rm"))
+                                ? (int?)null : reader.GetInt32("rm"),
+                                idEndereco = reader.GetInt32("idendereco"),
+                                statusPedido = reader.GetString("statuspedido"),
+                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
+                                ? (int?)null : reader.GetInt32("idcartao")
+                            });
+                        }
+                    }
+                }
             }
-        }*/
+            return lista;
+        }
 
         public void CancelarPedido(int idPedido, int rm)
         {
@@ -163,7 +117,7 @@ namespace vegalume.Repositorio
             }
         }
 
-        public void AvancarPedido(int idPedido, string statusAtual)
+        public void AvancarPedido(int idPedido, string statusAtual, int rm)
         {
             string proxStatus = statusAtual == "espera" ? "preparacao" : 
                 (statusAtual == "preparacao" ? "transito" : "entregue");
@@ -171,11 +125,12 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido=@proxStatus " +
+                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido=@proxStatus, rm=@rm " +
                                                     "where idpedido = @idPedido; ", conexao);
 
                 cmd.Parameters.AddWithValue("@idPedido", idPedido);
                 cmd.Parameters.AddWithValue("@proxStatus", proxStatus);
+                cmd.Parameters.AddWithValue("@rm", rm);
 
                 cmd.ExecuteNonQuery();
             }

@@ -13,63 +13,16 @@ namespace vegalume.Controllers
             _pedidoRepositorio = pedidoRepositorio;
         }
 
-        /*
-        public IActionResult Index()
-        {
-            return View(_pedidoRepositorio.TodosPedidos());
-        }
-
-        public IActionResult CadastrarPedido()
+        public IActionResult ListarPedido()
         {
             return View();
         }
 
-        [HttpPost]
-        public IActionResult CadastrarPedido(Pedido pedido)
+        public IActionResult FiltrarPedidos(string filtro)
         {
-
-            _pedidoRepositorio.Cadastrar(pedido);
-
-            return RedirectToAction(nameof(Index));
+            return Json(_pedidoRepositorio.FiltrarPedidos(filtro));
         }
 
-        public IActionResult EditarPedido(int id)
-        {
-            var pedido = _pedidoRepositorio.ObterPedido(id);
-
-            if (pedido == null)
-            {
-                return NotFound();
-            }
-
-            return View(pedido);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult EditarPedido(int id, [Bind("idPedido, statusPagamento, dataHoraPedido, rm, cep, idCliente")] Pedido pedido)
-        {
-            if (id != pedido.idPedido)
-            {
-            }
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    if (_pedidoRepositorio.Atualizar(pedido))
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
-                }
-                catch (Exception)
-                {
-                    ModelState.AddModelError("", "Ocorreu um erro ao Editar.");
-                    return View(pedido);
-                }
-            }
-            return View(pedido);
-        }
-        */
         public IActionResult TodosPedidosPorStatus(string status)
         {
             return Json(_pedidoRepositorio.TodosPedidosPorStatus(status));
@@ -83,9 +36,9 @@ namespace vegalume.Controllers
         }
 
         [HttpPost]
-        public IActionResult AvancarPedido(int idPedido, string statusAtual)
+        public IActionResult AvancarPedido(int idPedido, string statusAtual, int rm)
         {
-            _pedidoRepositorio.AvancarPedido(idPedido, statusAtual);
+            _pedidoRepositorio.AvancarPedido(idPedido, statusAtual, rm);
             return Ok();
         }
     }
