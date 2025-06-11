@@ -76,7 +76,6 @@ function fetchPedidos(status) {
 
                         const idPedido = this.dataset.idPedido;
                         const rm = document.getElementById('main').dataset.rm;
-                        console.log(rm);
 
                         fetch('/Pedido/AvancarPedido', {
                             method: 'POST',

@@ -10,7 +10,7 @@
         public int? valorCalorico { get; set; }
         public int? peso { get; set; }
         public int? pessoasServidas { get; set; }
-        public bool? statusPedido { get; set; }
+        public bool? statusPrato { get; set; }
 
     }
 }

@@ -60,10 +60,34 @@ function fetchPratos(status) {
                     <td class="descricao">${prato.descricaoPrato}</td>
                     <td class="preco">$${Number(prato.precoPrato).toFixed(0)}</td>
                     <td class="img-td">
-                        <a><img src="/Imagens/icons8-edit-100.png"></a>
-                        <a><img src="/Imagens/icons8-${icon}-100.png"></a>
+                        <a class="a-edit" data-id=${prato.idPrato}><img src="/Imagens/icons8-edit-100.png"></a>
+                        <a class="a-switch" data-id=${prato.idPrato}><img src="/Imagens/icons8-${icon}-100.png"></a>
                     </td>
                 </tr>`
+                })
+
+                document.querySelectorAll(".a-switch").forEach(a => {
+                    a.addEventListener('click', function (e) {
+                        const id = this.getAttribute('data-id');
+
+                        fetch('/Prato/TrocarStatus', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: `idPrato=${encodeURIComponent(id)}`
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    updatePratos();
+                                } else {
+                                    throw new Error('Erro.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Erro:', error);
+                            });
+                    })
                 })
             }
         })
@@ -72,8 +96,12 @@ function fetchPratos(status) {
         });
 }
 
-fetchPratos("ativos");
-fetchPratos("ocultos");
+function updatePratos() {
+    fetchPratos("ativos");
+    fetchPratos("ocultos");
+}
+
+updatePratos();
 
 const form = document.getElementById("frm-adicionar-prato");
 form.addEventListener('submit', function (e) {

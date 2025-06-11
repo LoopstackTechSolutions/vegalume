@@ -11,7 +11,7 @@ create table tb_prato
     valorCalorico int not null,
     peso int not null,
     pessoasServidas smallint not null,
-    statusPedido bit not null
+    statusPrato bit not null
 );
 
 -- Tabela que armazena os dados dos clientes
@@ -101,7 +101,7 @@ insert into tb_endereco (rua, numero, bairro, cidade, estado, idcliente) values
 
 insert into tb_funcionario (nome, senha, telefone, email) values ('Vinicius', 12345678, 11948577155, 'vinicavequi@gmail.com');
 
-insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas, statusPedido) values
+insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas, statusPrato) values
 ('Falafel', 19, 'Bolinho crocante de grão-de-bico temperado com ervas e especiarias, servido com molho tahine.', 320, 200, 1, 1),
 ('Estrogonofe de Cogumelos', 30, 'Estrogonofe cremoso feito com cogumelos frescos e creme de castanhas, acompanhado de arroz integral e batata palha.', 480, 400, 1, 1),
 ('Feijoada Vegana', 35, 'Feijoada feita com legumes, cogumelos, tofu defumado e acompanhamentos tradicionais como arroz, couve e farofa.', 600, 500, 2, 1),

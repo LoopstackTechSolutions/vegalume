@@ -43,7 +43,7 @@ namespace vegalume.Controllers
         public IActionResult CadastrarPrato(Prato prato)
         {
             _pratoRepositorio.Cadastrar(prato);
-            return RedirectToAction("EditarCardapio","Prato");
+            return RedirectToAction("EditarCardapio", "Prato");
         }
 
         public IActionResult EditarPrato(int id)
@@ -103,7 +103,7 @@ namespace vegalume.Controllers
         [HttpGet]
         public IActionResult DetalhesPrato(int idPrato)
         {
-            if(HttpContext.Session.GetInt32("UserId") == null)
+            if (HttpContext.Session.GetInt32("UserId") == null)
             {
                 return RedirectToAction("Login", "Home");
             }
@@ -114,6 +114,13 @@ namespace vegalume.Controllers
         public IActionResult EditarCardapio()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult TrocarStatus(int idPrato)
+        {
+            _pratoRepositorio.TrocarStatus(idPrato);
+            return Ok();
         }
     }
 }

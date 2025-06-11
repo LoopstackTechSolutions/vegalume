@@ -17,7 +17,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("insert into tb_prato (nomePrato, precoPrato, descricaoPrato, " +
-                    "valorCalorico, peso, pessoasServidas, statusPedido) values (@nomePrato, @precoPrato, " +
+                    "valorCalorico, peso, pessoasServidas, statusPrato) values (@nomePrato, @precoPrato, " +
                     "@descricaoPrato, @valorCalorico, @peso, @pessoasServidas, 0)", conexao);
 
                 cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
@@ -40,7 +40,7 @@ namespace vegalume.Repositorio
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand("Update tb_prato set nomePrato=@nomePrato, precoPrato=@precoPrato, " +
                         "descricaoPrato=@descricaoPrato, valorCalorico=@valorCalorico, peso=@peso, " +
-                        "pessoasServidas=@pessoasServidas, statusPedido=@statusPedido " + " where idPrato=@id ", conexao);
+                        "pessoasServidas=@pessoasServidas, statusPrato=@statusPrato " + " where idPrato=@id ", conexao);
                     cmd.Parameters.Add("@idPrato", MySqlDbType.Int64).Value = prato.idPrato;
                     cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
                     cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
@@ -87,7 +87,7 @@ namespace vegalume.Repositorio
                                     valorCalorico = (int)dr["valorCalorico"],
                                     peso = (int)dr["peso"],
                                     pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]),
-                                    statusPedido = (bool)dr["statusPedido"]
+                                    statusPrato = (bool)dr["statusPrato"]
                                 });
                 }
                 return lista;
@@ -101,9 +101,9 @@ namespace vegalume.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_prato where statusPedido = @statusPedido", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_prato where statusPrato = @statusPrato", conexao);
 
-                cmd.Parameters.AddWithValue("@statusPedido", status);
+                cmd.Parameters.AddWithValue("@statusPrato", status);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -122,7 +122,7 @@ namespace vegalume.Repositorio
                                     valorCalorico = (int)dr["valorCalorico"],
                                     peso = (int)dr["peso"],
                                     pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]),
-                                    statusPedido = Convert.ToUInt64(dr["statusPedido"]) != 0
+                                    statusPrato = Convert.ToUInt64(dr["statusPrato"]) != 0
                                 });
                 }
                 return lista;
@@ -188,10 +188,33 @@ namespace vegalume.Repositorio
                     prato.valorCalorico = (int)dr["valorCalorico"];
                     prato.peso = (int)dr["peso"];
                     prato.pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]);
-                    prato.statusPedido = (bool)dr["statusPedido"];
+                    prato.statusPrato = (bool)dr["statusPrato"];
 
                 }
                 return prato;
+            }
+        }
+
+        public void TrocarStatus(int idPrato)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("select statusPrato from tb_prato where idPrato=@idPrato", conexao);
+
+                cmd.Parameters.AddWithValue("@idPrato", idPrato);
+
+                short statusAtual = Convert.ToInt16(cmd.ExecuteScalar());
+                short proxStatus = (short)(statusAtual == 1 ? 0 : 1);
+
+                MySqlCommand cmd2 = new MySqlCommand("update tb_prato set statusPrato=@statusPrato " +
+                    "where idPrato=@idPrato", conexao);
+
+                cmd2.Parameters.AddWithValue("@idPrato", idPrato);
+                cmd2.Parameters.AddWithValue("@statusPrato", proxStatus);
+
+                cmd2.ExecuteNonQuery();
             }
         }
     }
