@@ -18,7 +18,7 @@ btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-fetch('/Prato/TodosPratos')
+fetch('/Prato/TodosPratosAtivos')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erro de conexão.');

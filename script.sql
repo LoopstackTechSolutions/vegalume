@@ -10,7 +10,8 @@ create table tb_prato
     descricaoPrato varchar(250) not null,
     valorCalorico int not null,
     peso int not null,
-    pessoasServidas smallint not null
+    pessoasServidas smallint not null,
+    statusPedido bit not null
 );
 
 -- Tabela que armazena os dados dos clientes
@@ -98,16 +99,16 @@ insert into tb_cliente (nome, senha, telefone, email) values
 insert into tb_endereco (rua, numero, bairro, cidade, estado, idcliente) values
 ('Rua Feliz', 44, 'Vila Feliz', 'Felizândia', 'SP', 1);
 
-insert into tb_funcionario (nome, senha, telefone, email) values ('Josna', 12345678, 11948577155, 'vinicavequi@gmail.com');
+insert into tb_funcionario (nome, senha, telefone, email) values ('Vinicius', 12345678, 11948577155, 'vinicavequi@gmail.com');
 
-insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas) values
-('Falafel', 19, 'Bolinho crocante de grão-de-bico temperado com ervas e especiarias, servido com molho tahine.', 320, 200, 1),
-('Estrogonofe de Cogumelos', 30, 'Estrogonofe cremoso feito com cogumelos frescos e creme de castanhas, acompanhado de arroz integral e batata palha.', 480, 400, 1),
-('Feijoada Vegana', 35, 'Feijoada feita com legumes, cogumelos, tofu defumado e acompanhamentos tradicionais como arroz, couve e farofa.', 600, 500, 2),
-('Lasanha de Berinjela', 27, 'Lasanha de camadas de berinjela grelhada, molho de tomate e ricota de tofu temperada.', 410, 350, 1),
-('Ratatouille', 25, 'Ensopado de legumes mediterrâneos como berinjela, abobrinha, pimentão e tomate, temperado com ervas finas.', 350, 300, 1),
-('Gazpacho', 22, 'Sopa fria de tomate, pimentão, pepino e cebola, refrescante para dias quentes.', 150, 250, 1),
-('Samosa', 18, 'Pastelzinho frito recheado com batata, ervilhas, cenoura e especiarias.', 280, 150, 1);
+insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas, statusPedido) values
+('Falafel', 19, 'Bolinho crocante de grão-de-bico temperado com ervas e especiarias, servido com molho tahine.', 320, 200, 1, 1),
+('Estrogonofe de Cogumelos', 30, 'Estrogonofe cremoso feito com cogumelos frescos e creme de castanhas, acompanhado de arroz integral e batata palha.', 480, 400, 1, 1),
+('Feijoada Vegana', 35, 'Feijoada feita com legumes, cogumelos, tofu defumado e acompanhamentos tradicionais como arroz, couve e farofa.', 600, 500, 2, 1),
+('Lasanha de Berinjela', 27, 'Lasanha de camadas de berinjela grelhada, molho de tomate e ricota de tofu temperada.', 410, 350, 1, 0),
+('Ratatouille', 25, 'Ensopado de legumes mediterrâneos como berinjela, abobrinha, pimentão e tomate, temperado com ervas finas.', 350, 300, 1, 1),
+('Gazpacho', 22, 'Sopa fria de tomate, pimentão, pepino e cebola, refrescante para dias quentes.', 150, 250, 1, 1),
+('Samosa', 18, 'Pastelzinho frito recheado com batata, ervilhas, cenoura e especiarias.', 280, 150, 1, 1);
 
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 1, null, 90);
 insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (6, 1, 1, null), (3, 1, 2, 'tempere bem!');
@@ -116,13 +117,3 @@ insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 
 
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 2, null, 120);
 insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 3, 1, 'SEM BATATA PALHA!!'), (1, 3, 2, null);
-
-insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 4, null, 120);
-insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 4, 1, 'SEM BATATA PALHA!!'), (1, 4, 2, null);
-insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 4, null, 120);
-insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 5, 1, 'SEM BATATA PALHA!!'), (1, 5, 2, null);
-insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 4, null, 120);
-insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 6, 1, 'SEM BATATA PALHA!!'), (1, 6, 2, null);
-
-
-

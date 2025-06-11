@@ -48,10 +48,11 @@ form div{
 
 input {
     font-family: unageo;
-    width: 70%;
+    width: 5000%;
     font-size: 1.5vw;
     padding-left: 0.4vw;
     background-color: var(--branco);
+    margin-left: 1vw;
 }
 
 form label {

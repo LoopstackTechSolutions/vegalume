@@ -1,0 +1,55 @@
+﻿@{
+
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cardápio</title>
+    <link rel="stylesheet" href="~/editarcardapio/editar-cardapio.css">
+    <link rel="stylesheet" href="~/shared.css">
+</head>
+
+<body>
+    <a class="white-green-btn" id="voltar" onclick="window.history.back()">Voltar</a>
+
+    <div id="main">
+        <div id="titulo">Editar Cardápio</div>
+
+        <div class="table-div">
+            <div class="table-title">Pratos Ativos</div>
+            <div class="vazio" id="vazio-ativos">Nenhum prato ativo no momento.</div>
+			<table id="table-ativos">
+            </table>
+        </div>
+
+        <div class="table-div">
+            <div class="table-title">Pratos Ocultos</div>
+            <div class="vazio" id="vazio-ocultos">Nenhum prato oculto no momento.</div>
+			<table id="table-ocultos">
+            </table>
+        </div>
+
+        <form id="frm-adicionar-prato" asp-action="CadastrarPrato" asp-controller="Prato">
+            <div id="adicione-prato">Adicione um novo prato:</div>
+            <div id="textboxes">
+                <div>
+                    <label>Nome </label><input type="text" id="txtNome" name="nomePrato" required maxlength="35">
+                    <label>Preço </label><input class="float" type="text" id="txtPreco" name="precoPrato" required maxlength="7">
+                </div>
+                <div id="txtDescricao-div">
+                    <label>Descrição </label><br />
+                    <textarea id="txtDescricao" name="descricaoPrato"></textarea>
+                </div>
+                <div>
+                    <label>Valor Calórico </label><input class="numerico" type="text" name="valorCalorico" id="txtValorCalorico" required maxlength="6">
+                    <label>Peso (g) </label><input class="numerico" type="text" name="peso" id="txtPeso" required maxlength="5">
+                    <label>Pessoas Servidas </label><input class="numerico" type="text" name="pessoasServidas" id="txtPessoas" required maxlength="1">
+                </div>
+            </div>
+            <input type="submit" class="white-green-btn" id="adicionar" value="Adicionar" />
+        </form>
+    </div>
+
+    <script src="~/editarcardapio/editar-cardapio.js"></script>
+</body>

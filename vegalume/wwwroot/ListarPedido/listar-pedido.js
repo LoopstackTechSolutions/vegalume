@@ -48,7 +48,7 @@ async function atualizarPedidos() {
                     const funcionarioResponse = await fetch(`/Funcionario/ObterFuncionarioPeloRm?rm=${encodeURIComponent(pedido.rm)}`);
                     if (funcionarioResponse.ok) {
                         funcionario = await funcionarioResponse.json();
-                        funcionario = funcionario == null ? "" : funcionario.nome;
+                        funcionario = funcionario == null ? "-" : funcionario.nome;
                     }
                 } catch (error) {
                     console.error('Erro ao buscar funcionário:', error);

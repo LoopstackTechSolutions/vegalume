@@ -16,8 +16,9 @@ namespace vegalume.Repositorio
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas) " +
-                    "values (@nomePrato, @precoPrato, @descricaoPrato, @valorCalorico, @peso, @pessoasServidas)", conexao);
+                MySqlCommand cmd = new MySqlCommand("insert into tb_prato (nomePrato, precoPrato, descricaoPrato, " +
+                    "valorCalorico, peso, pessoasServidas, statusPedido) values (@nomePrato, @precoPrato, " +
+                    "@descricaoPrato, @valorCalorico, @peso, @pessoasServidas, 0)", conexao);
 
                 cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
                 cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
@@ -37,8 +38,9 @@ namespace vegalume.Repositorio
                 using (var conexao = new MySqlConnection(_conexaoMySQL))
                 {
                     conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update tb_prato set nomePrato=@nomePrato, precoPrato=@precoPrato, descricaoPrato=@descricaoPrato, " +
-                        "valorCalorico=@valorCalorico, peso=@peso, pessoasServidas=@pessoasServidas " + " where idPrato=@id ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("Update tb_prato set nomePrato=@nomePrato, precoPrato=@precoPrato, " +
+                        "descricaoPrato=@descricaoPrato, valorCalorico=@valorCalorico, peso=@peso, " +
+                        "pessoasServidas=@pessoasServidas, statusPedido=@statusPedido " + " where idPrato=@id ", conexao);
                     cmd.Parameters.Add("@idPrato", MySqlDbType.Int64).Value = prato.idPrato;
                     cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
                     cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
@@ -61,7 +63,7 @@ namespace vegalume.Repositorio
 
         public IEnumerable<Prato> TodosPratos()
         {
-            List<Prato> Pratolist = new List<Prato>();
+            List<Prato> lista = new List<Prato>();
 
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -75,7 +77,7 @@ namespace vegalume.Repositorio
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Pratolist.Add(
+                    lista.Add(
                                 new Prato
                                 {
                                     idPrato = (int)dr["idPrato"],
@@ -85,9 +87,45 @@ namespace vegalume.Repositorio
                                     valorCalorico = (int)dr["valorCalorico"],
                                     peso = (int)dr["peso"],
                                     pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]),
+                                    statusPedido = (bool)dr["statusPedido"]
                                 });
                 }
-                return Pratolist;
+                return lista;
+            }
+        }
+
+        public IEnumerable<Prato> TodosPratosPorStatus(short status)
+        {
+            List<Prato> lista = new List<Prato>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_prato where statusPedido = @statusPedido", conexao);
+
+                cmd.Parameters.AddWithValue("@statusPedido", status);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    lista.Add(
+                                new Prato
+                                {
+                                    idPrato = (int)dr["idPrato"],
+                                    nomePrato = (string)dr["nomePrato"],
+                                    precoPrato = Convert.ToSingle(dr["precoPrato"]),
+                                    descricaoPrato = (string)dr["descricaoPrato"],
+                                    valorCalorico = (int)dr["valorCalorico"],
+                                    peso = (int)dr["peso"],
+                                    pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]),
+                                    statusPedido = Convert.ToUInt64(dr["statusPedido"]) != 0
+                                });
+                }
+                return lista;
             }
         }
 
@@ -150,25 +188,10 @@ namespace vegalume.Repositorio
                     prato.valorCalorico = (int)dr["valorCalorico"];
                     prato.peso = (int)dr["peso"];
                     prato.pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]);
+                    prato.statusPedido = (bool)dr["statusPedido"];
 
                 }
                 return prato;
-            }
-        }
-
-        public void Excluir(int Id)
-        {
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-
-                MySqlCommand cmd = new MySqlCommand("delete from tb_prato where idPrato=@id", conexao);
-
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                int i = cmd.ExecuteNonQuery();
-
-                conexao.Close();
             }
         }
     }

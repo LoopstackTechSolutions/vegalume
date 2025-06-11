@@ -39,18 +39,11 @@ namespace vegalume.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult CadastrarPrato()
-        {
-            return View();
-        }
-
         [HttpPost]
         public IActionResult CadastrarPrato(Prato prato)
         {
-
             _pratoRepositorio.Cadastrar(prato);
-
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("EditarCardapio","Prato");
         }
 
         public IActionResult EditarPrato(int id)
@@ -89,16 +82,16 @@ namespace vegalume.Controllers
             return View(prato);
         }
 
-        public IActionResult ExcluirPrato(int id)
-        {
-            _pratoRepositorio.Excluir(id);
-            return RedirectToAction(nameof(Index));
-        }
-
         [HttpGet]
         public IActionResult TodosPratos()
         {
             return Json(_pratoRepositorio.TodosPratos());
+        }
+
+        [HttpGet]
+        public IActionResult TodosPratosPorStatus(short status)
+        {
+            return Json(_pratoRepositorio.TodosPratosPorStatus(status));
         }
 
         [HttpGet]
@@ -116,6 +109,11 @@ namespace vegalume.Controllers
             }
             Prato prato = _pratoRepositorio.ObterPratoPeloId(idPrato);
             return View(prato);
+        }
+
+        public IActionResult EditarCardapio()
+        {
+            return View();
         }
     }
 }
