@@ -46,36 +46,11 @@ namespace vegalume.Controllers
             return RedirectToAction("EditarCardapio", "Prato");
         }
 
-        [HttpGet]
         public IActionResult EditarPrato(int idPrato)
         {
             var prato = _pratoRepositorio.ObterPratoPeloId(idPrato);
             return View(prato);
         }
-
-        /*[HttpPost]
-        public IActionResult EditarPrato(int id, [Bind("idPrato, nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas")] Prato prato)
-        {
-            if (id != prato.idPrato)
-            {
-            }
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    if (_pratoRepositorio.Atualizar(prato))
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
-                }
-                catch (Exception)
-                {
-                    ModelState.AddModelError("", "Ocorreu um erro ao Editar.");
-                    return View(prato);
-                }
-            }
-            return View(prato);
-        }*/
 
         [HttpGet]
         public IActionResult TodosPratos()
@@ -116,6 +91,14 @@ namespace vegalume.Controllers
         {
             _pratoRepositorio.TrocarStatus(idPrato);
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult AlterarPrato(Prato prato)
+        {
+            System.Diagnostics.Debug.WriteLine(prato.idPrato);
+            _pratoRepositorio.Editar(prato);
+            return RedirectToAction("EditarCardapio", "Prato");
         }
     }
 }

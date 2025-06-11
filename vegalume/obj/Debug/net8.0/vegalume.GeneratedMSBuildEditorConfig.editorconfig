@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = vegalume
 build_property.RootNamespace = vegalume
-build_property.ProjectDir = C:\Users\Vini\Desktop\vegalume\vegalume\
+build_property.ProjectDir = C:\Users\2mod\Desktop\vegalume\vegalume\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Vini\Desktop\vegalume\vegalume
+build_property.MSBuildProjectDirectory = C:\Users\2mod\Desktop\vegalume\vegalume
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Cliente/CadastroCliente.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Cliente/CadastroCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDYWRhc3Ryb0NsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Cliente/ListarCliente.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Cliente/ListarCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0YXJDbGllbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Funcionario/CadastroFuncionario.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Funcionario/CadastroFuncionario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9cQ2FkYXN0cm9GdW5jaW9uYXJpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Home/HomeFuncionario.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Home/HomeFuncionario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lRnVuY2lvbmFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Home/Index.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Home/Login.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Home/MinhaConta.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Home/MinhaConta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNaW5oYUNvbnRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Pedido/ListarPedido.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Pedido/ListarPedido.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXExpc3RhclBlZGlkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Prato/DetalhesPrato.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Prato/DetalhesPrato.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJhdG9cRGV0YWxoZXNQcmF0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Prato/EditarCardapio.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Prato/EditarCardapio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJhdG9cRWRpdGFyQ2FyZGFwaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/Prato/EditarPrato.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/Prato/EditarPrato.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJhdG9cRWRpdGFyUHJhdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vini/Desktop/vegalume/vegalume/Views/_ViewImports.cshtml]
+[C:/Users/2mod/Desktop/vegalume/vegalume/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

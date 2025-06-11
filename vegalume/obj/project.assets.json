@@ -1609,23 +1609,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vini\\.nuget\\packages\\": {},
+    "C:\\Users\\2mod\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
+      "projectUniqueName": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
       "projectName": "vegalume",
-      "projectPath": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
-      "packagesPath": "C:\\Users\\Vini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\obj\\",
+      "projectPath": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\vegalume.csproj",
+      "packagesPath": "C:\\Users\\2mod\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Vini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\2mod\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

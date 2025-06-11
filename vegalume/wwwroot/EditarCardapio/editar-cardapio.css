@@ -95,12 +95,10 @@ th {
 
 .nome {
     width: 20%;
-    max-width: 60%;
 }
 
 .descricao {
     width: 44%;
-    max-width: 15%;
 }
 
 .preco{

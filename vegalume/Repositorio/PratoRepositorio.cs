@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System.Data;
+using System.IO;
 using System.Xml;
 using vegalume.Models;
 
@@ -31,33 +32,23 @@ namespace vegalume.Repositorio
             }
         }
 
-        public bool Atualizar(Prato prato)
+        public void Editar(Prato prato)
         {
-            try
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
-                using (var conexao = new MySqlConnection(_conexaoMySQL))
-                {
-                    conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("Update tb_prato set nomePrato=@nomePrato, precoPrato=@precoPrato, " +
-                        "descricaoPrato=@descricaoPrato, valorCalorico=@valorCalorico, peso=@peso, " +
-                        "pessoasServidas=@pessoasServidas, statusPrato=@statusPrato " + " where idPrato=@id ", conexao);
-                    cmd.Parameters.Add("@idPrato", MySqlDbType.Int64).Value = prato.idPrato;
-                    cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
-                    cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
-                    cmd.Parameters.Add("@descricaoPrato", MySqlDbType.VarChar).Value = prato.descricaoPrato;
-                    cmd.Parameters.Add("@valorCalorico", MySqlDbType.Int64).Value = prato.valorCalorico;
-                    cmd.Parameters.Add("@peso", MySqlDbType.Decimal).Value = prato.peso;
-                    cmd.Parameters.Add("@pessoasServidas", MySqlDbType.Int32).Value = prato.pessoasServidas;
-                    int linhasAfetadas = cmd.ExecuteNonQuery();
-                    return linhasAfetadas > 0;
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("update tb_prato set nomePrato = @nomePrato, precoPrato = @precoPrato," +
+                    " descricaoPrato = @descricaoPrato, valorCalorico = @valorCalorico, peso = @peso," +
+                    " pessoasServidas = @pessoasServidas where idPrato = @idPrato;", conexao);
 
-                }
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine($"Erro ao atualizar prato: {ex.Message}");
-                return false;
-
+                cmd.Parameters.Add("@nomePrato", MySqlDbType.VarChar).Value = prato.nomePrato;
+                cmd.Parameters.Add("@precoPrato", MySqlDbType.Decimal).Value = prato.precoPrato;
+                cmd.Parameters.Add("@descricaoPrato", MySqlDbType.VarChar).Value = prato.descricaoPrato;
+                cmd.Parameters.Add("@valorCalorico", MySqlDbType.Int64).Value = prato.valorCalorico;
+                cmd.Parameters.Add("@peso", MySqlDbType.Decimal).Value = prato.peso;
+                cmd.Parameters.Add("@pessoasServidas", MySqlDbType.Int32).Value = prato.pessoasServidas;
+                cmd.Parameters.Add("@idPrato", MySqlDbType.Int32).Value = prato.idPrato;
+                cmd.ExecuteNonQuery();
             }
         }
 

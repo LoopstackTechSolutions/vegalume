@@ -11,27 +11,28 @@
 <body>
 	<a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
 
-	<form id="frm-cadastro">
+	<form id="frm-editar-prato" asp-controller="Prato" asp-action="AlterarPrato" method="post">
 		<p>Editar Prato</p>
 		<div id="textboxes">
 			<div>
-				<label>Nome do Prato </label><input type="text" id="txtNome" required maxlength="35" value="@Model.nomePrato">
+				<label>Nome do Prato </label><input type="text" name ="nomePrato" id="txtNome" required maxlength="35" value="@Model.nomePrato">
 			</div>
 			<div>
 				<label>Descrição do Prato </label>
 			</div>
 			<div id="txtDescricao-div">
-				<textarea id="txtDescricao">@Model.descricaoPrato</textarea>
+				<textarea name="descricaoPrato" id="txtDescricao">@Model.descricaoPrato</textarea>
 			</div>
 			<div>
-				<label>Preço </label><input class="float" type="text" id="txtPreco" value="@Model.precoPrato" required maxlength="7">
-				<label>Valor Calórico </label><input class="numerico" type="text"  value="@Model.valorCalorico" id="txtValorCalorico" required maxlength="6">
+				<label>Preço </label><input class="float" type="text" name = "precoPrato" id="txtPreco" value="@Model.precoPrato" required maxlength="7">
+				<label>Valor Calórico </label><input class="numerico" type="text"  value="@Model.valorCalorico" name="valorCalorico" id="txtValorCalorico" required maxlength="6">
 			</div>
 			<div>
-				<label>Peso (g) </label><input class="numerico" type="text" id="txtPeso" value="@Model.peso" required maxlength="5">
-				<label>Pessoas Servidas </label><input class="numerico" type="text" value="@Model.pessoasServidas" id="txtPessoas" required maxlength="1">
+				<label>Peso (g) </label><input class="numerico" type="text" name="peso" id="txtPeso" value="@Model.peso" required maxlength="5">
+				<label>Pessoas Servidas </label><input class="numerico" type="text" value="@Model.pessoasServidas" name="pessoasServidas" id="txtPessoas" required maxlength="1">
 			</div>
 		</div>
+		<input type="hidden" name="idPrato" value="@Model.idPrato"/>
 		<div id="botoes">
 			<input type="submit" class="white-green-btn" id="salvar" value="Salvar" />
 		</div>

@@ -17,6 +17,7 @@ form {
     width: 45%;
     margin-top: 6vw;
     padding: 2vw;
+    margin-bottom: 6vw;
 }
 
 form p {
@@ -85,7 +86,7 @@ form a {
 #txtDescricao{
     resize: none;
     width: 100%;
-    height: 7vh;
+    height:15vh;
 }
 
 #txtValorCalorico{
