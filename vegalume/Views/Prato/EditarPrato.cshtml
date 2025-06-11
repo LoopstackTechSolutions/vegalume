@@ -1,0 +1,41 @@
+﻿@model vegalume.Models.Prato
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Editar Prato</title>
+	<link rel="stylesheet" href="~/editarprato/editar-prato.css">
+	<link rel="stylesheet" href="~/shared.css">
+</head>
+
+<body>
+	<a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
+
+	<form id="frm-cadastro">
+		<p>Editar Prato</p>
+		<div id="textboxes">
+			<div>
+				<label>Nome do Prato </label><input type="text" id="txtNome" required maxlength="35" value="@Model.nomePrato">
+			</div>
+			<div>
+				<label>Descrição do Prato </label>
+			</div>
+			<div id="txtDescricao-div">
+				<textarea id="txtDescricao">@Model.descricaoPrato</textarea>
+			</div>
+			<div>
+				<label>Preço </label><input class="float" type="text" id="txtPreco" value="@Model.precoPrato" required maxlength="7">
+				<label>Valor Calórico </label><input class="numerico" type="text"  value="@Model.valorCalorico" id="txtValorCalorico" required maxlength="6">
+			</div>
+			<div>
+				<label>Peso (g) </label><input class="numerico" type="text" id="txtPeso" value="@Model.peso" required maxlength="5">
+				<label>Pessoas Servidas </label><input class="numerico" type="text" value="@Model.pessoasServidas" id="txtPessoas" required maxlength="1">
+			</div>
+		</div>
+		<div id="botoes">
+			<input type="submit" class="white-green-btn" id="salvar" value="Salvar" />
+		</div>
+	</form>
+
+	<script src="~/editarprato/editar-prato.js"></script>
+</body>

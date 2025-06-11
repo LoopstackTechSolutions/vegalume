@@ -188,7 +188,7 @@ namespace vegalume.Repositorio
                     prato.valorCalorico = (int)dr["valorCalorico"];
                     prato.peso = (int)dr["peso"];
                     prato.pessoasServidas = Convert.ToInt32(dr["pessoasServidas"]);
-                    prato.statusPrato = (bool)dr["statusPrato"];
+                    prato.statusPrato = Convert.ToUInt64(dr["statusPrato"]) != 0;
 
                 }
                 return prato;

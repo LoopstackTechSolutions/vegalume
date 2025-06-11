@@ -60,14 +60,15 @@ function fetchPratos(status) {
                     <td class="descricao">${prato.descricaoPrato}</td>
                     <td class="preco">$${Number(prato.precoPrato).toFixed(0)}</td>
                     <td class="img-td">
-                        <a class="a-edit" data-id=${prato.idPrato}><img src="/Imagens/icons8-edit-100.png"></a>
-                        <a class="a-switch" data-id=${prato.idPrato}><img src="/Imagens/icons8-${icon}-100.png"></a>
+                        <a class="a-edit" data-id="${prato.idPrato}"><img src="/Imagens/icons8-edit-100.png"></a>
+                        <a class="a-switch" data-id="${prato.idPrato}"><img src="/Imagens/icons8-${icon}-100.png"></a>
                     </td>
                 </tr>`
                 })
 
                 document.querySelectorAll(".a-switch").forEach(a => {
                     a.addEventListener('click', function (e) {
+                        e.preventDefault();
                         const id = this.getAttribute('data-id');
 
                         fetch('/Prato/TrocarStatus', {
@@ -89,6 +90,15 @@ function fetchPratos(status) {
                             });
                     })
                 })
+
+                document.querySelectorAll(".a-edit").forEach(a => {
+                    a.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const id = this.getAttribute('data-id');
+                        window.location.href = `/Prato/EditarPrato?idPrato=${encodeURIComponent(id)}`;
+                    });
+                });
             }
         })
         .catch(error => {

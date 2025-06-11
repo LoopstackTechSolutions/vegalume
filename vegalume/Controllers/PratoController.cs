@@ -46,19 +46,14 @@ namespace vegalume.Controllers
             return RedirectToAction("EditarCardapio", "Prato");
         }
 
-        public IActionResult EditarPrato(int id)
+        [HttpGet]
+        public IActionResult EditarPrato(int idPrato)
         {
-            var prato = _pratoRepositorio.ObterPratoPeloId(id);
-
-            if (prato == null)
-            {
-                return NotFound();
-            }
-
+            var prato = _pratoRepositorio.ObterPratoPeloId(idPrato);
             return View(prato);
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult EditarPrato(int id, [Bind("idPrato, nomePrato, precoPrato, descricaoPrato, valorCalorico, peso, pessoasServidas")] Prato prato)
         {
             if (id != prato.idPrato)
@@ -80,7 +75,7 @@ namespace vegalume.Controllers
                 }
             }
             return View(prato);
-        }
+        }*/
 
         [HttpGet]
         public IActionResult TodosPratos()
