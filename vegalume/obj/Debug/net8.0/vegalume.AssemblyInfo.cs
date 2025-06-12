@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vegalume")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c80a610f779d6b9b4752a4168acfcb8e64418cdb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09917975c4d5acb8784d338d4370c245d0ab0072")]
 [assembly: System.Reflection.AssemblyProductAttribute("vegalume")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vegalume")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

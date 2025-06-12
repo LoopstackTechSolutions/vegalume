@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\2mod\\Desktop\\vegalume\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\views\\home\\minhaconta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\home\\minhaconta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\wwwroot\\carrinho\\carrinho.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\carrinho\\carrinho.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\views\\prato\\detalhesprato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\prato\\detalhesprato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\views\\cliente\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\cliente\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\wwwroot\\carrinho\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\carrinho\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\2mod\\desktop\\vegalume\\vegalume\\models\\pratocarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\models\\pratocarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "carrinho.css",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.css",
+              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Carrinho\\carrinho.css",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.css",
+              "RelativeToolTip": "vegalume\\wwwroot\\Carrinho\\carrinho.css",
+              "ViewState": "AgIAABYAAAAAAAAAAAASwCMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-12T19:48:17.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PratoCarrinho.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\PratoCarrinho.cs",
+              "RelativeDocumentMoniker": "vegalume\\Models\\PratoCarrinho.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Models\\PratoCarrinho.cs",
+              "RelativeToolTip": "vegalume\\Models\\PratoCarrinho.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T18:49:57.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PratoController.cs",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T18:36:42.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MinhaConta.cshtml",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Home\\MinhaConta.cshtml",
-              "RelativeDocumentMoniker": "vegalume\\Views\\Home\\MinhaConta.cshtml",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Home\\MinhaConta.cshtml",
-              "RelativeToolTip": "vegalume\\Views\\Home\\MinhaConta.cshtml",
-              "ViewState": "AgIAALYAAAAAAAAAAAAAAMcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-12T17:30:53.303Z",
+              "Title": "carrinho.js",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.js",
+              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Carrinho\\carrinho.js",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.js",
+              "RelativeToolTip": "vegalume\\wwwroot\\Carrinho\\carrinho.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-12T18:34:59.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DetalhesPrato.cshtml",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Prato\\DetalhesPrato.cshtml",
-              "RelativeDocumentMoniker": "vegalume\\Views\\Prato\\DetalhesPrato.cshtml",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Prato\\DetalhesPrato.cshtml",
-              "RelativeToolTip": "vegalume\\Views\\Prato\\DetalhesPrato.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Title": "Carrinho.cshtml",
+              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Cliente\\Carrinho.cshtml",
+              "RelativeDocumentMoniker": "vegalume\\Views\\Cliente\\Carrinho.cshtml",
+              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Cliente\\Carrinho.cshtml",
+              "RelativeToolTip": "vegalume\\Views\\Cliente\\Carrinho.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-12T17:29:24.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "vegalume\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\2mod\\Desktop\\vegalume\\vegalume\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "vegalume\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-12T17:06:36.567Z",
+              "WhenOpened": "2025-06-12T18:17:40.533Z",
               "EditorCaption": ""
             }
           ]

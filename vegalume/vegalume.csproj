@@ -20,6 +20,7 @@
 	<ItemGroup>
 	  <Folder Include="wwwroot\Login\" />
 	  <Folder Include="wwwroot\MinhaConta\" />
+	  <Folder Include="wwwroot\Carrinho\" />
 	</ItemGroup>
 
 </Project>

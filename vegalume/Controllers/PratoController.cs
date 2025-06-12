@@ -35,10 +35,7 @@ namespace vegalume.Controllers
             }
 
             HttpContext.Session.SetObject("Carrinho", carrinho);
-            System.Diagnostics.Debug.WriteLine(HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho")!.Count);
-
-            return RedirectToAction("Index", "Home");
-
+            return Redirect(Url.Action("Index", "Home") + "#nosso-cardapio");
         }
 
         [HttpPost]
@@ -101,6 +98,16 @@ namespace vegalume.Controllers
             System.Diagnostics.Debug.WriteLine(prato.idPrato);
             _pratoRepositorio.Editar(prato);
             return RedirectToAction("EditarCardapio", "Prato");
+        }
+
+        public IActionResult ObterCarrinho()
+        {
+            return Json(HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho"));
+        }
+
+        public IActionResult ObterPratoPeloId(int idPrato)
+        {
+            return Json(_pratoRepositorio.ObterPratoPeloId(idPrato));
         }
     }
 }
