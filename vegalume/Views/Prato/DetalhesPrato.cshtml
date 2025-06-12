@@ -1,4 +1,10 @@
 @model vegalume.Models.Prato;
+@using vegalume.Models;
+@using vegalume;
+
+@{
+	var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+}
 
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +17,7 @@
 <body>
 	<button onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</button>
 
-	<form>
+	<form asp-controller="Prato" asp-action="AdicionarAoCarrinho">
 		<div id="titulo"></div>
 		<div id="nome-prato">@Model.nomePrato</div>
 		<div id="descricao-prato">@Model.descricaoPrato</div>
@@ -34,22 +40,22 @@
 			<img src="../Imagens/icons8-chat-100.png" alt="">
 			<div>Alguma observação?</div>
 		</div>
-		<textarea name="" placeholder="Ex: Tirar a cebola, feijão a parte etc..."></textarea>
+		<textarea name="Anotacoes" placeholder="Ex: Tirar a cebola, feijão a parte etc..."></textarea>
 		<div id="qtd-total">
 			<div>
 				<button class="qtd-button" type="button" onclick="diminuirQtd()">-</button>
-				<input type="text" id="qtd" value="1" />
+				<input type="text" id="qtd" value="1" name="Qtd"/>
 				<button class="qtd-button" type="button" onclick="aumentarQtd()">+</button>
 			</div>
 			<div id="total" data-preco-base="@Model.precoPrato">R$ @Model.precoPrato,00</div>
 		</div>
 		<input type="submit" class="white-green-btn" value="Adicionar ao Carrinho">
-
+		<input type="hidden" name="Id" value="@Model.idPrato"/>
 	</form>
 
-	<button class="fixed-btn" id="btn-carrinho">
+	<button class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
 		<img src="~/Imagens/cart.png">
-		<div id="qtd-carrinho"></div>
+		<div id="qtd-carrinho">@carrinho.Count</div>
 	</button>
 
 	<script src="~/DetalhesPrato/detalhes-prato.js"></script>

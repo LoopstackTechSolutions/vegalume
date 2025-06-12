@@ -63,6 +63,7 @@ namespace vegalume.Controllers
                 if (cliente != null)
                 {
                     HttpContext.Session.SetInt32("UserId", cliente.idCliente);
+                    HttpContext.Session.SetObject("Carrinho", new List<PratoCarrinho>());
                     return RedirectToAction("Index", "Home");
                 }
 

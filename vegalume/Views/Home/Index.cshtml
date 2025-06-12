@@ -1,5 +1,9 @@
-﻿@{
+﻿@using vegalume;
+@using vegalume.Models;
+
+@{
     var userId = Context.Session.GetInt32("UserId");
+    var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
 }
 
 
@@ -134,9 +138,11 @@
         <img src="../Imagens/arrow.png">
     </button>
 
-    <button class="fixed-btn" id="btn-carrinho">
+    <button class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
         <img src="~/Imagens/cart.png">
-        <div id="qtd-carrinho"></div>
+        <div id="qtd-carrinho">@carrinho.Count</div>
     </button>
+
+    <input type="hidden"  />
 	<script src="~/index/index.js"></script>
 </body>

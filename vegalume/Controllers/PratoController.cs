@@ -15,9 +15,9 @@ namespace vegalume.Controllers
 
         public IActionResult AdicionarAoCarrinho(int id, int qtd, string? anotacoes)
         {
-            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
 
-            var existingItem = carrinho.FirstOrDefault(c => c.Id == id);
+            var existingItem = carrinho!.FirstOrDefault(c => c.Id == id);
 
             if (existingItem != null)
             {
@@ -26,7 +26,7 @@ namespace vegalume.Controllers
             }
             else
             {
-                carrinho.Add(new PratoCarrinho
+                carrinho!.Add(new PratoCarrinho
                 {
                     Id = id,
                     Qtd = qtd,
@@ -35,8 +35,10 @@ namespace vegalume.Controllers
             }
 
             HttpContext.Session.SetObject("Carrinho", carrinho);
+            System.Diagnostics.Debug.WriteLine(HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho")!.Count);
 
             return RedirectToAction("Index", "Home");
+
         }
 
         [HttpPost]
