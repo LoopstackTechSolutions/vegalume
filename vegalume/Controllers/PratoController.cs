@@ -22,7 +22,7 @@ namespace vegalume.Controllers
             if (existingItem != null)
             {
                 existingItem.Qtd += qtd;
-                existingItem.Anotacoes = anotacoes;
+                existingItem.Anotacoes = existingItem.Anotacoes + " / " + anotacoes;
             }
             else
             {

@@ -1,5 +1,5 @@
 function diminuirQtd(prato, preco) {
-    preco = parseFloat(preco); 
+    preco = parseFloat(preco);
     var qtd = parseInt(document.getElementById(`qtd-${prato}`).value);
 
     if (qtd > 1)
@@ -10,7 +10,7 @@ function diminuirQtd(prato, preco) {
 }
 
 function aumentarQtd(prato, preco) {
-    preco = parseFloat(preco); 
+    preco = parseFloat(preco);
     var qtd = parseInt(document.getElementById(`qtd-${prato}`).value);
 
     if (qtd < 10)
@@ -60,6 +60,62 @@ function aumentarQtd(prato, preco) {
                 return;
             }
         }
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Erro. Tente novamente.');
+    }
+})();
+
+const id = document.getElementById("main").dataset.id;
+
+(async function () {
+    try {
+        const response = await fetch(`/Cliente/ObterClientePeloId?IdCliente=${encodeURIComponent(id)}`);
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
+        const data = await response.json();
+
+        const idCliente = data.idcliente;
+
+        try {
+            const response = await fetch(`/Cliente/TodosCartoes`);
+            if (!response.ok) {
+                throw new Error('Erro de conexão.');
+            }
+            const data = await response.json();
+
+            const pagamentos = document.getElementById('selPagamento');
+
+            for (const cartao of data) {
+                pagamentos.innerHTML += `<option>(${cartao.bandeira}) ${cartao.modalidade} - 
+                **** ${String(cartao.numeroCartao).slice(-4)}</option>`;
+            }
+
+        } catch (error) {
+            console.error('Fetch error:', error);
+            alert('Erro. Tente novamente.');
+        }
+
+        try {
+            const response = await fetch(`/Cliente/TodosEnderecos`);
+            if (!response.ok) {
+                throw new Error('Erro de conexão.');
+            }
+            const data = await response.json();
+
+            const enderecos = document.getElementById('selEndereco');
+
+            for (const endereco of data) {
+                enderecos.innerHTML += `<option>${endereco.rua}, ${endereco.numero} - ${endereco.bairro}, 
+                ${endereco.cidade} - ${endereco.estado}</option>`;
+            }
+
+        } catch (error) {
+            console.error('Fetch error:', error);
+            alert('Erro. Tente novamente.');
+        }
+
     } catch (error) {
         console.error('Fetch error:', error);
         alert('Erro. Tente novamente.');

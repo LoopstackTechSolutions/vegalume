@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    var userId = Context.Session.GetInt32("UserId");
 }
 <head>
     <meta charset="UTF-8">
@@ -13,7 +11,7 @@
 
 <body>
     <a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
-    <form id="main">
+    <form id="main" data-id="@userId">  
         <div id="titulo">Carrinho</div>
         <div id="pratos">
         
@@ -23,17 +21,14 @@
             <div>Opções de Pagamento</div>
         </div>
         <select id="selPagamento">
-            <option value="">Débito MasterCard****7777</option>
-            <option value="">Pix</option>
-            <option value="">Dinheiro</option>
+            <option>Pix</option>
+            <option>Dinheiro</option>
         </select>
         <div id="opcao-endereco">
             <img src="~/Imagens/icons8-location-100.png" alt="">
             <div>Opções de Endereço</div>
         </div>
         <select id="selEndereco">
-            <option value="">Rua Josnelândia, 123</option>
-            <option value="">Rua Juqueira, 321</option>
         </select>
 
         <input type="submit" class="white-green-btn" value="Fazer Pedido">

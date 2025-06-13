@@ -194,10 +194,10 @@
         <img src="../Imagens/arrow.png">
     </button>
 
-    <button class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
+    <a asp-controller="Cliente" asp-action="Carrinho" class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
         <img src="~/Imagens/cart.png">
-        <div id="qtd-carrinho">@carrinho.Count</div>
-    </button>
+        <div id="qtd-carrinho">@carrinho!.Count</div>
+    </a>
 
     <script src="~/minhaconta/minha-conta.js"></script>
 </body>

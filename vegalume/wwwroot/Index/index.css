@@ -267,14 +267,13 @@ header a:hover {
     white-space: nowrap;
     background: black;
     color: white;
-    font-size: 4vw;
     font-family: sans-serif;
     text-transform: uppercase;
     padding: 1vw 0;
     position: relative;
     background-color: var(--verde-escuro);
     font-family: avarezo;
-    font-size: 8vw;
+    font-size: 4vw;
     padding: 2vw;
 }
 

@@ -125,7 +125,7 @@ fetch('/Cliente/TodosCartoes')
             data.forEach(cartao => {
                 const linhaCartao = document.createElement('div');
                 linhaCartao.classList.add('linha-cartao');
-                linhaCartao.setAttribute('data-idcartao', cartao.idCartao); // ok
+                linhaCartao.setAttribute('data-idcartao', cartao.idCartao);
                 cartoes.appendChild(linhaCartao);
 
                 const bandeira = Capitalizar(cartao.bandeira);
@@ -141,7 +141,7 @@ fetch('/Cliente/TodosCartoes')
                 const a = document.createElement('a');
                 a.href = "#";
                 a.classList.add("excluir-cartao");
-                a.setAttribute('data-id', cartao.idCartao); // ✅ Set from object directly
+                a.setAttribute('data-id', cartao.idCartao);
                 linhaCartao.appendChild(a);
 
                 a.addEventListener('click', function (e) {
@@ -151,7 +151,7 @@ fetch('/Cliente/TodosCartoes')
                     console.log("data-id attribute:", e.currentTarget.getAttribute("data-id"));
                     console.log("dataset.id:", e.currentTarget.dataset.id);
 
-                    const id = e.currentTarget.dataset.id; // ✅ Correct dataset usage
+                    const id = e.currentTarget.dataset.id;
 
                     const confirmed = confirm("Tem certeza que deseja excluir este cartão?");
                     if (!confirmed) return;

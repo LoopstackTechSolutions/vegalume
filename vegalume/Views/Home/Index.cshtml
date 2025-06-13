@@ -140,7 +140,7 @@
 
     <a asp-controller="Cliente" asp-action="Carrinho" class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
         <img src="~/Imagens/cart.png">
-        <div id="qtd-carrinho">@carrinho.Count</div>
+        <div id="qtd-carrinho">@carrinho!.Count</div>
     </a>
 
     <input type="hidden"  />
