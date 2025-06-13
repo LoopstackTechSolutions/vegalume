@@ -1,12 +1,31 @@
-function diminuirQtd(prato, preco) {
+async function diminuirQtd(prato, preco, id) {
+    console.log(id);
+
     preco = parseFloat(preco);
     var qtd = parseInt(document.getElementById(`qtd-${prato}`).value);
 
-    if (qtd > 1)
+    if (qtd > 1) {
         qtd--;
+        document.getElementById(`qtd-${prato}`).value = qtd;
+        document.getElementById(`total-${prato}`).textContent = "$ " + (qtd * preco).toFixed(0) + ",00";
+    }
+    else {
+        try {
+            const response = await fetch(`/Prato/RemoverDoCarrinho?id=${encodeURIComponent(id)}`);
+            if (!response.ok) {
+                throw new Error('Erro de conexão.');
+            }
+        }
+        catch (error) {
+            console.error('Fetch error:', error);
+            alert('Erro. Tente novamente.');
+            return;
+        }
 
-    document.getElementById(`qtd-${prato}`).value = qtd;
-    document.getElementById(`total-${prato}`).textContent = "$ " + (qtd * preco).toFixed(0) + ",00";
+        const div = document.getElementById(`div-${id}`);
+        div.style.display = "none";
+    }
+    
 }
 
 function aumentarQtd(prato, preco) {
@@ -38,18 +57,17 @@ function aumentarQtd(prato, preco) {
                 }
 
                 const pratoData = await pratoResponse.json();
-                console.log(pratoData);
 
                 const anotacoes = pratoCarrinho.anotacoes == null ? "" : pratoCarrinho.anotacoes;
 
-                pratos.innerHTML += `<div>
+                pratos.innerHTML += `<div id="div-${pratoCarrinho.id}">
                 <div id="nome-prato">${pratoData.nomePrato}</div>
                 <div id="anotacoes-prato">${anotacoes}</div>
                 <div id="qtd-total">
                     <div>
-                        <button type="button" onclick="diminuirQtd('${pratoData.nomePrato}','${pratoData.precoPrato}')">-</button>
-                        <input type="text" class="qtd" id="qtd-${pratoData.nomePrato}" value="${pratoCarrinho.qtd}" />
-                        <button type="button" onclick="aumentarQtd('${pratoData.nomePrato}','${pratoData.precoPrato}')">+</button>
+                        <button type="button" onclick="diminuirQtd('${pratoData.nomePrato}','${pratoData.precoPrato}', '${pratoCarrinho.id}')">-</button>
+                        <input type="text" class="qtd" id="qtd-${pratoData.nomePrato}" value="${pratoCarrinho.qtd}"/>
+                        <button type="button" onclick="aumentarQtd('${pratoData.nomePrato}','${pratoData.precoPrato}', '${pratoCarrinho.id}')">+</button>
                     </div>
                     <div id="total-${pratoData.nomePrato}">$ ${(pratoCarrinho.qtd * pratoData.precoPrato).toFixed(0)},00</div>
                 </div>

@@ -4,6 +4,7 @@
 @{
     var userId = Context.Session.GetInt32("UserId");
     var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
+    System.Diagnostics.Debug.WriteLine(carrinho.Count);
 }
 
 

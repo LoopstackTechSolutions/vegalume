@@ -38,6 +38,19 @@ namespace vegalume.Controllers
             return Redirect(Url.Action("Index", "Home") + "#nosso-cardapio");
         }
 
+        public IActionResult RemoverDoCarrinho(int id)
+        {
+            
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+
+            var prato = carrinho!.FirstOrDefault(c => c.Id == id);
+
+            carrinho!.Remove(prato!);
+            HttpContext.Session.SetObject("Carrinho", carrinho);
+
+            return RedirectToAction("Carrinho", "Cliente");
+        }
+
         [HttpPost]
         public IActionResult CadastrarPrato(Prato prato)
         {

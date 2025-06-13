@@ -1,3 +1,5 @@
+window.location.reload();
+
 function revelaEsconde(conteudo) {
     if (conteudo === "localizacao") {
         document.getElementById("p-localizacao").classList.toggle("mostrar");
