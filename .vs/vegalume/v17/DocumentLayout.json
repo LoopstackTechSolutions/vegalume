@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\carrinho\\carrinho.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\views\\cliente\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\cliente\\carrinho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\wwwroot\\carrinho\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\carrinho\\carrinho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,39 +30,39 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PratoController.cs",
-              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
-              "RelativeDocumentMoniker": "vegalume\\Controllers\\PratoController.cs",
-              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PratoController.cs",
-              "RelativeToolTip": "vegalume\\Controllers\\PratoController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAwEEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T00:46:20.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "carrinho.css",
-              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.css",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\Carrinho\\carrinho.css",
-              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.css",
-              "RelativeToolTip": "vegalume\\wwwroot\\Carrinho\\carrinho.css",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAqwHsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-14T00:07:57.236Z",
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAkwFgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T01:15:49.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "vegalume\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "vegalume\\Controllers\\PedidoController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T01:06:17.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Carrinho.cshtml",
               "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Cliente\\Carrinho.cshtml",
               "RelativeDocumentMoniker": "vegalume\\Views\\Cliente\\Carrinho.cshtml",
               "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Cliente\\Carrinho.cshtml",
               "RelativeToolTip": "vegalume\\Views\\Cliente\\Carrinho.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-13T23:54:45.475Z",
               "EditorCaption": ""
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "vegalume\\wwwroot\\Carrinho\\carrinho.js",
               "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\Carrinho\\carrinho.js",
               "RelativeToolTip": "vegalume\\wwwroot\\Carrinho\\carrinho.js",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAADwv7gAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-06-13T22:53:59.063Z",
               "EditorCaption": ""

@@ -122,51 +122,38 @@ AtualizarCarrinho();
 const id = document.getElementById("main").dataset.id;
 
 (async function () {
+
     try {
-        const response = await fetch(`/Cliente/ObterClientePeloId?IdCliente=${encodeURIComponent(id)}`);
+        const response = await fetch(`/Cliente/TodosCartoes`);
         if (!response.ok) {
             throw new Error('Erro de conexão.');
         }
         const data = await response.json();
 
-        const idCliente = data.idcliente;
+        const pagamentos = document.getElementById('selPagamento');
 
-        try {
-            const response = await fetch(`/Cliente/TodosCartoes`);
-            if (!response.ok) {
-                throw new Error('Erro de conexão.');
-            }
-            const data = await response.json();
-
-            const pagamentos = document.getElementById('selPagamento');
-
-            for (const cartao of data) {
-                pagamentos.innerHTML += `<option>(${cartao.bandeira}) ${cartao.modalidade} - 
+        for (const cartao of data) {
+            pagamentos.innerHTML += `<option value="${cartao.idCartao}">(${cartao.bandeira}) ${cartao.modalidade} - 
                 **** ${String(cartao.numeroCartao).slice(-4)}</option>`;
-            }
-
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert('Erro. Tente novamente.');
         }
 
-        try {
-            const response = await fetch(`/Cliente/TodosEnderecos`);
-            if (!response.ok) {
-                throw new Error('Erro de conexão.');
-            }
-            const data = await response.json();
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Erro. Tente novamente.');
+    }
 
-            const enderecos = document.getElementById('selEndereco');
+    try {
+        const response = await fetch(`/Cliente/TodosEnderecos`);
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
+        const data = await response.json();
 
-            for (const endereco of data) {
-                enderecos.innerHTML += `<option>${endereco.rua}, ${endereco.numero} - ${endereco.bairro}, 
+        const enderecos = document.getElementById('selEndereco');
+
+        for (const endereco of data) {
+            enderecos.innerHTML += `<option value="${endereco.idEndereco}">${endereco.rua}, ${endereco.numero} - ${endereco.bairro}, 
                 ${endereco.cidade} - ${endereco.estado}</option>`;
-            }
-
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert('Erro. Tente novamente.');
         }
 
     } catch (error) {
@@ -175,8 +162,37 @@ const id = document.getElementById("main").dataset.id;
     }
 })();
 
-/*const form = document.getElementById("main");
-form.addEventListener('submit', function (e) {
+const form = document.getElementById("main");
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-    fetch(`/Pedido/FazerPedido?valorTotal=${}&idEndereco=${}&idCartao=${}`)
-})*/
+    const valorTotalDiv = document.getElementById("total-carrinho");
+    let text = valorTotalDiv.textContent || valorTotalDiv.innerText;
+    text = text.replace(/[^\d,.-]/g, '');
+    text = text.replace(',', '.');
+    const valorTotal = parseFloat(text);
+
+    const idEndereco = document.getElementById("selEndereco").value;
+    const idCartao = (document.getElementById("selPagamento").value == "pix" ||
+        document.getElementById("selPagamento").value == "dinheiro") ?
+        null : document.getElementById("selPagamento").value;
+
+    try {
+        const response = await fetch('/Pedido/FazerPedido',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `valorTotal=${encodeURIComponent(valorTotal)}&idEndereco=${encodeURIComponent(idEndereco)}&idCartao=${encodeURIComponent(idCartao)}`
+            });
+        if (!response.ok) {
+            throw new Error('Erro de conexão.');
+        }
+
+        alert("Pedido realizado com sucesso!");
+        //TO-DO redirect to AcompanharPedido
+
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Erro. Tente novamente.');
+    }
+})
