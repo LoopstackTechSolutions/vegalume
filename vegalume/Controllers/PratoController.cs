@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using vegalume.Models;
 using vegalume.Repositorio;
 
@@ -40,15 +41,32 @@ namespace vegalume.Controllers
 
         public IActionResult RemoverDoCarrinho(int id)
         {
-            
             var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
-
             var prato = carrinho!.FirstOrDefault(c => c.Id == id);
-
             carrinho!.Remove(prato!);
             HttpContext.Session.SetObject("Carrinho", carrinho);
 
             return RedirectToAction("Carrinho", "Cliente");
+        }
+
+        public IActionResult DiminuirQuantidade(int id)
+        {
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+            var prato = carrinho!.FirstOrDefault(c => c.Id == id);
+            prato!.Qtd--;
+            HttpContext.Session.SetObject("Carrinho", carrinho);
+
+            return Ok();
+        }
+
+        public IActionResult AumentarQuantidade(int id)
+        {
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+            var prato = carrinho!.FirstOrDefault(c => c.Id == id);
+            prato!.Qtd++;
+            HttpContext.Session.SetObject("Carrinho", carrinho);
+
+            return Ok();
         }
 
         [HttpPost]
@@ -108,7 +126,6 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult AlterarPrato(Prato prato)
         {
-            System.Diagnostics.Debug.WriteLine(prato.idPrato);
             _pratoRepositorio.Editar(prato);
             return RedirectToAction("EditarCardapio", "Prato");
         }

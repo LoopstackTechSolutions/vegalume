@@ -110,10 +110,14 @@ insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso
 ('Gazpacho', 22, 'Sopa fria de tomate, pimentão, pepino e cebola, refrescante para dias quentes.', 150, 250, 1, 1),
 ('Samosa', 18, 'Pastelzinho frito recheado com batata, ervilhas, cenoura e especiarias.', 280, 150, 1, 1);
 
+describe tb_prato;
+
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 1, null, 90);
-insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (6, 1, 1, null), (3, 1, 2, 'tempere bem!');
+insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (6, (select max(idpedido) from tb_pedido where idcliente = 1), 1, null);
+
+/*insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (6, 1, 1, null), (3, 1, 2, 'tempere bem!');
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 1, null, 120);
 insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 2, 1, 'SEM BATATA PALHA!!'), (1, 2, 2, null);
 
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 2, null, 120);
-insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 3, 1, 'SEM BATATA PALHA!!'), (1, 3, 2, null);
+insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (2, 3, 1, 'SEM BATATA PALHA!!'), (1, 3, 2, null);*/

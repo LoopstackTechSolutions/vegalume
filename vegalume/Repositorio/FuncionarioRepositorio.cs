@@ -79,7 +79,7 @@ namespace vegalume.Repositorio
                                     rm = Convert.ToInt32(dr["rm"]), 
                                     nome = ((string)dr["nome"]), 
                                     senha = ((string)dr["senha"]),
-                                    telefone = Convert.ToInt64(dr["telefone"]),//CONFIRMAR SE DEIXA DECIMAL MESMO OU INT
+                                    telefone = Convert.ToInt64(dr["telefone"]),
                                     email = ((string)dr["email"]), 
                                 });
                 }

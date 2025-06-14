@@ -10,26 +10,40 @@
 </head>
 
 <body>
-    <a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
+    <a asp-controller="Home" asp-action="Index" class="white-green-btn" id="voltar">Voltar</a>
     <form id="main" data-id="@userId">  
         <div id="titulo">Carrinho</div>
         <div id="pratos">
         
         </div>
+
         <div id="opcao-pagamento">
             <img src="~/Imagens/icons8-card-100.png" alt="">
             <div>Opções de Pagamento</div>
         </div>
+
         <select id="selPagamento">
             <option>Pix</option>
             <option>Dinheiro</option>
         </select>
+
         <div id="opcao-endereco">
             <img src="~/Imagens/icons8-location-100.png" alt="">
             <div>Opções de Endereço</div>
         </div>
+
         <select id="selEndereco">
         </select>
+
+        <div id="taxa">
+            <div>Taxa de Entrega</div>
+            <div>$ 7,00</div>
+        </div>
+
+        <div id="total">
+            <div>Total</div>
+            <div id="total-carrinho"></div>
+        </div>
 
         <input type="submit" class="white-green-btn" value="Fazer Pedido">
     </form>

@@ -9,7 +9,42 @@ namespace vegalume.Repositorio
 {
     public class PedidoRepositorio(IConfiguration configuration)
     {
-        private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
+        private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL")!;
+
+        public int FazerPedido(int? idCliente, decimal valorTotal, int idEndereco, int? idCartao)
+        {
+            using var conexao = new MySqlConnection(_conexaoMySQL);
+            conexao.Open();
+
+            var cmd = new MySqlCommand(@"insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal)
+                                        values (@idEndereco, @idCliente, @idCartao, @valorTotal);
+                                        select last_insert_id();", conexao);
+
+            cmd.Parameters.AddWithValue("@idEndereco", idEndereco);
+            cmd.Parameters.AddWithValue("@idCliente", (object?)idCliente ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@idCartao", (object?)idCartao ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
+
+        public void AdicionarPratoAoPedido(int idPedido, int idPrato, int qtd, string anotacoes)
+        {
+            using var conexao = new MySqlConnection(_conexaoMySQL);
+            conexao.Open();
+
+            var cmd = new MySqlCommand(@"insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido)
+                                        values (@idPrato, @idPedido, @qtd, @detalhesPedido)", conexao);
+
+            cmd.Parameters.AddWithValue("@idPedido", idPedido);
+            cmd.Parameters.AddWithValue("@idPrato", idPrato);
+            cmd.Parameters.AddWithValue("@qtd", qtd);
+            cmd.Parameters.AddWithValue("@detalhesPedido", anotacoes);
+
+            cmd.ExecuteNonQuery();
+        }
+
 
         public IEnumerable<Pedido> TodosPedidosPorStatus(string statusPedido)
         {

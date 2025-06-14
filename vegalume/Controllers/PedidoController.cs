@@ -13,6 +13,24 @@ namespace vegalume.Controllers
             _pedidoRepositorio = pedidoRepositorio;
         }
 
+        [HttpPost]
+        public IActionResult FazerPedido(decimal valorTotal, int idEndereco, int? idCartao = null)
+        {
+            int? idCliente = HttpContext.Session.GetInt32("UserId");
+            int idPedido = _pedidoRepositorio.FazerPedido(idCliente, valorTotal, idEndereco, idCartao);
+
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho")!;
+
+            foreach (var prato in carrinho)
+            {
+                _pedidoRepositorio.AdicionarPratoAoPedido(idPedido, prato.Id, prato.Qtd, prato.Anotacoes ?? "");
+            }
+
+            HttpContext.Session.Remove("Carrinho");
+
+            return Ok();
+        }
+
         public IActionResult ListarPedido()
         {
             return View();

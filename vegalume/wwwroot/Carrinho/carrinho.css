@@ -33,7 +33,7 @@ form {
     margin-bottom: 2vw;
 }
 
-#qtd-total{
+#qtd-total {
     display: flex;
     color: var(--branco);
     align-items: center;
@@ -45,15 +45,15 @@ form {
     margin-bottom: 2vw;
 }
 
-#qtd-total div {
-    display: flex;
-    text-align: center;
-    width: 50%;
-    white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
+    #qtd-total div {
+        display: flex;
+        text-align: center;
+        width: 50%;
+        white-space: nowrap;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
 
 .qtd {
     align-self: center;
@@ -79,7 +79,7 @@ form {
     overflow: hidden;
 }
 
-#opcao-pagamento, 
+#opcao-pagamento,
 #opcao-endereco {
     display: flex;
     color: var(--branco);
@@ -88,12 +88,12 @@ form {
     letter-spacing: 0.1vw;
 }
 
-img{
+img {
     width: 2vw;
     margin-right: 0.4vw;
 }
 
-#nome-prato{
+#nome-prato {
     font-family: avarezo;
     color: var(--branco);
     font-size: 1.5vw;
@@ -101,12 +101,12 @@ img{
     letter-spacing: 0.1vw;
 }
 
-#anotacoes-prato{
+#anotacoes-prato {
     font-family: unageo;
     color: var(--branco);
 }
 
-select{
+select {
     font-family: unageo;
     font-size: 1.5vw;
     width: 93%;
@@ -115,4 +115,47 @@ select{
     margin-bottom: 2vw;
     margin-top: 0.5vw;
     color: var(--verde-escuro);
+}
+
+#taxa {
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vw;
+    width: 70%;
+}
+
+#taxa > div:first-of-type {
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 1.5vw;
+    align-self: center;
+}
+
+#taxa > div:last-of-type {
+    font-family: steelfish;
+    letter-spacing: 0.2vw;
+    font-size: 1.5vw;
+}
+
+#total {
+    color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+    margin-top: 1vw;
+    width: 70%;
+}
+
+#total > div:first-of-type {
+    font-family: avarezo;
+    letter-spacing: 0.2vw;
+    font-size: 2.5vw;
+    align-self: center;
+}
+
+#total > div:last-of-type {
+    font-family: steelfish;
+    letter-spacing: 0.2vw;
+    font-size: 2vw;
 }

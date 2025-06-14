@@ -6,40 +6,64 @@ async function diminuirQtd(prato, preco, id) {
 
     if (qtd > 1) {
         qtd--;
-        document.getElementById(`qtd-${prato}`).value = qtd;
-        document.getElementById(`total-${prato}`).textContent = "$ " + (qtd * preco).toFixed(0) + ",00";
-    }
-    else {
+
         try {
-            const response = await fetch(`/Prato/RemoverDoCarrinho?id=${encodeURIComponent(id)}`);
+            const response = await fetch(`/Prato/DiminuirQuantidade?id=${encodeURIComponent(id)}`);
             if (!response.ok) {
                 throw new Error('Erro de conexão.');
             }
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Fetch error:', error);
             alert('Erro. Tente novamente.');
             return;
         }
 
-        const div = document.getElementById(`div-${id}`);
-        div.style.display = "none";
+        AtualizarCarrinho();
     }
-    
+    else {
+        if (confirm('Remover prato do carrinho?')) {
+            try {
+                const response = await fetch(`/Prato/RemoverDoCarrinho?id=${encodeURIComponent(id)}`);
+                if (!response.ok) {
+                    throw new Error('Erro de conexão.');
+                }
+            }
+            catch (error) {
+                console.error('Fetch error:', error);
+                alert('Erro. Tente novamente.');
+                return;
+            }
+
+            const div = document.getElementById(`div-${id}`);
+            div.style.display = "none";
+        }
+    }
+
 }
 
-function aumentarQtd(prato, preco) {
+async function aumentarQtd(prato, preco, id) {
     preco = parseFloat(preco);
     var qtd = parseInt(document.getElementById(`qtd-${prato}`).value);
 
-    if (qtd < 10)
+    if (qtd < 10) {
         qtd++;
 
-    document.getElementById(`qtd-${prato}`).value = qtd;
-    document.getElementById(`total-${prato}`).textContent = "$ " + (qtd * preco).toFixed(0) + ",00";
+        try {
+            const response = await fetch(`/Prato/AumentarQuantidade?id=${encodeURIComponent(id)}`);
+            if (!response.ok) {
+                throw new Error('Erro de conexão.');
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+            alert('Erro. Tente novamente.');
+            return;
+        }
+
+        AtualizarCarrinho();
+    }
 }
 
-(async function () {
+async function AtualizarCarrinho() {
     try {
         const response = await fetch("/Prato/ObterCarrinho");
         if (!response.ok) {
@@ -48,6 +72,8 @@ function aumentarQtd(prato, preco) {
         const data = await response.json();
 
         const pratos = document.getElementById("pratos");
+        pratos.innerHTML = "";
+        var totalCarrinho = 0;
 
         for (const pratoCarrinho of data) {
             try {
@@ -71,18 +97,27 @@ function aumentarQtd(prato, preco) {
                     </div>
                     <div id="total-${pratoData.nomePrato}">$ ${(pratoCarrinho.qtd * pratoData.precoPrato).toFixed(0)},00</div>
                 </div>
-            </div>`;
+                </div>`;
+
+                totalCarrinho += pratoCarrinho.qtd * pratoData.precoPrato;
+
             } catch (error) {
                 console.error('Fetch error:', error);
                 alert('Erro. Tente novamente.');
                 return;
             }
         }
+
+        totalCarrinho += 7;
+        document.getElementById("total-carrinho").textContent = `$ ${totalCarrinho.toFixed(0)},00`;
+
     } catch (error) {
         console.error('Fetch error:', error);
         alert('Erro. Tente novamente.');
     }
-})();
+};
+
+AtualizarCarrinho();
 
 const id = document.getElementById("main").dataset.id;
 
@@ -139,3 +174,9 @@ const id = document.getElementById("main").dataset.id;
         alert('Erro. Tente novamente.');
     }
 })();
+
+/*const form = document.getElementById("main");
+form.addEventListener('submit', function (e) {
+
+    fetch(`/Pedido/FazerPedido?valorTotal=${}&idEndereco=${}&idCartao=${}`)
+})*/
