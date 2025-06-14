@@ -28,11 +28,12 @@ section:last-of-type {
     padding-top: 5vw;
     padding-bottom: 5vw;
     display: none;
+
 }
 
 table {
     font-family: unageo;
-    background-color: var(--branco);
+    background-color: var(--verde-escuro);
     color: var(--verde-escuro);
     border-collapse: collapse;
     border-color: var(--verde-escuro);
@@ -48,6 +49,16 @@ th {
     padding-right: 0.3vw;
     padding-left: 0.3vw;
     text-align: center;
+    background-color: var(--branco);
+}
+
+.td-img{
+    background-color: var(--verde-escuro);
+}
+
+.td-img img{
+    width: 4vw;
+    margin-left: 1vw
 }
 
 form label {
@@ -94,27 +105,6 @@ select {
     background-color: var(--branco);
 
 }
-
-
-/* se cliente tiver 0 endereços:
-
-#enderecos{
-    display: none;
-}
-
-#adicione-endereco{
-    margin-top: 0;
-}*/
-
-/* se cliente tiver 0 cartoes:
-
-#cartoes{
-    display: none;
-}
-
-#adicione-endereco{
-    margin-top: 0;
-}*/
 
 .linha-endereco,
 .linha-cartao {

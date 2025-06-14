@@ -110,7 +110,7 @@ insert into tb_prato (nomePrato, precoPrato, descricaoPrato, valorCalorico, peso
 ('Gazpacho', 22, 'Sopa fria de tomate, pimentão, pepino e cebola, refrescante para dias quentes.', 150, 250, 1, 1),
 ('Samosa', 18, 'Pastelzinho frito recheado com batata, ervilhas, cenoura e especiarias.', 280, 150, 1, 1);
 
-describe tb_prato;
+select * from tb_pedido;
 
 insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal) values (1, 1, null, 90);
 insert into tb_prato_pedido (idPrato, idPedido, qtd, detalhesPedido) values (6, (select max(idpedido) from tb_pedido where idcliente = 1), 1, null);

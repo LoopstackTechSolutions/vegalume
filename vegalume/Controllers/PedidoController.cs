@@ -46,6 +46,11 @@ namespace vegalume.Controllers
             return Json(_pedidoRepositorio.TodosPedidosPorStatus(status));
         }
 
+        public IActionResult TodosPedidosPorCliente(int idCliente)
+        {
+            return Json(_pedidoRepositorio.TodosPedidosPorCliente(idCliente));
+        }
+
         [HttpPost]
         public IActionResult CancelarPedido(int idPedido, int rm)
         {

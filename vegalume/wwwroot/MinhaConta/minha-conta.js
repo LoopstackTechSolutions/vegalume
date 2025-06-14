@@ -11,7 +11,6 @@ fetch('/Cliente/ObterCliente')
         return response.json();
     })
     .then(cliente => {
-        console.log(cliente);
         document.getElementById('txtNome').value = cliente.nome;
         document.getElementById('txtSenha').value = cliente.senha;
         telefone = cliente.telefone;
@@ -187,6 +186,65 @@ fetch('/Cliente/TodosCartoes')
         console.error('Fetch error:', error);
     });
 
+(async () => {
+    try {
+        const idCliente = document.getElementById("meus-pedidos").dataset.id;
+
+        const response = await fetch(`/Pedido/TodosPedidosPorCliente?idCliente=${encodeURIComponent(idCliente)}`);
+        if (!response.ok) throw new Error('Erro de conexão ao obter pedidos.');
+
+        const pedidos = await response.json();
+
+        const table = document.querySelector("#table-pedidos");
+        const primeiro = document.querySelector('#primeiro-pedido');
+
+        if (pedidos.length === 0) {
+            table.style.display = "none";
+            primeiro.style.display = "block";
+        }
+        else {
+            table.style.display = "table";
+            primeiro.style.display = "none";
+
+            const tbody = document.querySelector("#table-pedidos tbody");
+            tbody.innerHTML = "";
+
+            for (const pedido of pedidos) {
+                const pratosResponse = await fetch(`/Prato/TodosPratosPorPedido?idPedido=${encodeURIComponent(pedido.idPedido)}`);
+                if (!pratosResponse.ok) throw new Error('Erro de conexão ao obter pratos.');
+
+                const pratosData = await pratosResponse.json();
+
+                let pratos = "";
+                for (const prato of pratosData) {
+                    pratos += `${prato.nomePrato} (${prato.qtd})<br>`;
+                }
+
+                const date = new Date(pedido.dataHoraPedido);
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const year = String(date.getFullYear()).slice(-2);
+                const dataFormatada = `${day}/${month}/${year}`;
+
+                tbody.insertAdjacentHTML("afterbegin", `
+        <tr class="linha-pedido">
+          <td>${pedido.idPedido}</td>
+          <td>${dataFormatada}</td>
+          <td>${pratos}</td>
+          <td>$${pedido.valorTotal},00</td>
+          <td>${Capitalizar(pedido.statusPedido)}</td>
+          <td class="td-img">
+            <a><img src="/Imagens/icons8-eye-100.png" alt="Ver detalhes" /></a>
+          </td>
+        </tr>`);
+            }
+        }
+    } catch (error) {
+        console.error(error);
+    }
+})();
+
+
 
 document.querySelectorAll('.numerico').forEach(input => {
     input.addEventListener('input', function () {
@@ -197,7 +255,7 @@ document.querySelectorAll('.numerico').forEach(input => {
 
 const phoneInput = document.querySelector('.telefone');
 phoneInput.addEventListener('input', function () {
-    let digits = this.value.replace(/\D/g, '').slice(0, 11); // Keep only 11 digits
+    let digits = this.value.replace(/\D/g, '').slice(0, 11);
     let formatted = '';
 
     if (digits.length > 0) formatted += '(' + digits.slice(0, 2);
@@ -209,7 +267,7 @@ phoneInput.addEventListener('input', function () {
 
 const shortDateInput = document.querySelector('.data');
 shortDateInput.addEventListener('input', function () {
-    let digits = this.value.replace(/\D/g, '').slice(0, 4); // Max 4 digits
+    let digits = this.value.replace(/\D/g, '').slice(0, 4);
     let formatted = '';
 
     if (digits.length > 2) {
@@ -223,7 +281,7 @@ shortDateInput.addEventListener('input', function () {
 
 const cardInput = document.querySelector('.cartao');
 cardInput.addEventListener('input', function () {
-    let digits = this.value.replace(/\D/g, '').slice(0, 16); // Max 16 digits
+    let digits = this.value.replace(/\D/g, '').slice(0, 16);
     let formatted = '';
 
     for (let i = 0; i < digits.length; i++) {

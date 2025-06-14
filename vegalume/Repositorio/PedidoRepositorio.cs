@@ -45,7 +45,6 @@ namespace vegalume.Repositorio
             cmd.ExecuteNonQuery();
         }
 
-
         public IEnumerable<Pedido> TodosPedidosPorStatus(string statusPedido)
         {
             List<Pedido> lista = new List<Pedido>();
@@ -72,6 +71,42 @@ namespace vegalume.Repositorio
                                 idCliente = reader.GetInt32("idcliente"),
                                 idEndereco = reader.GetInt32("idendereco"),
                                 idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao")) 
+                                ? (int?)null : reader.GetInt32("idcartao")
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+
+        public IEnumerable<Pedido> TodosPedidosPorCliente(int idCliente)
+        {
+            List<Pedido> lista = new List<Pedido>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"select * from tb_pedido where idcliente = @idCliente order by idpedido asc;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Pedido
+                            {
+                                idPedido = reader.GetInt32("idpedido"),
+                                dataHoraPedido = reader.GetDateTime("datahorapedido"),
+                                statusPedido = reader.GetString("statuspedido"),
+                                valorTotal = reader.GetDecimal("valortotal"),
+                                idCliente = reader.GetInt32("idcliente"),
+                                idEndereco = reader.GetInt32("idendereco"),
+                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
                                 ? (int?)null : reader.GetInt32("idcartao")
                             });
                         }

@@ -3,201 +3,155 @@
 
 @{
 	var userId = Context.Session.GetInt32("UserId");
-    var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+	var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
 }
 
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vegalume - Minha Conta</title>
-    <link href="~/minhaconta/minha-conta.css" rel="stylesheet" />
-    <link href="~/shared.css" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vegalume - Minha Conta</title>
+	<link href="~/minhaconta/minha-conta.css" rel="stylesheet" />
+	<link href="~/shared.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <a asp-action="Index" asp-controller="Home" class="white-green-btn">Voltar</a>
-        <a href="#meus-pedidos">Meus Pedidos</a>
-        <a href="#dados-cadastrais">Dados Cadastrais</a>
-        <a href="#meus-enderecos">Meus Endereços</a>
-        <a href="#formas-de-pagamento">Formas de Pagamento</a>
-    </header>
+	<header>
+		<a asp-action="Index" asp-controller="Home" class="white-green-btn">Voltar</a>
+		<a href="#meus-pedidos">Meus Pedidos</a>
+		<a href="#dados-cadastrais">Dados Cadastrais</a>
+		<a href="#meus-enderecos">Meus Endereços</a>
+		<a href="#formas-de-pagamento">Formas de Pagamento</a>
+	</header>
 
-    <section id="meus-pedidos">
-        <p>Meus Pedidos</p>
-        <p id="primeiro-pedido">Seu primeiro pedido aparecerá aqui!</p>
-        <table>
-            <tr>
-                <th>N°</th>
-                <th>Data</th>
-                <th>Pratos</th>
-                <th>Total</th>
-                <th>Status</th>
-            </tr>
-            <tr class="linha-pedido">
-                <td>234</td>
-                <td>27/06/25</td>
-                <td>
-                    Falafel com Homus e Pão Pita (1)<br>
-                    Curry com Grão de Bico (2)
-                </td>
-                <td>R$90,00</td>
-                <td>Entregue</td>
-            </tr>
-            <tr class="linha-pedido">
-                <td>234</td>
-                <td>27/06/25</td>
-                <td>
-                    Falafel com Homus e Pão Pita (1)<br>
-                    Curry com Grão de Bico (2)
-                </td>
-                <td>R$90,00</td>
-                <td>Entregue</td>
-            </tr>
-            <tr class="linha-pedido">
-                <td>234</td>
-                <td>27/06/25</td>
-                <td>
-                    Falafel com Homus e Pão Pita (1)<br>
-                    Curry com Grão de Bico (2)
-                </td>
-                <td>R$90,00</td>
-                <td>Entregue</td>
-            </tr>
-            <tr class="linha-pedido">
-                <td>234</td>
-                <td>27/06/25</td>
-                <td>
-                    Falafel com Homus e Pão Pita (1)<br>
-                    Curry com Grão de Bico (2)
-                </td>
-                <td>R$90,00</td>
-                <td>Entregue</td>
-            </tr>
-            <tr class="linha-pedido">
-                <td>234</td>
-                <td>27/06/25</td>
-                <td>
-                    Falafel com Homus e Pão Pita (1)<br>
-                    Curry com Grão de Bico (2)
-                </td>
-                <td>R$90,00</td>
-                <td>Entregue</td>
-            </tr>
-        </table>
-    </section>
+	<section id="meus-pedidos" data-id="@userId">
+		<p>Meus Pedidos</p>
+		<p id="primeiro-pedido">Seu primeiro pedido aparecerá aqui!</p>
+		<table id="table-pedidos">
+			<thead>
+				<tr>
+					<th>N°</th>
+					<th>Data</th>
+					<th>Pratos</th>
+					<th>Total</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</section>
 
-    <section id="dados-cadastrais">
-        <p>Meus Dados Cadastrais</p>
-        <form id="frm-dados-cadastrais" asp-action="EditarCliente" asp-controller="Cliente">
-            <div id="dados-textboxes">
-                <div>
-                    <label>Nome </label>
-                    <input type="text" id="txtNome" name="nome" required maxlength="50">
-                </div>
-                <div>
-                    <label>Senha </label>
-                    <input type="password" id="txtSenha" name="senha" required maxlength="30">
-                </div>
-                <div>
-                    <label>Telefone </label>
-                    <input type="text" class="numerico telefone" id="txtTelefone" name="telefone" required maxlength="14">
-                </div>
-            </div>
-            <input type="submit" class="white-green-btn" id="salvar" value="Salvar" />
-        </form>
-    </section>
+	<section id="dados-cadastrais">
+		<p>Meus Dados Cadastrais</p>
+		<form id="frm-dados-cadastrais" asp-action="EditarCliente" asp-controller="Cliente">
+			<div id="dados-textboxes">
+				<div>
+					<label>Nome </label>
+					<input type="text" id="txtNome" name="nome" required maxlength="50">
+				</div>
+				<div>
+					<label>Senha </label>
+					<input type="password" id="txtSenha" name="senha" required maxlength="30">
+				</div>
+				<div>
+					<label>Telefone </label>
+					<input type="text" class="numerico telefone" id="txtTelefone" name="telefone" required maxlength="14">
+				</div>
+			</div>
+			<input type="submit" class="white-green-btn" id="salvar" value="Salvar" />
+		</form>
+	</section>
 
-    <section id="meus-enderecos">
-        <p>Meus Endereços de Entrega</p>
-        <div id="enderecos">
-        </div>
+	<section id="meus-enderecos">
+		<p>Meus Endereços de Entrega</p>
+		<div id="enderecos">
+		</div>
 
-        <form id="frm-adicionar-endereco" asp-action="CadastrarEndereco" asp-controller="Cliente">
-            <div id="adicione-endereco">Adicione um novo endereço:</div>
-            <div id="endereco-textboxes">
-                <div>
-                    <label>Rua </label><input type="text" id="txtRua" name="rua" required maxlength="50">
-                    <label>N° </label><input type="text" class="numerico" id="txtN" name="numero" required maxlength="6">
-                </div>
-                <div>
-                    <label>Bairro </label><input type="text" id="txtBairro" name="bairro" required maxlength="50">
-                    <label>Cidade </label><input type="text" id="txtCidade" name="cidade" required maxlength="50">
-                    <label>UF </label><select id="txtUF" name="estado" required>
-                        <option value=""></option>
-                        <option value="AC">AC</option>
-                        <option value="AL">AL</option>
-                        <option value="AM">AM</option>
-                        <option value="AP">AP</option>
-                        <option value="BA">BA</option>
-                        <option value="CE">CE</option>
-                        <option value="DF">DF</option>
-                        <option value="ES">ES</option>
-                        <option value="GO">GO</option>
-                        <option value="MA">MA</option>
-                        <option value="MG">MG</option>
-                        <option value="MS">MS</option>
-                        <option value="MT">MT</option>
-                        <option value="PA">PA</option>
-                        <option value="PB">PB</option>
-                        <option value="PE">PE</option>
-                        <option value="PI">PI</option>
-                        <option value="PR">PR</option>
-                        <option value="RJ">RJ</option>
-                        <option value="RN">RN</option>
-                        <option value="RO">RO</option>
-                        <option value="RR">RR</option>
-                        <option value="RS">RS</option>
-                        <option value="SC">SC</option>
-                        <option value="SE">SE</option>
-                        <option value="SP">SP</option>
-                        <option value="TO">TO</option>
-                    </select>
-                </div>
-            </div>
-            <input type="submit" class="white-green-btn" id="adicionar-endereco" value="Adicionar" />
-        </form>
-    </section>
+		<form id="frm-adicionar-endereco" asp-action="CadastrarEndereco" asp-controller="Cliente">
+			<div id="adicione-endereco">Adicione um novo endereço:</div>
+			<div id="endereco-textboxes">
+				<div>
+					<label>Rua </label><input type="text" id="txtRua" name="rua" required maxlength="50">
+					<label>N° </label><input type="text" class="numerico" id="txtN" name="numero" required maxlength="6">
+				</div>
+				<div>
+					<label>Bairro </label><input type="text" id="txtBairro" name="bairro" required maxlength="50">
+					<label>Cidade </label><input type="text" id="txtCidade" name="cidade" required maxlength="50">
+					<label>UF </label><select id="txtUF" name="estado" required>
+						<option value=""></option>
+						<option value="AC">AC</option>
+						<option value="AL">AL</option>
+						<option value="AM">AM</option>
+						<option value="AP">AP</option>
+						<option value="BA">BA</option>
+						<option value="CE">CE</option>
+						<option value="DF">DF</option>
+						<option value="ES">ES</option>
+						<option value="GO">GO</option>
+						<option value="MA">MA</option>
+						<option value="MG">MG</option>
+						<option value="MS">MS</option>
+						<option value="MT">MT</option>
+						<option value="PA">PA</option>
+						<option value="PB">PB</option>
+						<option value="PE">PE</option>
+						<option value="PI">PI</option>
+						<option value="PR">PR</option>
+						<option value="RJ">RJ</option>
+						<option value="RN">RN</option>
+						<option value="RO">RO</option>
+						<option value="RR">RR</option>
+						<option value="RS">RS</option>
+						<option value="SC">SC</option>
+						<option value="SE">SE</option>
+						<option value="SP">SP</option>
+						<option value="TO">TO</option>
+					</select>
+				</div>
+			</div>
+			<input type="submit" class="white-green-btn" id="adicionar-endereco" value="Adicionar" />
+		</form>
+	</section>
 
-    <section id="formas-de-pagamento">
-        <p>Minhas Formas de Pagamento</p>
-        <div id="cartoes">
-        </div>
+	<section id="formas-de-pagamento">
+		<p>Minhas Formas de Pagamento</p>
+		<div id="cartoes">
+		</div>
 
-        <form id="frm-adicionar-cartao" asp-action="CadastrarCartao" asp-controller="Cliente">
-            <div id="adicione-cartao">Adicione um novo cartão:</div>
-            <div id="cartao-textboxes">
-                <div>
-                    <label>Nome do Titular </label><input type="text" id="txtTitular" name="nomeTitular" required maxlength="30">
-                </div>
-                <div>
-                    <label>Bandeira </label><input type="text" id="txtBandeira" name="bandeira" required maxlength="30">
-                    <label>N° </label><input type="text" class="numerico cartao" id="txtNCartao" name="numeroCartao" required
-                                             maxlength="19">
-                </div>
-                <div>
-                    <label>CVV </label><input type="text" class="numerico" id="txtCVV" name="cvv" required maxlength="3">
-                    <label>Validade </label><input type="text" class="numerico data" id="txtValidade" name="dataValidade" required
-                                                   maxlength="5">
-                </div>
-                <div>
-                    <input type="radio" id="radModalidade" name="modalidade" value="débito" checked><label class="lblModalidade">Débito</label>
-                    <input type="radio" id="radModalidade" name="modalidade" value="crédito"><label class="lblModalidade">Crédito</label>
-                </div>
-            </div>
-            <input type="submit" class="white-green-btn" id="adicionar-cartao" value="Adicionar" />
-        </form>
-    </section>
+		<form id="frm-adicionar-cartao" asp-action="CadastrarCartao" asp-controller="Cliente">
+			<div id="adicione-cartao">Adicione um novo cartão:</div>
+			<div id="cartao-textboxes">
+				<div>
+					<label>Nome do Titular </label><input type="text" id="txtTitular" name="nomeTitular" required maxlength="30">
+				</div>
+				<div>
+					<label>Bandeira </label><input type="text" id="txtBandeira" name="bandeira" required maxlength="30">
+					<label>N° </label><input type="text" class="numerico cartao" id="txtNCartao" name="numeroCartao" required
+										maxlength="19">
+				</div>
+				<div>
+					<label>CVV </label><input type="text" class="numerico" id="txtCVV" name="cvv" required maxlength="3">
+					<label>Validade </label><input type="text" class="numerico data" id="txtValidade" name="dataValidade" required
+											  maxlength="5">
+				</div>
+				<div>
+					<input type="radio" id="radModalidade" name="modalidade" value="débito" checked><label class="lblModalidade">Débito</label>
+					<input type="radio" id="radModalidade" name="modalidade" value="crédito"><label class="lblModalidade">Crédito</label>
+				</div>
+			</div>
+			<input type="submit" class="white-green-btn" id="adicionar-cartao" value="Adicionar" />
+		</form>
+	</section>
 
-    <button class="fixed-btn" id="scroll-top">
-        <img src="../Imagens/arrow.png">
-    </button>
+	<button class="fixed-btn" id="scroll-top">
+		<img src="../Imagens/arrow.png">
+	</button>
 
-    <a asp-controller="Cliente" asp-action="Carrinho" class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
-        <img src="~/Imagens/cart.png">
-        <div id="qtd-carrinho">@carrinho!.Count</div>
-    </a>
+	<a asp-controller="Cliente" asp-action="Carrinho" class="fixed-btn" id="btn-carrinho" style='@(carrinho!.Count != 0 ? "display: inline;" : "")'>
+		<img src="~/Imagens/cart.png">
+		<div id="qtd-carrinho">@carrinho!.Count</div>
+	</a>
 
-    <script src="~/minhaconta/minha-conta.js"></script>
+	<script src="~/minhaconta/minha-conta.js"></script>
 </body>
