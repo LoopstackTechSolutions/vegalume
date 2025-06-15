@@ -1,52 +1,54 @@
 ﻿@{
-    var userId = Context.Session.GetInt32("UserId");
+	var userId = Context.Session.GetInt32("UserId");
 }
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Carrinho</title>
-    <link rel="stylesheet" href="~/carrinho/carrinho.css">
-    <link rel="stylesheet" href="~/shared.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<title>Carrinho</title>
+	<link rel="stylesheet" href="~/carrinho/carrinho.css">
+	<link rel="stylesheet" href="~/shared.css">
 </head>
 
 <body>
-    <a asp-controller="Home" asp-action="Index" class="white-green-btn" id="voltar">Voltar</a>
-    <form id="main" data-id="@userId">  
-        <div id="titulo">Carrinho</div>
-        <div id="pratos">
-        
-        </div>
+	<a asp-controller="Home" asp-action="Index" class="white-green-btn" id="voltar">Voltar</a>
+	<form id="main" data-id="@userId">
+		<div id="titulo">Carrinho</div>
+		<div id="pratos">
+		</div>
 
-        <div id="opcao-pagamento">
-            <img src="~/Imagens/icons8-card-100.png" alt="">
-            <div>Opções de Pagamento</div>
-        </div>
+		<div id="opcao-pagamento">
+			<img src="~/Imagens/icons8-card-100.png" alt="">
+			<div>Opções de Pagamento</div>
+		</div>
 
-        <select id="selPagamento">
-            <option value="pix">Pix</option>
-            <option value="dinheiro">Dinheiro</option>
-        </select>
+		<select id="selPagamento">
+			<option value="pix">Pix</option>
+			<option value="dinheiro">Dinheiro</option>
+		</select>
 
-        <div id="opcao-endereco">
-            <img src="~/Imagens/icons8-location-100.png" alt="">
-            <div>Opções de Endereço</div>
-        </div>
+		<div id="opcao-endereco">
+			<img src="~/Imagens/icons8-location-100.png" alt="">
+			<div>Opções de Endereço</div>
+		</div>
 
-        <select id="selEndereco">
-        </select>
+		<select id="selEndereco">
+		</select>
 
-        <div id="taxa">
-            <div>Taxa de Entrega</div>
-            <div>$ 7,00</div>
-        </div>
+		<div id="taxa">
+			<div>Taxa de Entrega</div>
+			<div>$ 7,00</div>
+		</div>
 
-        <div id="total">
-            <div>Total</div>
-            <div id="total-carrinho"></div>
-        </div>
+		<div id="total">
+			<div>Total</div>
+			<div id="total-carrinho"></div>
+		</div>
 
-        <input type="submit" class="white-green-btn" value="Fazer Pedido">
-    </form>
+		<div id="botoes">
+			<a id="limpar-carrinho"><img src="~/Imagens/icons8-trash-250.png"/></a>
+			<input type="submit" class="white-green-btn" value="Fazer Pedido">
+		</div>
+	</form>
 
-    <script src="~/carrinho/carrinho.js"></script>
+	<script src="~/carrinho/carrinho.js"></script>
 </body>

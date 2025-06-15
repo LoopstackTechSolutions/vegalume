@@ -3,7 +3,7 @@
 @using vegalume;
 
 @{
-	var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+	var carrinho = Context.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
 }
 
 <head>

@@ -62,9 +62,22 @@ function atualizarClientes() {
                     tr.appendChild(telefone);
 
                     const pedidos = document.createElement('td');
-                    // TO-DO fetch
-                    pedidos.classList.add("pedidos");
-                    tr.appendChild(pedidos);
+                    fetch(`/Pedido/TodosPedidosPorCliente?idCliente=${cliente.idCliente}`)                    
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Erro de conexão.');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            pedidos.textContent = data.length;
+                            pedidos.classList.add("pedidos");
+                            tr.appendChild(pedidos);
+                        })
+                        .catch(error => {
+                            console.error('Fetch error:', error);
+                        })
+                    
                 })
             }
         })

@@ -12,6 +12,7 @@ namespace vegalume.Models
         public int? rm { get; set; }
         public int? idEndereco { get; set; }
         public int? idCliente { get; set; }
+        public string? formaPagamento { get; set; }
         public long? idCartao { get; set; }
     }
 }

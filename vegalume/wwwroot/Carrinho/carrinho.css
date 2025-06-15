@@ -141,7 +141,7 @@ select {
 #total {
     color: var(--branco);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 3vw;
     margin-top: 1vw;
     width: 70%;
@@ -158,4 +158,21 @@ select {
     font-family: steelfish;
     letter-spacing: 0.2vw;
     font-size: 2vw;
+}
+
+#botoes {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#botoes a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#botoes a img {
+    width: 28%;
 }

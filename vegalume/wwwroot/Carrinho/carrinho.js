@@ -162,9 +162,38 @@ const id = document.getElementById("main").dataset.id;
     }
 })();
 
+const limparCarrinho = document.getElementById("limpar-carrinho");
+limparCarrinho.addEventListener('click', async function (e) {
+    e.preventDefault();
+
+    if (confirm("Limpar Carrinho?")) {
+        try {
+            const response = await fetch('/Cliente/LimparCarrinho');
+
+            if (!response.ok) {
+                throw new Error('Erro de conexão.');
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert("Carrinho limpo!");
+                window.location.href = "/Home/Index#nosso-cardapio";
+            } else {
+                alert("Falha ao limpar o carrinho.");
+            }
+
+        } catch (error) {
+            console.error('Fetch error:', error);
+            alert("Erro ao limpar carrinho. Tente novamente.");
+        }
+    }
+});
+
 const form = document.getElementById("main");
 form.addEventListener('submit', async function (e) {
     e.preventDefault();
+    console.log("Form submitted");
 
     const valorTotalDiv = document.getElementById("total-carrinho");
     let text = valorTotalDiv.textContent || valorTotalDiv.innerText;
@@ -173,23 +202,36 @@ form.addEventListener('submit', async function (e) {
     const valorTotal = parseFloat(text);
 
     const idEndereco = document.getElementById("selEndereco").value;
-    const idCartao = (document.getElementById("selPagamento").value == "pix" ||
-        document.getElementById("selPagamento").value == "dinheiro") ?
-        null : document.getElementById("selPagamento").value;
+
+    const pagamento = document.getElementById("selPagamento").value;
+
+    console.log(pagamento);
+
+    const formaPagamento = pagamento === "pix" ? "pix"
+        : (pagamento === "dinheiro" ? "dinheiro"
+            : "cartao");
+
+    console.log(formaPagamento);
+
+    const idCartao = (pagamento === "pix" ||
+        pagamento === "dinheiro") ?
+        null : pagamento;
 
     try {
         const response = await fetch('/Pedido/FazerPedido',
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `valorTotal=${encodeURIComponent(valorTotal)}&idEndereco=${encodeURIComponent(idEndereco)}&idCartao=${encodeURIComponent(idCartao)}`
+                body: `valorTotal=${encodeURIComponent(valorTotal)}&idEndereco=${encodeURIComponent(idEndereco)}&formaPagamento=${encodeURIComponent(formaPagamento)}&idCartao=${encodeURIComponent(idCartao)}`
             });
         if (!response.ok) {
             throw new Error('Erro de conexão.');
         }
 
+        const data = await response.json();
+
         alert("Pedido realizado com sucesso!");
-        //TO-DO redirect to AcompanharPedido
+        window.location.href = `/Pedido/AcompanharPedido?idPedido=${data.idPedido}`;
 
     } catch (error) {
         console.error('Fetch error:', error);

@@ -234,7 +234,9 @@ fetch('/Cliente/TodosCartoes')
           <td>$${pedido.valorTotal},00</td>
           <td>${Capitalizar(pedido.statusPedido)}</td>
           <td class="td-img">
-            <a><img src="/Imagens/icons8-eye-100.png" alt="Ver detalhes" /></a>
+            <a href="/Pedido/AcompanharPedido?idPedido=${pedido.idPedido}" >
+            <img src="/Imagens/icons8-eye-100.png"/>
+            </a>
           </td>
         </tr>`);
             }

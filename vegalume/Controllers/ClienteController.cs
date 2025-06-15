@@ -106,9 +106,16 @@ namespace vegalume.Controllers
             _clienteRepositorio.ExcluirCartao(idCartao);
             return Ok();
         }
+
         public IActionResult Carrinho()
         {
             return View();
+        }
+
+        public IActionResult LimparCarrinho()
+        {
+            HttpContext.Session.Remove("Carrinho");
+            return Json(new { success = true });
         }
     }
 }

@@ -11,23 +11,23 @@ namespace vegalume.Repositorio
     {
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL")!;
 
-        public int FazerPedido(int? idCliente, decimal valorTotal, int idEndereco, int? idCartao)
+        public int FazerPedido(int? idCliente, decimal valorTotal, int idEndereco, string formaPagamento, int? idCartao)
         {
             using var conexao = new MySqlConnection(_conexaoMySQL);
             conexao.Open();
 
-            var cmd = new MySqlCommand(@"insert into tb_pedido (idEndereco, idCliente, idCartao, valorTotal)
-                                        values (@idEndereco, @idCliente, @idCartao, @valorTotal);
+            var cmd = new MySqlCommand(@"insert into tb_pedido (idEndereco, idCliente, formaPagamento, idCartao, valorTotal)
+                                        values (@idEndereco, @idCliente, @formaPagamento, @idCartao, @valorTotal);
                                         select last_insert_id();", conexao);
 
             cmd.Parameters.AddWithValue("@idEndereco", idEndereco);
             cmd.Parameters.AddWithValue("@idCliente", (object?)idCliente ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@formaPagamento", formaPagamento);
             cmd.Parameters.AddWithValue("@idCartao", (object?)idCartao ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
 
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
-
 
         public void AdicionarPratoAoPedido(int idPedido, int idPrato, int qtd, string anotacoes)
         {
@@ -43,6 +43,40 @@ namespace vegalume.Repositorio
             cmd.Parameters.AddWithValue("@detalhesPedido", anotacoes);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public Pedido? ObterPedidoPeloId(int idPedido)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                string query = @"select * from tb_pedido where idpedido = @idPedido;";
+
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idPedido", idPedido);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            return new Pedido
+                            {
+                                idPedido = reader.GetInt32("idpedido"),
+                                dataHoraPedido = reader.GetDateTime("datahorapedido"),
+                                valorTotal = reader.GetDecimal("valortotal"),
+                                idCliente = reader.GetInt32("idcliente"),
+                                idEndereco = reader.GetInt32("idendereco"),
+                                formaPagamento = reader.GetString("formapagamento"),
+                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
+                                    ? (int?)null : reader.GetInt32("idcartao")
+                            };
+                        }
+                        return null;
+                    }
+                }
+            }
         }
 
         public IEnumerable<Pedido> TodosPedidosPorStatus(string statusPedido)
@@ -70,7 +104,8 @@ namespace vegalume.Repositorio
                                 valorTotal = reader.GetDecimal("valortotal"),
                                 idCliente = reader.GetInt32("idcliente"),
                                 idEndereco = reader.GetInt32("idendereco"),
-                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao")) 
+                                formaPagamento = reader.GetString("formaPagamento"),
+                                idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
                                 ? (int?)null : reader.GetInt32("idcartao")
                             });
                         }
@@ -106,6 +141,7 @@ namespace vegalume.Repositorio
                                 valorTotal = reader.GetDecimal("valortotal"),
                                 idCliente = reader.GetInt32("idcliente"),
                                 idEndereco = reader.GetInt32("idendereco"),
+                                formaPagamento = reader.GetString("formaPagamento"),
                                 idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
                                 ? (int?)null : reader.GetInt32("idcartao")
                             });
@@ -118,12 +154,12 @@ namespace vegalume.Repositorio
 
         public IEnumerable<Pedido> FiltrarPedidos(string filtro)
         {
-            List<Pedido> lista = new List<Pedido> ();
+            List<Pedido> lista = new List<Pedido>();
 
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                    string query;
+                string query;
 
                 if (string.IsNullOrEmpty(filtro))
                     query = @"SELECT distinct pe.* FROM tb_pedido pe ORDER BY pe.idpedido DESC;";
@@ -161,6 +197,7 @@ namespace vegalume.Repositorio
                                 ? (int?)null : reader.GetInt32("rm"),
                                 idEndereco = reader.GetInt32("idendereco"),
                                 statusPedido = reader.GetString("statuspedido"),
+                                formaPagamento = reader.GetString("formaPagamento"),
                                 idCartao = reader.IsDBNull(reader.GetOrdinal("idcartao"))
                                 ? (int?)null : reader.GetInt32("idcartao")
                             });
@@ -189,7 +226,7 @@ namespace vegalume.Repositorio
 
         public void AvancarPedido(int idPedido, string statusAtual, int rm)
         {
-            string proxStatus = statusAtual == "espera" ? "preparacao" : 
+            string proxStatus = statusAtual == "espera" ? "preparacao" :
                 (statusAtual == "preparacao" ? "transito" : "entregue");
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {

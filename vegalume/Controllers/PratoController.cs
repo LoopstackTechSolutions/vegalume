@@ -16,7 +16,7 @@ namespace vegalume.Controllers
 
         public IActionResult AdicionarAoCarrinho(int id, int qtd, string? anotacoes)
         {
-            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho");
+            var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho") ?? new List<PratoCarrinho>();
 
             var existingItem = carrinho!.FirstOrDefault(c => c.Id == id);
 

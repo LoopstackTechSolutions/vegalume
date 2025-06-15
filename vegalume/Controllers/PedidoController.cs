@@ -14,10 +14,11 @@ namespace vegalume.Controllers
         }
 
         [HttpPost]
-        public IActionResult FazerPedido(decimal valorTotal, int idEndereco, int? idCartao = null)
+        public IActionResult FazerPedido(decimal valorTotal, int idEndereco, string formaPagamento, int? idCartao = null)
         {
-            int? idCliente = HttpContext.Session.GetInt32("UserId");
-            int idPedido = _pedidoRepositorio.FazerPedido(idCliente, valorTotal, idEndereco, idCartao);
+            System.Diagnostics.Debug.WriteLine(valorTotal + " " + idEndereco + " " + formaPagamento + " " + idCartao);
+            int ? idCliente = HttpContext.Session.GetInt32("UserId");
+            int idPedido = _pedidoRepositorio.FazerPedido(idCliente, valorTotal, idEndereco, formaPagamento, idCartao);
 
             var carrinho = HttpContext.Session.GetObject<List<PratoCarrinho>>("Carrinho")!;
 
@@ -28,7 +29,7 @@ namespace vegalume.Controllers
 
             HttpContext.Session.Remove("Carrinho");
 
-            return Ok();
+            return Json(new { idPedido });
         }
 
         public IActionResult ListarPedido()
@@ -63,6 +64,11 @@ namespace vegalume.Controllers
         {
             _pedidoRepositorio.AvancarPedido(idPedido, statusAtual, rm);
             return Ok();
+        }
+
+        public IActionResult AcompanharPedido(int idPedido)
+        {
+            return View(_pedidoRepositorio.ObterPedidoPeloId(idPedido));
         }
     }
 }

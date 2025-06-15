@@ -61,6 +61,10 @@ th {
     margin-left: 1vw
 }
 
+.td-img a{
+    cursor: pointer;
+}
+
 form label {
     font-family: avarezo;
     color: var(--branco);
