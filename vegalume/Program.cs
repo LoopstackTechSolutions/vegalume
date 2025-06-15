@@ -2,6 +2,13 @@ using vegalume.Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Explicitly set URL from environment variable (set via launchSettings.json profiles)
+var url = builder.Configuration["applicationUrl"];
+if (!string.IsNullOrEmpty(url))
+{
+    builder.WebHost.UseUrls(url);
+}
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

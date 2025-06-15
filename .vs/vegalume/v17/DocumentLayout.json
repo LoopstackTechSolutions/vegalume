@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Vini\\Desktop\\vegalume\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\wwwroot\\acompanharpedido\\acompanhar-pedido.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\acompanharpedido\\acompanhar-pedido.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\wwwroot\\acompanharpedido\\acompanhar-pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\acompanharpedido\\acompanhar-pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\views\\pedido\\acompanharpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\views\\pedido\\acompanharpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AcompanharPedido.cshtml",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Pedido\\AcompanharPedido.cshtml",
+              "RelativeDocumentMoniker": "vegalume\\Views\\Pedido\\AcompanharPedido.cshtml",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\Views\\Pedido\\AcompanharPedido.cshtml",
+              "RelativeToolTip": "vegalume\\Views\\Pedido\\AcompanharPedido.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-15T23:00:16.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "acompanhar-pedido.css",
-              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.css",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.css",
-              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.css",
-              "RelativeToolTip": "vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.css",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-15T02:20:19.813Z",
+              "Title": "acompanhar-pedido.js",
+              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.js",
+              "RelativeDocumentMoniker": "vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.js",
+              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.js",
+              "RelativeToolTip": "vegalume\\wwwroot\\AcompanharPedido\\acompanhar-pedido.js",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwA8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-15T22:53:57.065Z",
               "EditorCaption": ""
             }
           ]

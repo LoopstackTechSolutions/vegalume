@@ -36,6 +36,12 @@
     color: var(--verde-escuro);
 }
 
+#icone {
+    align-self: center;
+    width: 8vw;
+    display: none;
+}
+
 #frase-status {
     text-align: center;
 }
@@ -79,10 +85,10 @@
     width: 100%;
 }
 
-#detalhes-pedido>div:first-of-type {
-    text-align: center;
-    margin-bottom: 2vw;
-}
+    #detalhes-pedido > div:first-of-type {
+        text-align: center;
+        margin-bottom: 2vw;
+    }
 
 #pratos {
     font-family: unageo;
@@ -112,44 +118,44 @@
     margin-top: 2vw;
 }
 
-#total>div:first-of-type {
-    font-family: unageo;
-    font-size: 3vw;
-}
+    #total > div:first-of-type {
+        font-family: unageo;
+        font-size: 3vw;
+    }
 
-#total>div:last-of-type {
-    font-family: steelfish;
-    letter-spacing: 0.2vw;
-    font-size: 3vw;
-}
+    #total > div:last-of-type {
+        font-family: steelfish;
+        letter-spacing: 0.2vw;
+        font-size: 3vw;
+    }
 
-img{
+img {
     width: 3vw;
     margin-right: 0.4vw;
     align-self: flex-start;
 }
 
-.p-e{
+.p-e {
     display: flex;
     flex-direction: column;
     margin-top: 2vw;
     font-size: 2vw;
 }
 
-.p-e > div:first-of-type{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .p-e > div:first-of-type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.p-e > div:last-of-type{
-    font-family: unageo;
-    font-size: 1.5vw;
-    align-self: center;
-    background-color: var(--branco);
-    color: var(--verde-escuro);
-    padding: 0.5vw;
-    margin-top: 0.5vw;
-    width: 100%;
-    text-align: center;
-}
+    .p-e > div:last-of-type {
+        font-family: unageo;
+        font-size: 1.5vw;
+        align-self: center;
+        background-color: var(--branco);
+        color: var(--verde-escuro);
+        padding: 0.5vw;
+        margin-top: 0.5vw;
+        width: 100%;
+        text-align: center;
+    }

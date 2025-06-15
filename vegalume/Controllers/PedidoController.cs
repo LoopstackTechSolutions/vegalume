@@ -37,6 +37,11 @@ namespace vegalume.Controllers
             return View();
         }
 
+        public IActionResult ObterPedidoPeloId(int idPedido)
+        {
+            return Json(_pedidoRepositorio.ObterPedidoPeloId(idPedido));
+        }
+
         public IActionResult FiltrarPedidos(string filtro)
         {
             return Json(_pedidoRepositorio.FiltrarPedidos(filtro));
@@ -68,7 +73,9 @@ namespace vegalume.Controllers
 
         public IActionResult AcompanharPedido(int idPedido)
         {
-            return View(_pedidoRepositorio.ObterPedidoPeloId(idPedido));
+            Pedido pedido = _pedidoRepositorio.ObterPedidoPeloId(idPedido)!;
+            System.Diagnostics.Debug.WriteLine("status:" + pedido.idEndereco);
+            return View(pedido);
         }
     }
 }

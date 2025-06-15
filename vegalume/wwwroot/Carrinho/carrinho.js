@@ -1,3 +1,12 @@
+function Capitalizar(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .filter(word => word.trim().length > 0)
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+}
+
 async function diminuirQtd(prato, preco, id) {
     console.log(id);
 
@@ -133,8 +142,8 @@ const id = document.getElementById("main").dataset.id;
         const pagamentos = document.getElementById('selPagamento');
 
         for (const cartao of data) {
-            pagamentos.innerHTML += `<option value="${cartao.idCartao}">(${cartao.bandeira}) ${cartao.modalidade} - 
-                **** ${String(cartao.numeroCartao).slice(-4)}</option>`;
+            pagamentos.innerHTML += `<option value="${cartao.idCartao}">${cartao.bandeira} (${Capitalizar(cartao.modalidade)}) - 
+                ${cartao.nomeTitular.toUpperCase()} - **** ${String(cartao.numeroCartao).slice(-4)}</option>`;
         }
 
     } catch (error) {

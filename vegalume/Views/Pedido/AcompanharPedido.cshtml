@@ -11,10 +11,11 @@
 <body>
     <a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
 
-    <div id="main">
+    <div id="main" data-id="@Model.idPedido">
 
         <div id="status-pedido">
-            <div id="frase-status">Aguardando confirmação do restaurante</div>
+            <img id="icone"/>
+            <div id="frase-status"></div>
             <div id="barras">
                 <div class="barra" id="barra-espera">
                     <div class="progresso" id="progresso-espera"></div>

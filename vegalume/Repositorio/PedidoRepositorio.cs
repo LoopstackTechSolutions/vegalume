@@ -64,6 +64,7 @@ namespace vegalume.Repositorio
                             return new Pedido
                             {
                                 idPedido = reader.GetInt32("idpedido"),
+                                statusPedido = reader.GetString("statuspedido"),
                                 dataHoraPedido = reader.GetDateTime("datahorapedido"),
                                 valorTotal = reader.GetDecimal("valortotal"),
                                 idCliente = reader.GetInt32("idcliente"),

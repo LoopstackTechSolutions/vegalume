@@ -27,7 +27,7 @@ namespace vegalume.Controllers
         public IActionResult CadastrarFuncionario(Funcionario funcionario)
         {
             _funcionarioRepositorio.Cadastrar(funcionario);
-            string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
+            string? email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
             return RedirectToAction("HomeFuncionario", "Home", new { email });
         }
 

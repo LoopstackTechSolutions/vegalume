@@ -7,12 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vegalume", "vegalume\vegalu
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
+		DebugCliente|Any CPU = DebugCliente|Any CPU
+		DebugFuncionario|Any CPU = DebugFuncionario|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.DebugCliente|Any CPU.ActiveCfg = DebugCliente|Any CPU
+		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.DebugCliente|Any CPU.Build.0 = DebugCliente|Any CPU
+		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.DebugFuncionario|Any CPU.ActiveCfg = DebugFuncionario|Any CPU
+		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.DebugFuncionario|Any CPU.Build.0 = DebugFuncionario|Any CPU
 		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

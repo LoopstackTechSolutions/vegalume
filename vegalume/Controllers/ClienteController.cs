@@ -30,7 +30,7 @@ namespace vegalume.Controllers
                 HttpContext.Session.SetInt32("UserId", id);
                 return RedirectToAction("Index", "Home");
             }
-            string email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
+            string? email = _funcionarioRepositorio.ObterFuncionarioPeloRm(HttpContext.Session.GetInt32("WorkerId")).email;
             return RedirectToAction("HomeFuncionario", "Home", new { email });
         }
 
