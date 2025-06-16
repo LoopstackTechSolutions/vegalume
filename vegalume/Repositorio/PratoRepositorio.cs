@@ -128,7 +128,7 @@ namespace vegalume.Repositorio
             {
                 conexao.Open();
 
-                string query = @"select pr.nomeprato, pp.qtd, pp.detalhespedido from tb_prato_pedido pp " +
+                string query = @"select pr.nomeprato, pp.qtd, pp.detalhespedido, pr.precoprato from tb_prato_pedido pp " +
                                 "inner join tb_prato pr on pr.idprato = pp.idprato " +
                                 "where pp.idpedido = @idPedido;";
 
@@ -145,7 +145,8 @@ namespace vegalume.Repositorio
                                 nomePrato = reader.GetString("nomeprato"),
                                 qtd = reader.GetInt32("qtd"),
                                 anotacoes = reader.IsDBNull(reader.GetOrdinal("detalhespedido"))
-                                ? "" : reader.GetString("detalhespedido")
+                                ? "" : reader.GetString("detalhespedido"),
+                                precoUnitario = reader.GetFloat("precoprato")
                             });
                         }
                     }

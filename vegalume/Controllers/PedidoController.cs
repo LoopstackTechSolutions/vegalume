@@ -58,7 +58,7 @@ namespace vegalume.Controllers
         }
 
         [HttpPost]
-        public IActionResult CancelarPedido(int idPedido, int rm)
+        public IActionResult CancelarPedido(int idPedido, int? rm)
         {
             _pedidoRepositorio.CancelarPedido(idPedido, rm);
             return Ok();
@@ -67,8 +67,8 @@ namespace vegalume.Controllers
         [HttpPost]
         public IActionResult AvancarPedido(int idPedido, string statusAtual, int rm)
         {
-            _pedidoRepositorio.AvancarPedido(idPedido, statusAtual, rm);
-            return Ok();
+            string newStatus = _pedidoRepositorio.AvancarPedido(idPedido, statusAtual, rm);
+            return Json(new { status = newStatus });
         }
 
         public IActionResult AcompanharPedido(int idPedido)
@@ -76,6 +76,16 @@ namespace vegalume.Controllers
             Pedido pedido = _pedidoRepositorio.ObterPedidoPeloId(idPedido)!;
             System.Diagnostics.Debug.WriteLine("status:" + pedido.idEndereco);
             return View(pedido);
+        }
+
+        public IActionResult ObterEnderecoPeloId(int idEndereco)
+        {
+            return Json(_pedidoRepositorio.ObterEnderecoPeloId(idEndereco));
+        }
+
+        public IActionResult ObterCartaoPeloId(int idCartao)
+        {
+            return Json(_pedidoRepositorio.ObterCartaoPeloId(idCartao));
         }
     }
 }

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="~/shared.css">
 </head>
 
-<body>
-    <a onclick="window.history.back()" class="white-green-btn" id="voltar">Voltar</a>
+<body><a asp-controller="Home" asp-action="Index" class="white-green-btn" id="voltar">Voltar</a>
 
     <div id="main" data-id="@Model.idPedido">
 
@@ -29,7 +28,7 @@
             </div>
             <div id="hora-entrega">
                 <div>Hora estimada de entrega:</div>
-                <div>19:30 - 20:00</div>
+                <div id="hora-entrega-div">19:30 - 20:00</div>
             </div>
         </div>
 
@@ -37,19 +36,11 @@
             <div>Detalhes do Pedido</div>
 
             <div id="pratos">
-                <div class="prato">
-                    <div class="nome">Falafel (2)</div>
-                    <div class="total">$ 32,00</div>
-                </div>
-                <div class="prato">
-                    <div class="nome">Feijoada Vegana (1)</div>
-                    <div class="total">$ 30,00</div>
-                </div>
             </div>
 
             <div id="total">
                 <div><strong>Total</strong></div>
-                <div>$ 70,00</div>
+                <div id="total-div"></div>
             </div>
 
             <div class="p-e" id="forma-pagamento">
@@ -57,17 +48,19 @@
                     <img src="~/Imagens/icons8-card-100.png" alt="">
                     <div>Forma de Pagamento</div>
                 </div>
-                <div>(Débito) Mastercard - **** 2386</div>
+                <div id="pagamento-div">(Débito) Mastercard - **** 2386</div>
             </div>
 
             <div class="p-e" id="endereco">
                 <div>
-                    <img src=".~/Imagens/icons8-location-100.png" alt="">
+                    <img src="~/Imagens/icons8-location-100.png" alt="">
                     <div>Endereço de Entrega</div>
                 </div>
-                <div>Rua Feliz, 54 - Vila Feliz, Felizândia - SP</div>
+                <div id="endereco-div"></div>
             </div>
         </div>
+
+        <a class="white-green-btn" id="cancelar">Cancelar Pedido</a>
 
     </div>
 

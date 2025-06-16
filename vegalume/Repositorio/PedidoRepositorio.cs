@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System.Data;
+using System.Reflection.PortableExecutable;
 using System.Runtime.ConstrainedExecution;
 using vegalume.Models;
 
@@ -209,38 +210,126 @@ namespace vegalume.Repositorio
             return lista;
         }
 
-        public void CancelarPedido(int idPedido, int rm)
+        public void CancelarPedido(int idPedido, int? rm)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido='cancelado', rm=@rm " +
-                                                    "where idpedido = @idPedido; ", conexao);
+                if (ObterPedidoPeloId(idPedido)!.statusPedido != "cancelado")
+                {
 
-                cmd.Parameters.AddWithValue("@idPedido", idPedido);
-                cmd.Parameters.AddWithValue("@rm", rm);
+                    MySqlCommand cmd;
 
-                cmd.ExecuteNonQuery();
+                    if (rm == null)
+                    {
+                        cmd = new MySqlCommand("update tb_pedido set statuspedido='cancelado' " +
+                                                "where idpedido = @idPedido; ", conexao);
+
+                        cmd.Parameters.AddWithValue("@idPedido", idPedido);
+                    }
+                    else
+                    {
+                        cmd = new MySqlCommand("update tb_pedido set statuspedido='cancelado', rm=@rm " +
+                                                "where idpedido = @idPedido; ", conexao);
+
+                        cmd.Parameters.AddWithValue("@idPedido", idPedido);
+                        cmd.Parameters.AddWithValue("@rm", rm);
+                    }
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
-        public void AvancarPedido(int idPedido, string statusAtual, int rm)
+        public string AvancarPedido(int idPedido, string statusAtual, int rm)
         {
-            string proxStatus = statusAtual == "espera" ? "preparacao" :
-                (statusAtual == "preparacao" ? "transito" : "entregue");
+            Console.WriteLine(ObterPedidoPeloId(idPedido)!.statusPedido);
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido=@proxStatus, rm=@rm " +
-                                                    "where idpedido = @idPedido; ", conexao);
+                if (ObterPedidoPeloId(idPedido)!.statusPedido != "cancelado")
+                {
 
-                cmd.Parameters.AddWithValue("@idPedido", idPedido);
-                cmd.Parameters.AddWithValue("@proxStatus", proxStatus);
-                cmd.Parameters.AddWithValue("@rm", rm);
+                    string proxStatus = statusAtual == "espera" ? "preparacao" :
+                        (statusAtual == "preparacao" ? "transito" : "entregue");
 
-                cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = new MySqlCommand("update tb_pedido set statuspedido=@proxStatus, rm=@rm " +
+                                                        "where idpedido = @idPedido; ", conexao);
+
+                    cmd.Parameters.AddWithValue("@idPedido", idPedido);
+                    cmd.Parameters.AddWithValue("@proxStatus", proxStatus);
+                    cmd.Parameters.AddWithValue("@rm", rm);
+
+                    cmd.ExecuteNonQuery();
+                    return proxStatus;
+                }
+                return "cancelado";
+            }
+        }
+
+        public Endereco? ObterEnderecoPeloId(int idEndereco)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_endereco where idEndereco=@idEndereco ", conexao);
+
+                cmd.Parameters.AddWithValue("@idEndereco", idEndereco);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                MySqlDataReader dr;
+                Endereco endereco = new Endereco();
+
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    endereco.idEndereco = (int)dr["idEndereco"];
+                    endereco.rua = (string)dr["rua"];
+                    endereco.numero = (int)dr["numero"];
+                    endereco.bairro = (string)dr["bairro"];
+                    endereco.cidade = (string)dr["cidade"];
+                    endereco.estado = (string)dr["estado"];
+                    endereco.idCliente = (int)dr["idCliente"];
+                }
+
+                return endereco;
+            }
+        }
+
+        public Cartao? ObterCartaoPeloId(int idCartao)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_cartao where idCartao=@idCartao ", conexao);
+
+                cmd.Parameters.AddWithValue("@idCartao", idCartao);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                MySqlDataReader dr;
+                Cartao cartao = new Cartao();
+
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    var modalidadeBool = dr.GetFieldValue<bool>("modalidade");
+                    string modalidade = modalidadeBool ? "crédito" : "débito";
+
+                    cartao.idCartao = (int)dr["idCartao"];
+                    cartao.numeroCartao = (long)dr["numeroCartao"];
+                    cartao.nomeTitular = (string)dr["nomeTitular"];
+                    cartao.dataValidade = (DateTime)dr["dataValidade"];
+                    cartao.cvv = (short)dr["cvv"];
+                    cartao.bandeira = (string)dr["bandeira"];
+                    cartao.modalidade = modalidade;
+                }
+
+                return cartao;
             }
         }
     }

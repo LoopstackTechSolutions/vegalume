@@ -38,7 +38,8 @@
 
 #icone {
     align-self: center;
-    width: 8vw;
+    width: 6vw;
+    margin-bottom: 1vw;
     display: none;
 }
 
@@ -158,4 +159,9 @@ img {
         margin-top: 0.5vw;
         width: 100%;
         text-align: center;
+    }
+
+    #cancelar {
+        margin-top: 3vw;
+        display: none;
     }

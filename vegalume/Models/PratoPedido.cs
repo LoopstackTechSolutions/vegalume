@@ -2,8 +2,9 @@
 {
     public class PratoPedido
     {
-        public string nomePrato { get; set; }
+        public string? nomePrato { get; set; }
         public int qtd { get; set; }
-        public string anotacoes { get; set; }
+        public string? anotacoes { get; set; }
+        public float? precoUnitario { get; set; }
     }
 }

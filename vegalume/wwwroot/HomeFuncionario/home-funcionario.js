@@ -85,15 +85,21 @@ function fetchPedidos(status) {
                             body: `idPedido=${encodeURIComponent(idPedido)}&statusAtual=${encodeURIComponent(status)}&rm=${encodeURIComponent(rm)}`
                         })
                             .then(response => {
-                                if (response.ok) {
-                                    window.location.reload();
+                                if (!response.ok) throw new Error('Erro na resposta');
+                                return response.json();
+                            })
+                            .then(result => {
+                                console.log(result.status);
+                                if (result.status === "cancelado") {
+                                    alert("Pedido cancelado pelo cliente");
                                 } else {
-                                    throw new Error('Erro.');
+                                    window.location.reload();
                                 }
                             })
                             .catch(error => {
                                 console.error('Erro:', error);
                             });
+
                     });
 
                     const aNo = document.createElement('a');
