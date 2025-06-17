@@ -9,6 +9,10 @@ section {
     padding: 2vw;
 }
 
+    section:last-of-type {
+        margin-bottom: 8vw;
+    }
+
 section p {
     font-family: avarezo;
     color: var(--branco);

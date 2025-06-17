@@ -1,37 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Vini\\Desktop\\vegalume\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|c:\\users\\vini\\desktop\\vegalume\\vegalume\\wwwroot\\homefuncionario\\home-funcionario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B7732F4C-8A3D-47A5-A6DA-15CF494524E7}|vegalume\\vegalume.csproj|solutionrelative:vegalume\\wwwroot\\homefuncionario\\home-funcionario.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\2mod\\Desktop\\vegalume\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "home-funcionario.js",
-              "DocumentMoniker": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\HomeFuncionario\\home-funcionario.js",
-              "RelativeDocumentMoniker": "vegalume\\wwwroot\\HomeFuncionario\\home-funcionario.js",
-              "ToolTip": "C:\\Users\\Vini\\Desktop\\vegalume\\vegalume\\wwwroot\\HomeFuncionario\\home-funcionario.js",
-              "RelativeToolTip": "vegalume\\wwwroot\\HomeFuncionario\\home-funcionario.js",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAF8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-06-16T02:36:45.232Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

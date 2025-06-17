@@ -18,11 +18,15 @@ form {
     min-height: 60vh;
 }
 
-form div{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 4vw;
-    margin-bottom: 2vw;
+    form div {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 4vw;
+        margin-bottom: 2vw;
+    }
+
+#filtro {
+    width: 40%;
 }
 
 #titulo {
@@ -48,11 +52,12 @@ form div{
 
 input {
     font-family: unageo;
-    width: 5000%;
+    width: 80%;
     font-size: 1.5vw;
     padding-left: 0.4vw;
     background-color: var(--branco);
     margin-left: 1vw;
+    text-align: center;
 }
 
 form label {
